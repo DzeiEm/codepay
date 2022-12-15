@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMoneyViewController" customModule="jmecodepay" customModuleProvider="target">
+            <connections>
+                <outlet property="amountTextfield" destination="0eq-vf-fIS" id="PFo-bB-Tub"/>
+                <outlet property="errorLabel" destination="jeZ-sb-R82" id="R9x-m4-rdY"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Tzg-WY-2La"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zuX-uw-0bS">
+                    <rect key="frame" x="30" y="294" width="333" height="87.666666666666686"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dg-qi-6sC">
+                            <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-vf-fIS">
+                            <rect key="frame" x="0.0" y="21.333333333333314" width="333" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="1lq-GD-uLS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-sb-R82">
+                            <rect key="frame" x="0.0" y="67.333333333333314" width="333" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemPinkColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0eq-vf-fIS" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="MKq-dT-OuS"/>
+                        <constraint firstItem="jeZ-sb-R82" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="OKX-4f-SFN"/>
+                        <constraint firstAttribute="trailing" secondItem="1Dg-qi-6sC" secondAttribute="trailing" id="aMk-ce-LX6"/>
+                        <constraint firstItem="1Dg-qi-6sC" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="ayN-ki-5lM"/>
+                        <constraint firstAttribute="trailing" secondItem="0eq-vf-fIS" secondAttribute="trailing" id="fwf-5k-Lga"/>
+                        <constraint firstAttribute="trailing" secondItem="jeZ-sb-R82" secondAttribute="trailing" id="iKy-Cb-FmH"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQd-we-jp1">
+                    <rect key="frame" x="30" y="743" width="333" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="HH5-X6-dq5"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Add money"/>
+                    <connections>
+                        <action selector="addMoneyButtonTapped" destination="-1" eventType="touchUpInside" id="oXD-nq-UMg"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Money" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q53-m3-c28">
+                    <rect key="frame" x="30" y="109" width="333" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="2Lm-7q-jaz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxp-fg-d83" userLabel="backButton">
+                    <rect key="frame" x="30" y="164" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="CS3-DR-vuB"/>
+                        <constraint firstAttribute="width" constant="30" id="mRU-Wr-RRT"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                    <connections>
+                        <action selector="backButtonTapped" destination="-1" eventType="touchUpInside" id="ipt-6J-pGG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xQd-we-jp1" secondAttribute="bottom" constant="30" id="5Pz-Zz-X9L"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zuX-uw-0bS" secondAttribute="trailing" constant="30" id="Dna-5p-j9H"/>
+                <constraint firstItem="zuX-uw-0bS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="It0-sg-o2K"/>
+                <constraint firstItem="Zxp-fg-d83" firstAttribute="top" secondItem="Q53-m3-c28" secondAttribute="bottom" constant="10" id="LNP-UK-XIU"/>
+                <constraint firstItem="Zxp-fg-d83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="ZNB-HS-kZd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xQd-we-jp1" secondAttribute="trailing" constant="30" id="d5h-pC-YKs"/>
+                <constraint firstItem="Q53-m3-c28" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="nGH-en-yoF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Q53-m3-c28" secondAttribute="trailing" constant="30" id="q5v-0j-W7E"/>
+                <constraint firstItem="xQd-we-jp1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="qZF-j1-UPI"/>
+                <constraint firstItem="zuX-uw-0bS" firstAttribute="top" secondItem="Zxp-fg-d83" secondAttribute="bottom" constant="100" id="uee-Cd-RMy"/>
+                <constraint firstItem="Q53-m3-c28" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="z0j-cg-4bF"/>
+            </constraints>
+            <point key="canvasLocation" x="113.74045801526717" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
