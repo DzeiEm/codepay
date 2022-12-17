@@ -7,7 +7,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var phoneNumberTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var loginBUtton: UIButton!
-    let settings = UIConfiguration()
+//    let settings = UIConfiguration()
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         self.viewDidLoad()
-        settings.configureButton(loginBUtton)
+//        settings.configureButton(loginBUtton)
     }
     
 }

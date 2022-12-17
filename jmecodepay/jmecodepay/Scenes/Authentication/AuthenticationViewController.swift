@@ -6,7 +6,7 @@ class AuthenticationViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    let settings = UIConfiguration()
+   
     
     
     @IBAction func loginButtonTapped() {
@@ -23,7 +23,6 @@ class AuthenticationViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        settings.configureButton(loginButton)
-        settings.configureButton(registerButton)
+       
     }
 }

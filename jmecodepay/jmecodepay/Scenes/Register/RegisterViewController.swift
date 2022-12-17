@@ -9,7 +9,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
-    let settings = UIConfiguration()
+//    let settings = UIConfiguration()
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -20,6 +20,6 @@ class RegisterViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        settings.configureButton(registerButton)
+//        settings.configureButton(registerButton)
     }
 }
