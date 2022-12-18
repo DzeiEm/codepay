@@ -11,11 +11,9 @@ class SendMoneyViewController: UIViewController {
     @IBOutlet weak var subjectTextfield: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
-    
-    
+
     @IBAction func backButtonTapped() {
-        let homeScreen = HomeViewController()
-        homeScreen.dismiss(animated: true)
+        self.dismiss(animated: true)
     }
     
     
@@ -23,4 +21,19 @@ class SendMoneyViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        errorLabel.isHidden = true
+    }
+    
+    
+}
+
+extension SendMoneyViewController {
+    
+    func display(message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+
+    }
 }

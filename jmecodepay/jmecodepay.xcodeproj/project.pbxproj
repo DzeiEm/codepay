@@ -17,8 +17,10 @@
 		CE498C6E294E1E9000F58C81 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6D294E1E9000F58C81 /* Transaction.swift */; };
 		CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6F294F1CD100F58C81 /* UserManager.swift */; };
 		CE498C72294F24EA00F58C81 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C71294F24EA00F58C81 /* UserData.swift */; };
-		CE498C75294F5F1D00F58C81 /* RecentTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C74294F5F1D00F58C81 /* RecentTransactionCell.swift */; };
+		CE498C75294F5F1D00F58C81 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C74294F5F1D00F58C81 /* TransactionCell.swift */; };
 		CE498C77294F5F2C00F58C81 /* RecentTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE498C76294F5F2C00F58C81 /* RecentTransactionCell.xib */; };
+		CE498C79294F65A300F58C81 /* InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C78294F65A300F58C81 /* InputData.swift */; };
+		CE498C7B294F687200F58C81 /* SendMoneyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */; };
 		CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593253294B8C8F00BE3357 /* AppDelegate.swift */; };
 		CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593255294B8C8F00BE3357 /* SceneDelegate.swift */; };
 		CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59325C294B8C9000BE3357 /* Assets.xcassets */; };
@@ -37,8 +39,6 @@
 		CE593289294BA6DB00BE3357 /* SendMoneyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE593288294BA6DB00BE3357 /* SendMoneyView.xib */; };
 		CE59328C294BB1D100BE3357 /* AllTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59328B294BB1D100BE3357 /* AllTransactionsViewController.swift */; };
 		CE59328E294BB1F600BE3357 /* AllTransactionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59328D294BB1F600BE3357 /* AllTransactionsView.xib */; };
-		CE593291294BB2FA00BE3357 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593290294BB2FA00BE3357 /* TransactionCell.swift */; };
-		CE593293294BB32800BE3357 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE593292294BB32800BE3357 /* TransactionCell.xib */; };
 		CE593297294BB4F300BE3357 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593296294BB4F300BE3357 /* APIErrors.swift */; };
 		CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593298294BB50400BE3357 /* APIEndpoints.swift */; };
 		CE59329B294BB52400BE3357 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59329A294BB52400BE3357 /* APIManager.swift */; };
@@ -57,8 +57,10 @@
 		CE498C6D294E1E9000F58C81 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		CE498C6F294F1CD100F58C81 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		CE498C71294F24EA00F58C81 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		CE498C74294F5F1D00F58C81 /* RecentTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionCell.swift; sourceTree = "<group>"; };
+		CE498C74294F5F1D00F58C81 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		CE498C76294F5F2C00F58C81 /* RecentTransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTransactionCell.xib; sourceTree = "<group>"; };
+		CE498C78294F65A300F58C81 /* InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputData.swift; sourceTree = "<group>"; };
+		CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyErrors.swift; sourceTree = "<group>"; };
 		CE593250294B8C8F00BE3357 /* jmecodepay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmecodepay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE593253294B8C8F00BE3357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE593255294B8C8F00BE3357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +81,6 @@
 		CE593288294BA6DB00BE3357 /* SendMoneyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendMoneyView.xib; sourceTree = "<group>"; };
 		CE59328B294BB1D100BE3357 /* AllTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactionsViewController.swift; sourceTree = "<group>"; };
 		CE59328D294BB1F600BE3357 /* AllTransactionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTransactionsView.xib; sourceTree = "<group>"; };
-		CE593290294BB2FA00BE3357 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
-		CE593292294BB32800BE3357 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		CE593296294BB4F300BE3357 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		CE593298294BB50400BE3357 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		CE59329A294BB52400BE3357 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -107,13 +107,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CE498C73294F5F0500F58C81 /* cell */ = {
+		CE498C73294F5F0500F58C81 /* TransactionCell */ = {
 			isa = PBXGroup;
 			children = (
-				CE498C74294F5F1D00F58C81 /* RecentTransactionCell.swift */,
+				CE498C74294F5F1D00F58C81 /* TransactionCell.swift */,
 				CE498C76294F5F2C00F58C81 /* RecentTransactionCell.xib */,
 			);
-			path = cell;
+			path = TransactionCell;
 			sourceTree = "<group>";
 		};
 		CE593247294B8C8F00BE3357 = {
@@ -153,6 +153,7 @@
 		CE593267294B8FB400BE3357 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE498C73294F5F0500F58C81 /* TransactionCell */,
 				CE59328A294BB1B900BE3357 /* AllTransactions */,
 				CE593281294BA23500BE3357 /* SendMoney */,
 				CE593280294BA22900BE3357 /* AddMoney */,
@@ -227,7 +228,6 @@
 		CE59327B294B9D9A00BE3357 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CE498C73294F5F0500F58C81 /* cell */,
 				CE59327C294B9DFA00BE3357 /* HomeViewController.swift */,
 				CE59327E294B9E1E00BE3357 /* HomeView.xib */,
 			);
@@ -246,8 +246,10 @@
 		CE593281294BA23500BE3357 /* SendMoney */ = {
 			isa = PBXGroup;
 			children = (
+				CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */,
 				CE593286294BA6B800BE3357 /* SendMoneyViewController.swift */,
 				CE593288294BA6DB00BE3357 /* SendMoneyView.xib */,
+				CE498C78294F65A300F58C81 /* InputData.swift */,
 			);
 			path = SendMoney;
 			sourceTree = "<group>";
@@ -255,20 +257,10 @@
 		CE59328A294BB1B900BE3357 /* AllTransactions */ = {
 			isa = PBXGroup;
 			children = (
-				CE59328F294BB2E400BE3357 /* cell */,
 				CE59328B294BB1D100BE3357 /* AllTransactionsViewController.swift */,
 				CE59328D294BB1F600BE3357 /* AllTransactionsView.xib */,
 			);
 			path = AllTransactions;
-			sourceTree = "<group>";
-		};
-		CE59328F294BB2E400BE3357 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				CE593290294BB2FA00BE3357 /* TransactionCell.swift */,
-				CE593292294BB32800BE3357 /* TransactionCell.xib */,
-			);
-			path = cell;
 			sourceTree = "<group>";
 		};
 		CE593294294BB4D500BE3357 /* Request */ = {
@@ -360,7 +352,6 @@
 				CE59327A294B99B500BE3357 /* RegisterView.xib in Resources */,
 				CE593260294B8C9000BE3357 /* LaunchScreen.storyboard in Resources */,
 				CE593274294B974100BE3357 /* LoginView.xib in Resources */,
-				CE593293294BB32800BE3357 /* TransactionCell.xib in Resources */,
 				CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */,
 				CE593285294BA27000BE3357 /* AddMoneyView.xib in Resources */,
 				CE59328E294BB1F600BE3357 /* AllTransactionsView.xib in Resources */,
@@ -419,16 +410,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE593287294BA6B800BE3357 /* SendMoneyViewController.swift in Sources */,
-				CE593291294BB2FA00BE3357 /* TransactionCell.swift in Sources */,
 				CE593270294B95DC00BE3357 /* AuthenticationViewController.swift in Sources */,
 				CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */,
 				CE498C66294E01D300F58C81 /* Currency.swift in Sources */,
 				CE593297294BB4F300BE3357 /* APIErrors.swift in Sources */,
 				CE498C68294E0C7D00F58C81 /* RegistrationError.swift in Sources */,
 				CE59329B294BB52400BE3357 /* APIManager.swift in Sources */,
+				CE498C79294F65A300F58C81 /* InputData.swift in Sources */,
 				CE498C62294DFF1900F58C81 /* LoginValidation.swift in Sources */,
 				CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */,
-				CE498C75294F5F1D00F58C81 /* RecentTransactionCell.swift in Sources */,
+				CE498C75294F5F1D00F58C81 /* TransactionCell.swift in Sources */,
 				CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */,
 				CE593278294B997E00BE3357 /* RegisterViewController.swift in Sources */,
 				CE59328C294BB1D100BE3357 /* AllTransactionsViewController.swift in Sources */,
@@ -441,6 +432,7 @@
 				CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */,
 				CE498C6C294E1E5D00F58C81 /* Account.swift in Sources */,
 				CE593283294BA24C00BE3357 /* AddMoneyViewController.swift in Sources */,
+				CE498C7B294F687200F58C81 /* SendMoneyErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
