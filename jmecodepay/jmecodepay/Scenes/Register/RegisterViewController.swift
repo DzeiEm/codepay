@@ -13,13 +13,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var dropdownView: UIView!
     @IBOutlet private weak var seledtedLabel: UILabel!
     
-    
-    
     let validate = RegistrationValidation()
     let apiManager = APIManager()
+    let userManager = UserManager(apiManager: APIManager.init())
     let dropdown = DropDown()
     var currency = ["EUR", "USD", "GBP"]
-    
+    private var availableTextFields: [UITextField] = []
+
+
     
     @IBAction func showDropDownOptions() {
         dropdown.show()
@@ -33,13 +34,25 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonTapped() {
         
-       
+        let passedData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
+                                                     password: passwordTextfield.text,
+                                                     confirmPassword: confirmPasswordTextfield.text,
+                                                     account: seledtedLabel.text)
+        
+        do {
+            try userManager.register(phone: passedData?.phone,
+                                     password: passedData?.password)
+        } catch let registrationerror as RegistrationError {
+            displayError(message: registrationerror.error)
+        } catch {
+            print("SOMETHING Weird happened")
+        }
+        
     }
     
     override func viewDidLoad() {
-        configureButton(registerButton)
-        errorLabel.isHidden = true
-        seledtedLabel.text = "Select currency"
+        
+        configureInitailView()
         dropdownView.frame.size.height = 45
         dropdown.anchorView = dropdownView
         dropdown.dataSource = currency
@@ -54,25 +67,50 @@ class RegisterViewController: UIViewController {
 }
 
 
-extension RegisterViewController {
+extension RegisterViewController: UITextFieldDelegate {
+    
+    internal func textFieldDidChangeSelection(_ textField: UITextField) {
+        configureRegistrationButton()
+    }
+    
+    fileprivate func clearAllTextfields() {
+        phoneNumberTextfield.text = nil
+        passwordTextfield.text = nil
+        confirmPasswordTextfield.text = nil
+    }
+    
+    fileprivate func setTextfieldsDelegates() {
+        phoneNumberTextfield.delegate = self
+        passwordTextfield.delegate = self
+        confirmPasswordTextfield.delegate = self
+    }
+    
+    fileprivate func configureRegistrationButton() {
+    
+    
+        let allTextFieldsFilled = availableTextFields.allSatisfy { textField in
+            guard let text = textField.text else { return false }
+            return !text.isEmpty
+        }
+        registerButton.isHidden = false
+        
+    }
     
     fileprivate func configureButton(_ button: UIButton)  {
         button.layer.cornerRadius = 20
     }
-    
-    fileprivate func textfieldsAreNotEmpty(phone: String?, password: String?, confirmPassword: String?) -> Bool {
-        
-        guard let phone = phone,
-              let password = password,
-              let confirmPassword = confirmPassword,
-              !phone.isEmpty,
-              !password.isEmpty,
-              !confirmPassword.isEmpty
-        else {
-            registerButton.isEnabled = false
-            return true
-        }
-        return false
+    fileprivate func configureInitailView() {
+        errorLabel.isHidden = true
+        seledtedLabel.text = "Select currency"
+        registerButton.isEnabled = false
+        configureButton(registerButton)
     }
     
+    fileprivate func displayError(message: String) {
+        errorLabel.isHidden = false
+        errorLabel.textColor = .red
+        errorLabel.text = message
+    }
 }
+
+

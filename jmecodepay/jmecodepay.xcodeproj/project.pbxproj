@@ -15,6 +15,8 @@
 		CE498C6A294E13D200F58C81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C69294E13D200F58C81 /* User.swift */; };
 		CE498C6C294E1E5D00F58C81 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6B294E1E5D00F58C81 /* Account.swift */; };
 		CE498C6E294E1E9000F58C81 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6D294E1E9000F58C81 /* Transaction.swift */; };
+		CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6F294F1CD100F58C81 /* UserManager.swift */; };
+		CE498C72294F24EA00F58C81 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C71294F24EA00F58C81 /* UserData.swift */; };
 		CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593253294B8C8F00BE3357 /* AppDelegate.swift */; };
 		CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593255294B8C8F00BE3357 /* SceneDelegate.swift */; };
 		CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59325C294B8C9000BE3357 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		CE498C69294E13D200F58C81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE498C6B294E1E5D00F58C81 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CE498C6D294E1E9000F58C81 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		CE498C6F294F1CD100F58C81 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		CE498C71294F24EA00F58C81 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		CE593250294B8C8F00BE3357 /* jmecodepay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmecodepay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE593253294B8C8F00BE3357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE593255294B8C8F00BE3357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +100,6 @@
 				377A930486E91BDFDDB27CFB /* Pods-jmecodepay.debug.xcconfig */,
 				9926F438BBBF7CCE71BA5BC1 /* Pods-jmecodepay.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CE498C65294E01D300F58C81 /* Currency.swift */,
-				CE498C69294E13D200F58C81 /* User.swift */,
+				CE498C71294F24EA00F58C81 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 		CE593275294B994A00BE3357 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CE498C6F294F1CD100F58C81 /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -199,6 +203,7 @@
 			children = (
 				CE593295294BB4DC00BE3357 /* Response */,
 				CE593294294BB4D500BE3357 /* Request */,
+				CE498C69294E13D200F58C81 /* User.swift */,
 				CE593296294BB4F300BE3357 /* APIErrors.swift */,
 				CE593298294BB50400BE3357 /* APIEndpoints.swift */,
 				CE59329A294BB52400BE3357 /* APIManager.swift */,
@@ -407,11 +412,13 @@
 				CE498C68294E0C7D00F58C81 /* RegistrationError.swift in Sources */,
 				CE59329B294BB52400BE3357 /* APIManager.swift in Sources */,
 				CE498C62294DFF1900F58C81 /* LoginValidation.swift in Sources */,
+				CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */,
 				CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */,
 				CE593278294B997E00BE3357 /* RegisterViewController.swift in Sources */,
 				CE59328C294BB1D100BE3357 /* AllTransactionsViewController.swift in Sources */,
 				CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */,
 				CE593272294B971A00BE3357 /* LoginViewController.swift in Sources */,
+				CE498C72294F24EA00F58C81 /* UserData.swift in Sources */,
 				CE498C6E294E1E9000F58C81 /* Transaction.swift in Sources */,
 				CE498C6A294E13D200F58C81 /* User.swift in Sources */,
 				CE59327D294B9DFA00BE3357 /* HomeViewController.swift in Sources */,

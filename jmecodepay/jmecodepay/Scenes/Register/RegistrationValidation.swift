@@ -3,24 +3,39 @@ import Foundation
 
 class RegistrationValidation {
     
-    func register(phone: String, password: String)  {
-        try? isPhoneNumberUnique(phone)
-        try? isPasswordValid(password)
+    func isEmptyFields(phone: String?, password: String?, confirmPassword: String?, account: String?) throws -> UserData {
+        guard let phone = phone,
+              let password = password,
+              let confirmPassword = confirmPassword,
+              let account = account,
+              !phone.isEmpty,
+              !password.isEmpty,
+              !confirmPassword.isEmpty,
+              !account.isEmpty
+        else {
+            throw RegistrationError.unexpecteerError
+        }
         
+        try isPasswordsMatch(password: password, confirmPassword: confirmPassword)
+        try isPasswordValid(password)
         
+        return UserData(phone: phone,
+                    password: password,
+                    confirmPassword: confirmPassword,
+                    account: account)
     }
     
-//    func validateEmptyFields(phone: String, password: String, ) {
-//
-//    }
-       
+    func isPasswordsMatch(password: String, confirmPassword: String) throws {
+       if password != confirmPassword {
+           throw RegistrationError.passwodDoNotMAtch
+       }
+       return
+   }
     
-    func isPhoneNumberUnique(_ phone: String) throws {
-        // get all numbersfrom API
-    }
-    
-    func isPasswordValid(_ password: String) throws {
-    
+    func isPasswordValid(_ password: String?) throws {
+        guard let password = password else {
+            return
+        }
         try? isPasswordSecure(password: password)
     }
 
@@ -39,13 +54,10 @@ class RegistrationValidation {
         }
     }
     
-     func isPasswordsMatch(password: String, confirmPassword: String) throws {
-        if password != confirmPassword {
-            throw RegistrationError.passwodDoNotMAtch
-            
-        }
-        return
+    func isPhoneNumberUnique(_ phone: String) throws {
+      // GET
     }
+     
 }
 
 

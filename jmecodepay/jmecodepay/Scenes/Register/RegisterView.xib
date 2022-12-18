@@ -177,7 +177,7 @@
     </objects>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
-        <image name="down-arrow" width="512" height="512"/>
+        <image name="down-arrow" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="backgroundColor">
             <color red="0.0" green="0.14900000393390656" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

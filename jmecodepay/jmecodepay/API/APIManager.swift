@@ -31,40 +31,38 @@ struct APIManager {
 
 
 extension APIManager {
-//
-//    func registerUser(_ user: User, completion: @escaping(Result<User, APIErrors>) -> Void) {
-//
-//        guard let url = APIEndpoints.registerUser.url  else {
-//            completion(.failure(APIErrors.invalidURL))
-//            return
-//        }
-//
-//        let registerUserRequest = User()
-//
-//        guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
-//            completion(.failure(APIErrors.serializationError))
-//            return
-//        }
-//
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = HTTPMethod.post
-//        urlRequest.httpBody = requestBodyJSON
-//
-//        urlSession.dataTask(with: urlRequest,
-//                            completionHandler: { data, _, error in
-//
-//            if let error = error {
-//                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-//            }
-//            guard let data = data,
-//                  let userResponse = try? decoder.decode(User.self, from: data)
-//            else {
-//                completion(.failure(.parsingError))
-//                return
-//            }
-//            completion(.success(User())
-//        }).resume()
-//    }
+
+    func registerUser(_ user: User, completion: @escaping(Result<User, APIErrors>) -> Void) {
+
+        guard let url = APIEndpoints.createUser.url  else {
+            completion(.failure(APIErrors.invalidURL))
+            return
+        }
+        
+        guard let requestBodyJSON = try? encoder.encode(user) else {
+            completion(.failure(APIErrors.serializationError))
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.post
+        urlRequest.httpBody = requestBodyJSON
+
+        urlSession.dataTask(with: urlRequest,
+                            completionHandler: { data, _, error in
+
+            if let error = error {
+                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            }
+            guard let data = data,
+                  let userResponse = try? decoder.decode(User.self, from: data)
+            else {
+                completion(.failure(.parsingError))
+                return
+            }
+            completion(.success(userResponse))
+        }).resume()
+    }
 
 //    func createAccount(_ account: AccountRequest, completion: @escaping(Result<AccountRequest, APIError>) -> Void) {
 //

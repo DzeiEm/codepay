@@ -1,7 +1,7 @@
 
 import Foundation
 
-class User: Codable {
+struct User: Codable {
     let phone: String
     let password: String
 }
