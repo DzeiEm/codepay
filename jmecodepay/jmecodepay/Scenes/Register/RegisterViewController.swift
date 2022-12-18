@@ -19,56 +19,43 @@ class RegisterViewController: UIViewController {
     let dropdown = DropDown()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
-
-
     
+
     @IBAction func showDropDownOptions() {
         dropdown.show()
     }
-    
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
     @IBAction func registerButtonTapped() {
         
-        let passedData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
-                                                     password: passwordTextfield.text,
-                                                     confirmPassword: confirmPasswordTextfield.text,
-                                                     account: seledtedLabel.text)
-        
         do {
+            var passedData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
+                                                         password: passwordTextfield.text,
+                                                         confirmPassword: confirmPasswordTextfield.text,
+                                                         account: seledtedLabel.text)
+            
             try userManager.register(phone: passedData?.phone,
                                      password: passedData?.password)
-        } catch let registrationerror as RegistrationError {
-            displayError(message: registrationerror.error)
+            
+        } catch let error {
+            displayError(message: error.localizedDescription)
         } catch {
-            print("SOMETHING Weird happened")
+    
+            print("something")
         }
-        
     }
     
     override func viewDidLoad() {
-        
         configureInitailView()
-        dropdownView.frame.size.height = 45
-        dropdown.anchorView = dropdownView
-        dropdown.dataSource = currency
-        dropdown.bottomOffset = CGPoint(x: 0, y: 45)
-        dropdown.topOffset = CGPoint(x: 0, y: 45)
-        dropdown.direction = .bottom
-        dropdown.selectionAction = {
-            [unowned self] (index: Int, item: String) in
-            self.seledtedLabel.text = currency[index]
-        }
+        configureDopdown()
     }
 }
 
 
 extension RegisterViewController: UITextFieldDelegate {
-    
     internal func textFieldDidChangeSelection(_ textField: UITextField) {
         configureRegistrationButton()
     }
@@ -85,25 +72,31 @@ extension RegisterViewController: UITextFieldDelegate {
         confirmPasswordTextfield.delegate = self
     }
     
+    fileprivate func configureInitailView() {
+        errorLabel.isHidden = true
+        registerButton.isEnabled = true
+        registerButton.layer.cornerRadius = 20
+    }
+    
+    fileprivate func configureDopdown() {
+        dropdownView.frame.size.height = 45
+        dropdown.anchorView = dropdownView
+        dropdown.dataSource = currency
+        dropdown.bottomOffset = CGPoint(x: 0, y: 45)
+        dropdown.topOffset = CGPoint(x: 0, y: 45)
+        dropdown.direction = .bottom
+        dropdown.selectionAction = {
+            [unowned self] (index: Int, item: String) in
+            self.seledtedLabel.text = currency[index]
+        }
+    }
+    
     fileprivate func configureRegistrationButton() {
-    
-    
         let allTextFieldsFilled = availableTextFields.allSatisfy { textField in
             guard let text = textField.text else { return false }
             return !text.isEmpty
         }
-        registerButton.isHidden = false
-        
-    }
-    
-    fileprivate func configureButton(_ button: UIButton)  {
-        button.layer.cornerRadius = 20
-    }
-    fileprivate func configureInitailView() {
-        errorLabel.isHidden = true
-        seledtedLabel.text = "Select currency"
-        registerButton.isEnabled = false
-        configureButton(registerButton)
+//        registerButton.isHidden = false
     }
     
     fileprivate func displayError(message: String) {
