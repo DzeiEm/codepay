@@ -50,8 +50,6 @@ class RegisterViewController: UIViewController {
             [unowned self] (index: Int, item: String) in
             self.seledtedLabel.text = currency[index]
         }
-        
-        
     }
 }
 
