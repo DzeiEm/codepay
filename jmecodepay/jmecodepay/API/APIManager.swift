@@ -6,7 +6,6 @@ struct APIManager {
     private enum HTTPMethod {
         static let get = "GET"
         static let post = "POST"
-        static let delete = "DELETE"
     }
     
     private enum HeaderKey {
@@ -30,20 +29,20 @@ struct APIManager {
     }
 }
 
+
+extension APIManager {
 //
-//extension APIManager {
+//    func registerUser(_ user: User, completion: @escaping(Result<User, APIErrors>) -> Void) {
 //
-//    func registerUser(_ user: UserRequest, completion: @escaping(Result<UserRequest, APIError>) -> Void) {
-//
-//        guard let url = APIEndpoint.registerUser.url  else {
-//            completion(.failure(APIError.invalidURL))
+//        guard let url = APIEndpoints.registerUser.url  else {
+//            completion(.failure(APIErrors.invalidURL))
 //            return
 //        }
 //
-//        let registerUserRequest = UserRequest(phoneNumber: user.phoneNumber, password: user.password)
+//        let registerUserRequest = User()
 //
 //        guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
-//            completion(.failure(APIError.serializationError))
+//            completion(.failure(APIErrors.serializationError))
 //            return
 //        }
 //
@@ -55,18 +54,18 @@ struct APIManager {
 //                            completionHandler: { data, _, error in
 //
 //            if let error = error {
-//                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+//                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
 //            }
 //            guard let data = data,
-//                  let userResponse = try? decoder.decode(UserResponse.self, from: data)
+//                  let userResponse = try? decoder.decode(User.self, from: data)
 //            else {
 //                completion(.failure(.parsingError))
 //                return
 //            }
-//            completion(.success(UserRequest(phoneNumber: userResponse.phoneNumber, password: userResponse.password)))
+//            completion(.success(User())
 //        }).resume()
 //    }
-//
+
 //    func createAccount(_ account: AccountRequest, completion: @escaping(Result<AccountRequest, APIError>) -> Void) {
 //
 //        guard let url = APIEndpoint.createAccount.url  else {
@@ -104,8 +103,8 @@ struct APIManager {
 //                                               balance: accountResponse.balance)))
 //        }).resume()
 //    }
-//}
-//
+}
+
 //
 //extension APIManager {
 //
@@ -131,12 +130,12 @@ struct APIManager {
 //                }
 //                completion(.success(transactions.compactMap({ transaction in
 //
-//                    Transaction(senderNo: transaction.senderId,
-//                                receiverNo: transaction.receiverId,
-//                                transactionId: transaction.id,
-//                                amount: transaction.amount,
-//                                currency: transaction.currency,
-//                                subject: transaction.reference)
+////                    Transaction(senderNo: transaction.senderId,
+////                                receiverNo: transaction.receiverId,
+////                                transactionId: transaction.id,
+////                                amount: transaction.amount,
+////                                currency: transaction.currency,
+////                                subject: transaction.reference)
 //                })))
 //            }).resume()
 //    }
@@ -163,12 +162,12 @@ struct APIManager {
 //                }
 //                completion(.success(transactions.compactMap({ transaction in
 //
-//                    Transaction(senderNo: transaction.senderId,
-//                                receiverNo: transaction.receiverId,
-//                                transactionId: transaction.id,
-//                                amount: transaction.amount,
-//                                currency: transaction.currency,
-//                                subject: transaction.reference)
+////                    Transaction(senderNo: transaction.senderId,
+////                                receiverNo: transaction.receiverId,
+////                                transactionId: transaction.id,
+////                                amount: transaction.amount,
+////                                currency: transaction.currency,
+////                                subject: transaction.reference)
 //                })))
 //            }).resume()
 //    }

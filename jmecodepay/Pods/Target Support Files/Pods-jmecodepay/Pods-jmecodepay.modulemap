@@ -1,0 +1,6 @@
+framework module Pods_jmecodepay {
+  umbrella header "Pods-jmecodepay-umbrella.h"
+
+  export *
+  module * { export * }
+}

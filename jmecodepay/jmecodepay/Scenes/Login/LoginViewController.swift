@@ -6,8 +6,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var phoneNumberTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
-    @IBOutlet private weak var loginBUtton: UIButton!
-//    let settings = UIConfiguration()
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var errorLabel: UILabel!
+    
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -20,8 +21,15 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.viewDidLoad()
-//        settings.configureButton(loginBUtton)
+        configureButton(loginButton)
+        errorLabel.isHidden = true
     }
+}
+
+
+extension LoginViewController {
     
+    fileprivate func configureButton(_ button: UIButton)  {
+        button.layer.cornerRadius = 20
+    }
 }

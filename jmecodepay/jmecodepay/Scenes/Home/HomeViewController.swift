@@ -10,6 +10,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
+    @IBAction func logoutBUttonTapped() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
     
     @IBAction func sendButtonTapped() {

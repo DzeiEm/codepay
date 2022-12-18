@@ -97,6 +97,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="logout" image="logout"/>
+                    <connections>
+                        <action selector="logoutBUttonTapped" destination="-1" eventType="touchUpInside" id="FtB-sL-19I"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CodePay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nva-2i-Jbd">
                     <rect key="frame" x="30" y="89" width="333" height="45"/>

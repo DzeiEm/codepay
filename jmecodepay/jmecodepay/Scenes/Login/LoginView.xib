@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="jmecodepay" customModuleProvider="target">
             <connections>
-                <outlet property="loginBUtton" destination="7a8-VF-DRd" id="ZsF-u5-UAs"/>
+                <outlet property="errorLabel" destination="E8v-D2-JFw" id="uwJ-cY-NZ8"/>
+                <outlet property="loginButton" destination="7a8-VF-DRd" id="ZsF-u5-UAs"/>
                 <outlet property="passwordTextfield" destination="cLO-JV-28u" id="X2m-b1-S3T"/>
                 <outlet property="phoneNumberTextfield" destination="Sd6-uM-gLt" id="O0Y-fn-MWl"/>
                 <outlet property="view" destination="hLr-Gg-sdF" id="taL-2R-rRS"/>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bC3-N9-7b9">
-                    <rect key="frame" x="30" y="279" width="333" height="90"/>
+                    <rect key="frame" x="30" y="279" width="333" height="120.33333333333331"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KdQ-kc-x1d">
                             <rect key="frame" x="0.0" y="0.0" width="333" height="40"/>
@@ -55,10 +56,16 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8v-D2-JFw">
+                            <rect key="frame" x="0.0" y="100" width="333" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-VF-DRd">
-                    <rect key="frame" x="213" y="379" width="150" height="45"/>
+                    <rect key="frame" x="213" y="409.33333333333331" width="150" height="45"/>
                     <color key="backgroundColor" name="buttonColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="PFO-Ua-cZk"/>

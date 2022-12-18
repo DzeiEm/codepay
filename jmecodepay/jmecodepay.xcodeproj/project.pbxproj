@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502B27E64DF62C0D412B4A28 /* Pods_jmecodepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87109A2ECC3B947893188C9 /* Pods_jmecodepay.framework */; };
+		CE498C62294DFF1900F58C81 /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C61294DFF1900F58C81 /* LoginValidation.swift */; };
+		CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C63294E013D00F58C81 /* RegistrationValidation.swift */; };
+		CE498C66294E01D300F58C81 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C65294E01D300F58C81 /* Currency.swift */; };
+		CE498C68294E0C7D00F58C81 /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C67294E0C7D00F58C81 /* RegistrationError.swift */; };
+		CE498C6A294E13D200F58C81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C69294E13D200F58C81 /* User.swift */; };
+		CE498C6C294E1E5D00F58C81 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6B294E1E5D00F58C81 /* Account.swift */; };
+		CE498C6E294E1E9000F58C81 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6D294E1E9000F58C81 /* Transaction.swift */; };
 		CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593253294B8C8F00BE3357 /* AppDelegate.swift */; };
 		CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593255294B8C8F00BE3357 /* SceneDelegate.swift */; };
 		CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59325C294B8C9000BE3357 /* Assets.xcassets */; };
@@ -30,10 +38,19 @@
 		CE593297294BB4F300BE3357 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593296294BB4F300BE3357 /* APIErrors.swift */; };
 		CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593298294BB50400BE3357 /* APIEndpoints.swift */; };
 		CE59329B294BB52400BE3357 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59329A294BB52400BE3357 /* APIManager.swift */; };
-		CE59329E294BBC8500BE3357 /* UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59329D294BBC8500BE3357 /* UIConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		377A930486E91BDFDDB27CFB /* Pods-jmecodepay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jmecodepay.debug.xcconfig"; path = "Target Support Files/Pods-jmecodepay/Pods-jmecodepay.debug.xcconfig"; sourceTree = "<group>"; };
+		9926F438BBBF7CCE71BA5BC1 /* Pods-jmecodepay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jmecodepay.release.xcconfig"; path = "Target Support Files/Pods-jmecodepay/Pods-jmecodepay.release.xcconfig"; sourceTree = "<group>"; };
+		A87109A2ECC3B947893188C9 /* Pods_jmecodepay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jmecodepay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE498C61294DFF1900F58C81 /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
+		CE498C63294E013D00F58C81 /* RegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationValidation.swift; sourceTree = "<group>"; };
+		CE498C65294E01D300F58C81 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		CE498C67294E0C7D00F58C81 /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
+		CE498C69294E13D200F58C81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE498C6B294E1E5D00F58C81 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CE498C6D294E1E9000F58C81 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		CE593250294B8C8F00BE3357 /* jmecodepay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmecodepay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE593253294B8C8F00BE3357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE593255294B8C8F00BE3357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +76,6 @@
 		CE593296294BB4F300BE3357 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		CE593298294BB50400BE3357 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		CE59329A294BB52400BE3357 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		CE59329D294BBC8500BE3357 /* UIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +83,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502B27E64DF62C0D412B4A28 /* Pods_jmecodepay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B337F974F1E3276114E63224 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				377A930486E91BDFDDB27CFB /* Pods-jmecodepay.debug.xcconfig */,
+				9926F438BBBF7CCE71BA5BC1 /* Pods-jmecodepay.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE593247294B8C8F00BE3357 = {
 			isa = PBXGroup;
 			children = (
 				CE593252294B8C8F00BE3357 /* jmecodepay */,
 				CE593251294B8C8F00BE3357 /* Products */,
+				B337F974F1E3276114E63224 /* Pods */,
+				EF9B16D3324FD17526AB693E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,7 +121,6 @@
 		CE593252294B8C8F00BE3357 /* jmecodepay */ = {
 			isa = PBXGroup;
 			children = (
-				CE59329C294BBC6100BE3357 /* UI */,
 				CE593276294B995700BE3357 /* API */,
 				CE593275294B994A00BE3357 /* Managers */,
 				CE593268294B8FBE00BE3357 /* Model */,
@@ -123,6 +151,8 @@
 		CE593268294B8FBE00BE3357 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE498C65294E01D300F58C81 /* Currency.swift */,
+				CE498C69294E13D200F58C81 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +171,7 @@
 			children = (
 				CE593271294B971A00BE3357 /* LoginViewController.swift */,
 				CE593273294B974100BE3357 /* LoginView.xib */,
+				CE498C61294DFF1900F58C81 /* LoginValidation.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -150,6 +181,8 @@
 			children = (
 				CE593277294B997E00BE3357 /* RegisterViewController.swift */,
 				CE593279294B99B500BE3357 /* RegisterView.xib */,
+				CE498C63294E013D00F58C81 /* RegistrationValidation.swift */,
+				CE498C67294E0C7D00F58C81 /* RegistrationError.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -222,6 +255,8 @@
 		CE593294294BB4D500BE3357 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				CE498C6B294E1E5D00F58C81 /* Account.swift */,
+				CE498C6D294E1E9000F58C81 /* Transaction.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -233,12 +268,12 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
-		CE59329C294BBC6100BE3357 /* UI */ = {
+		EF9B16D3324FD17526AB693E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE59329D294BBC8500BE3357 /* UIConfiguration.swift */,
+				A87109A2ECC3B947893188C9 /* Pods_jmecodepay.framework */,
 			);
-			path = UI;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,9 +283,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE593264294B8C9000BE3357 /* Build configuration list for PBXNativeTarget "jmecodepay" */;
 			buildPhases = (
+				E6609C949506952574A92CB4 /* [CP] Check Pods Manifest.lock */,
 				CE59324C294B8C8F00BE3357 /* Sources */,
 				CE59324D294B8C8F00BE3357 /* Frameworks */,
 				CE59324E294B8C8F00BE3357 /* Resources */,
+				A3F9C0F6FED9D5CAE8037A3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +351,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A3F9C0F6FED9D5CAE8037A3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-jmecodepay/Pods-jmecodepay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-jmecodepay/Pods-jmecodepay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-jmecodepay/Pods-jmecodepay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6609C949506952574A92CB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-jmecodepay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE59324C294B8C8F00BE3357 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -323,15 +402,21 @@
 				CE593291294BB2FA00BE3357 /* TransactionCell.swift in Sources */,
 				CE593270294B95DC00BE3357 /* AuthenticationViewController.swift in Sources */,
 				CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */,
+				CE498C66294E01D300F58C81 /* Currency.swift in Sources */,
 				CE593297294BB4F300BE3357 /* APIErrors.swift in Sources */,
+				CE498C68294E0C7D00F58C81 /* RegistrationError.swift in Sources */,
 				CE59329B294BB52400BE3357 /* APIManager.swift in Sources */,
+				CE498C62294DFF1900F58C81 /* LoginValidation.swift in Sources */,
+				CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */,
 				CE593278294B997E00BE3357 /* RegisterViewController.swift in Sources */,
 				CE59328C294BB1D100BE3357 /* AllTransactionsViewController.swift in Sources */,
 				CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */,
-				CE59329E294BBC8500BE3357 /* UIConfiguration.swift in Sources */,
 				CE593272294B971A00BE3357 /* LoginViewController.swift in Sources */,
+				CE498C6E294E1E9000F58C81 /* Transaction.swift in Sources */,
+				CE498C6A294E13D200F58C81 /* User.swift in Sources */,
 				CE59327D294B9DFA00BE3357 /* HomeViewController.swift in Sources */,
 				CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */,
+				CE498C6C294E1E5D00F58C81 /* Account.swift in Sources */,
 				CE593283294BA24C00BE3357 /* AddMoneyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +551,7 @@
 		};
 		CE593265294B8C9000BE3357 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377A930486E91BDFDDB27CFB /* Pods-jmecodepay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,6 +579,7 @@
 		};
 		CE593266294B8C9000BE3357 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9926F438BBBF7CCE71BA5BC1 /* Pods-jmecodepay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
