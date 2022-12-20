@@ -44,6 +44,8 @@
 		CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593298294BB50400BE3357 /* APIEndpoints.swift */; };
 		CE59329B294BB52400BE3357 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59329A294BB52400BE3357 /* APIManager.swift */; };
 		CEFD54E02952146E00AD8AB4 /* LoginErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD54DF2952146E00AD8AB4 /* LoginErrors.swift */; };
+		CEFD54E22952299B00AD8AB4 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD54E12952299B00AD8AB4 /* TransactionDetailsViewController.swift */; };
+		CEFD54E5295229BD00AD8AB4 /* TransactionDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFD54E4295229BD00AD8AB4 /* TransactionDetailsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		CE593298294BB50400BE3357 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		CE59329A294BB52400BE3357 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CEFD54DF2952146E00AD8AB4 /* LoginErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrors.swift; sourceTree = "<group>"; };
+		CEFD54E12952299B00AD8AB4 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		CEFD54E4295229BD00AD8AB4 /* TransactionDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 		CE593267294B8FB400BE3357 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEFD54E3295229A300AD8AB4 /* TransactionDetails */,
 				CE498C73294F5F0500F58C81 /* TransactionCell */,
 				CE59328A294BB1B900BE3357 /* AllTransactions */,
 				CE593281294BA23500BE3357 /* SendMoney */,
@@ -285,6 +290,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		CEFD54E3295229A300AD8AB4 /* TransactionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD54E12952299B00AD8AB4 /* TransactionDetailsViewController.swift */,
+				CEFD54E4295229BD00AD8AB4 /* TransactionDetailsView.xib */,
+			);
+			path = TransactionDetails;
+			sourceTree = "<group>";
+		};
 		EF9B16D3324FD17526AB693E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +373,7 @@
 				CE593260294B8C9000BE3357 /* LaunchScreen.storyboard in Resources */,
 				CE593274294B974100BE3357 /* LoginView.xib in Resources */,
 				CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */,
+				CEFD54E5295229BD00AD8AB4 /* TransactionDetailsView.xib in Resources */,
 				CE593285294BA27000BE3357 /* AddMoneyView.xib in Resources */,
 				CE59328E294BB1F600BE3357 /* AllTransactionsView.xib in Resources */,
 				CE59327F294B9E1E00BE3357 /* HomeView.xib in Resources */,
@@ -434,6 +449,7 @@
 				CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */,
 				CE593272294B971A00BE3357 /* LoginViewController.swift in Sources */,
 				CE498C72294F24EA00F58C81 /* UserData.swift in Sources */,
+				CEFD54E22952299B00AD8AB4 /* TransactionDetailsViewController.swift in Sources */,
 				CE498C6E294E1E9000F58C81 /* TransactionRequest.swift in Sources */,
 				CE498C6A294E13D200F58C81 /* User.swift in Sources */,
 				CE59327D294B9DFA00BE3357 /* HomeViewController.swift in Sources */,

@@ -8,6 +8,9 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
+    //TODO:
+    //1. fetch userr account dats
+    
     
     @IBAction func logoutBUttonTapped() {
         self.navigationController?.popToRootViewController(animated: true)
@@ -32,6 +35,10 @@ class HomeViewController: UIViewController {
         let viewAllTransactionScreen = AllTransactionViewController()
         viewAllTransactionScreen.modalPresentationStyle = .fullScreen
         present(viewAllTransactionScreen, animated: true)
+    }
+    
+    override func viewDidLoad() {
+        // fetch
     }
     
 }

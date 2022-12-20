@@ -19,6 +19,12 @@ class RegisterViewController: UIViewController {
     let dropdown = DropDown()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
+    
+    // TODO:
+    // 1.OBSERVER for Account
+    // 2. Validate registration
+    // 3. Register user
+    // 4. Create account
    
     
 
@@ -38,6 +44,7 @@ class RegisterViewController: UIViewController {
                                                              confirmPassword: confirmPasswordTextfield.text,
                                                              account: seledtedLabel.text)
             try? userManager.register(phone: userData?.phone, password: userData?.password)
+            displayAlert()
             
         } catch let userInputError as RegistrationError {
             displayError(message: userInputError.error)
@@ -105,7 +112,17 @@ extension RegisterViewController: UITextFieldDelegate {
     
     fileprivate func displayAlert() {
         
+        let alert = UIAlertController(title: "Success",
+                                      message: "User has been sucessfully registered",
+                                      preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+           let loginScreen = LoginViewController()
+            loginScreen.modalPresentationStyle = .fullScreen
+            self.present(loginScreen, animated: true)
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
