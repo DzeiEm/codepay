@@ -17,18 +17,18 @@ class InputData {
     func validateInput(amount: Double) throws {
         // Need to know balance
         
-        var balance = 100
-        if amount.description.isEmpty {
-            throw SendMoneyErrors.amountIsEmpty
-        }
-        
-        switch amount {
-        case amount < 0:
-            return SendMoneyErrors.amountLowerthanZero
-        case amount > balance:
-            return SendMoneyErrors.amountExceedBalance
-        default: return SendMoneyErrors.unexpecteerError
-        }
+//        var balance = 100
+//        if amount.description.isEmpty {
+//            throw SendMoneyErrors.amountIsEmpty
+//        }
+//        
+//        switch amount {
+//        case amount < 0:
+//            return SendMoneyErrors.amountLowerthanZero
+//        case amount > balance:
+//            return SendMoneyErrors.amountExceedBalance
+//        default: return SendMoneyErrors.unexpecteerError
+//        }
     }
     
     

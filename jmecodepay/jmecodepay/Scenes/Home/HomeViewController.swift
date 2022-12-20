@@ -5,8 +5,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var balanceLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     
     
     @IBAction func logoutBUttonTapped() {

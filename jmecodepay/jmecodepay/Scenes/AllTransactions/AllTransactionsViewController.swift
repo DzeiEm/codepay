@@ -4,9 +4,8 @@ import Foundation
 import UIKit
 
 class AllTransactionViewController: UIViewController {
-    
-    
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet private weak var tableView: UITableView!
     
     
     @IBAction func backButtonTapped() {

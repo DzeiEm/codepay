@@ -19,6 +19,7 @@ class RegisterViewController: UIViewController {
     let dropdown = DropDown()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
+   
     
 
     @IBAction func showDropDownOptions() {
@@ -30,21 +31,18 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped() {
-        
+       
         do {
-            var passedData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
-                                                         password: passwordTextfield.text,
-                                                         confirmPassword: confirmPasswordTextfield.text,
-                                                         account: seledtedLabel.text)
+            let userData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
+                                                             password: passwordTextfield.text,
+                                                             confirmPassword: confirmPasswordTextfield.text,
+                                                             account: seledtedLabel.text)
+            try? userManager.register(phone: userData?.phone, password: userData?.password)
             
-            try userManager.register(phone: passedData?.phone,
-                                     password: passedData?.password)
-            
-        } catch let error {
-            displayError(message: error.localizedDescription)
+        } catch let userInputError as RegistrationError {
+            displayError(message: userInputError.error)
         } catch {
-    
-            print("something")
+            displayError(message: "Unexpected error")
         }
     }
     
@@ -103,6 +101,11 @@ extension RegisterViewController: UITextFieldDelegate {
         errorLabel.isHidden = false
         errorLabel.textColor = .red
         errorLabel.text = message
+    }
+    
+    fileprivate func displayAlert() {
+        
+        
     }
 }
 

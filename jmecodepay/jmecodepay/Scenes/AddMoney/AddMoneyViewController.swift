@@ -6,8 +6,8 @@ import UIKit
 class AddMoneyViewController: UIViewController {
     
     
-    @IBOutlet weak var amountTextfield: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet private weak var amountTextfield: UITextField!
+    @IBOutlet private weak var errorLabel: UILabel!
     
     
     @IBAction func backButtonTapped() {
@@ -16,16 +16,18 @@ class AddMoneyViewController: UIViewController {
     
     @IBAction func addMoneyButtonTapped() {
         var amountInput = amountTextfield.text
-        
-        guard let amountInput = amountInput else {
-            return
-        }
-        
-        
-        
-
+        //
+        //        guard let amountInput = amountInput else {
+        //            return
+        //        }
+        //
+        //        isValid(amountInput) {
+        //            // ADD MONEY
+        //        } else {
+        //            display(message: "somthing ")
+        //        }
+        //    }
     }
-    
 }
 
 
@@ -37,20 +39,22 @@ extension AddMoneyViewController {
         errorLabel.textColor = .red
     }
     
-    func isValid(_ input: Double) throws -> Bool {
+    func isValid(_ input: Double) throws {
         
         // Should know about my balance
         
-        var balance = 100
-        
-        switch input {
-        case input == 0:
-            throw SendMoneyErrors.sendZero
-        case input > balance {
-            throw SendMoneyErrors.amountIsEmpty
-        default:
-            throw SendMoneyErrors.unexpecteerError
-        }
-        return true
+        //        var balance = 100
+        //
+        //        switch input {
+        //        case input == 0:
+        //            throw SendMoneyErrors.sendZero
+        //        case input > balance {
+        //            throw SendMoneyErrors.amountIsEmpty
+        //        default:
+        //            throw SendMoneyErrors.unexpecteerError
+        //        }
+        //        return true
+        //    }
     }
+    
 }
