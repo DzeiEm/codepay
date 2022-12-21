@@ -1,30 +1,71 @@
 
 import Foundation
 
-struct UserManager {
+class UserManager {
     
-    let apiManager: APIManager
-    var onSuccess: (() -> Void)?
-    var onFailure: ((String) -> Void)?
-    
-    func register(phone: String?, password: String?) throws {
+    let apiManager = APIManager()
+    var users = [User]()
+    var accounts = [AccountRequest]()
+//    var onSuccess: (() -> Void)?
+//    var onFailure: ((String) -> Void)?
+//
+    func registerUser(phone: String?, password: String?) throws {
         
         guard let phone = phone,
               let password = password else {
             return
         }
         
-        let user = User(phone: phone, password: password)
+        var user = User(phoneNumber: phone, password: password)
         
-        apiManager.registerUser(user, completion: { result in
+        apiManager.createUser(user, { [ weak self ] result in
             switch result {
-            case .success:
-                self.onSuccess?()
             case .failure(let error):
-                self.onFailure?(error.description)
+                DispatchQueue.main.sync {
+                    print(error)
+                }
+            case .success(let user):
+                self?.users.append(user)
             }
         })
     }
+    
+    func createAccount(account: AccountRequest?) throws {
+        guard let account = account else {
+            return
+        }
+        
+        apiManager.createAccount(account, { [ weak self ] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    print(error)
+                }
+            case .success(let account):
+                self?.accounts.append(account)
+            }
+        })
+    }
+    
+    
+    
+    
+    
+    func fetchUsers() {
+        
+        apiManager.getAllUsers(completion: { result in
+            switch result {
+            case .success(let user):
+                print("USER:\(user)")
+                self.users.append(contentsOf: user)
+
+            case .failure(let error):
+//                self?.onFailure?(error.description)
+                print(error)
+            }
+        })
+    }
+    
     
     func login(phone: String?, password: String?) throws {
       
@@ -35,10 +76,14 @@ struct UserManager {
         apiManager.getUser(by: phone, completion: { result in
             switch result {
             case .success(let user):
-                self.onSuccess?()
+                print(user)
             case .failure(let error):
-                self.onFailure?(error.description)
+                //self.onFailure?(error.description)
+                print(error)
             }
         })
     }
+    
+    
+    
 }

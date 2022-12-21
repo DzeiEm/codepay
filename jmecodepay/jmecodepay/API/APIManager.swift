@@ -32,16 +32,16 @@ struct APIManager {
 
 extension APIManager {
 
-    func registerUser(_ user: User, completion: @escaping(Result<User, APIErrors>) -> Void) {
+    func createUser(_ user: User, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
 
-        guard let url = APIEndpoints.createUser.url  else {
+        guard let url = APIEndpoints.user.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
         }
         
-        let registerUserRequest = User(phone: user.phone, password: user.password)
+        let registerUserRequest = User(phoneNumber: user.phoneNumber, password: user.password)
         
-        guard let requestBodyJSON = try? encoder.encode(user) else {
+        guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
             completion(.failure(APIErrors.serializationError))
             return
         }
@@ -62,14 +62,15 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
-            completion(.success(User(phone: user.phone, password: user.password)))
+//            completion(.success(User(phoneNumber: user.phoneNumber, password: user.password)))
+            completion(.success(userResponse))
         }).resume()
     }
 
     
-    func createAccount(_ account: AccountRequest , completion: @escaping(Result<AccountRequest, APIErrors>) -> Void) {
+    func createAccount(_ account: AccountRequest , _ completion: @escaping(Result<AccountRequest, APIErrors>) -> Void) {
 
-        guard let url = APIEndpoints.createAccount.url  else {
+        guard let url = APIEndpoints.account.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
         }
@@ -127,8 +128,40 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
-            completion(.success(User(phone: userResponse.phone, password: userResponse.password)))
+            completion(.success(User(phoneNumber: userResponse.phoneNumber, password: userResponse.password)))
     
         }).resume()
     }
+    
+    func getAllUsers(completion: @escaping(Result<[User], APIErrors>) -> Void) {
+        
+        guard let url = APIEndpoints.getAllUsers.url else {
+            completion(.failure(APIErrors.invalidURL))
+            return
+        }
+        
+        urlSession.dataTask(with: url,
+                            completionHandler: { data, _, error in
+
+            if let error = error {
+                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            }
+            guard let data = data,
+                  let allusersResponse = try? decoder.decode([User].self, from: data)
+            else {
+                completion(.failure(.parsingError))
+                return
+            }
+            
+            completion(.success(allusersResponse.compactMap { user in
+                
+                User(phoneNumber: user.phoneNumber, password: user.password)
+                
+            }))
+            print(allusersResponse)
+    
+        }).resume()
+        
+    }
+
 }

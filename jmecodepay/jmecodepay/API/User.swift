@@ -2,6 +2,7 @@
 import Foundation
 
 struct User: Codable {
-    let phone: String
+    
+    let phoneNumber: String
     let password: String
 }

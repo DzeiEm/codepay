@@ -15,20 +15,13 @@ class RegisterViewController: UIViewController {
     
     let validate = RegistrationValidation()
     let apiManager = APIManager()
-    let userManager = UserManager(apiManager: APIManager.init())
+    let userManager = UserManager()
     let dropdown = DropDown()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
     
-    // TODO:
-    // 1.OBSERVER for Account
-    // 2. Validate registration
-    // 3. Register user
-    // 4. Create account
-    // 5. Validate if phone number is unique
-   
+    var users = [User]()
     
-
     @IBAction func showDropDownOptions() {
         dropdown.show()
     }
@@ -38,21 +31,29 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped() {
-       
+        
         do {
             let userData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
-                                                             password: passwordTextfield.text,
-                                                             confirmPassword: confirmPasswordTextfield.text,
-                                                             account: seledtedLabel.text)
-            // try? validate.isPhonenumberUnique()
-            try? userManager.register(phone: userData?.phone, password: userData?.password)
+                                                       password: passwordTextfield.text,
+                                                       confirmPassword: confirmPasswordTextfield.text,
+                                                       account: seledtedLabel.text)
+            
+            var account = AccountRequest(phoneNumber: userData?.phone, currency: userData?.account)
+            try? userManager.registerUser(phone: userData?.phone, password: userData?.password)
+            try? userManager.createAccount(account: account)
             displayAlert()
             
-        } catch let userInputError as RegistrationError {
-            displayError(message: userInputError.error)
-        } catch {
-            displayError(message: "Unexpected error")
+        } catch let registrationError as RegistrationError {
+            displayError(message: registrationError.error)
+            
+        } catch let error{
+            displayError(message: error.localizedDescription )
         }
+            
+            
+            
+            
+        
     }
     
     override func viewDidLoad() {
@@ -63,6 +64,8 @@ class RegisterViewController: UIViewController {
 
 
 extension RegisterViewController: UITextFieldDelegate {
+    
+    
     internal func textFieldDidChangeSelection(_ textField: UITextField) {
         configureRegistrationButton()
     }
@@ -103,7 +106,6 @@ extension RegisterViewController: UITextFieldDelegate {
             guard let text = textField.text else { return false }
             return !text.isEmpty
         }
-//        registerButton.isHidden = false
     }
     
     fileprivate func displayError(message: String) {
@@ -113,19 +115,19 @@ extension RegisterViewController: UITextFieldDelegate {
     }
     
     fileprivate func displayAlert() {
-        
         let alert = UIAlertController(title: "Success",
                                       message: "User has been sucessfully registered",
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-           let loginScreen = LoginViewController()
+            let loginScreen = LoginViewController()
             loginScreen.modalPresentationStyle = .fullScreen
             self.present(loginScreen, animated: true)
         }))
         
         present(alert, animated: true, completion: nil)
     }
+    
 }
 
 

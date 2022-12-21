@@ -45,6 +45,7 @@
 		CE59329B294BB52400BE3357 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59329A294BB52400BE3357 /* APIManager.swift */; };
 		CED76F6C295350520085EE83 /* EmptyTransactionCellEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED76F6B295350520085EE83 /* EmptyTransactionCellEmptyCell.swift */; };
 		CED76F6E295350AC0085EE83 /* EmptyTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED76F6D295350AC0085EE83 /* EmptyTransactionCell.xib */; };
+		CED76F7029537BAC0085EE83 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED76F6F29537BAC0085EE83 /* AccountManager.swift */; };
 		CEFD54E02952146E00AD8AB4 /* LoginErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD54DF2952146E00AD8AB4 /* LoginErrors.swift */; };
 		CEFD54E22952299B00AD8AB4 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD54E12952299B00AD8AB4 /* TransactionDetailsViewController.swift */; };
 		CEFD54E5295229BD00AD8AB4 /* TransactionDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFD54E4295229BD00AD8AB4 /* TransactionDetailsView.xib */; };
@@ -93,6 +94,7 @@
 		CE59329A294BB52400BE3357 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CED76F6B295350520085EE83 /* EmptyTransactionCellEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransactionCellEmptyCell.swift; sourceTree = "<group>"; };
 		CED76F6D295350AC0085EE83 /* EmptyTransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTransactionCell.xib; sourceTree = "<group>"; };
+		CED76F6F29537BAC0085EE83 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		CEFD54DF2952146E00AD8AB4 /* LoginErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrors.swift; sourceTree = "<group>"; };
 		CEFD54E12952299B00AD8AB4 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		CEFD54E4295229BD00AD8AB4 /* TransactionDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsView.xib; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				CE498C6F294F1CD100F58C81 /* UserManager.swift */,
+				CED76F6F29537BAC0085EE83 /* AccountManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */,
 				CE498C6C294E1E5D00F58C81 /* AccountRequest.swift in Sources */,
 				CE593283294BA24C00BE3357 /* AddMoneyViewController.swift in Sources */,
+				CED76F7029537BAC0085EE83 /* AccountManager.swift in Sources */,
 				CE498C7B294F687200F58C81 /* SendMoneyErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

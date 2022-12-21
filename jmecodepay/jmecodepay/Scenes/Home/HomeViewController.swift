@@ -40,12 +40,18 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         // fetch
         setupDatbleView()
+        configureCell()
     }
     
     func setupDatbleView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 60
+    }
+    
+    func configureCell() {
+        let cellNib = UINib(nibName: "TransactionCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "TransactionCell")
     }
     
 }

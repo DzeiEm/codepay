@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         do {
             
            let userData = try? validate.isLoginTextfieldsEmpty(passwordTextfield.text, passwordTextfield.text)
-            try? userManager.login(phone: userData?.phone, password: userData?.password)
+            try? userManager.login(phone: userData?.phoneNumber, password: userData?.password)
             // if input matches registered user data
           navigateToHome()
         } catch let loginError as LoginErrors {
