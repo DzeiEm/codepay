@@ -14,8 +14,8 @@
             filePath = "jmecodepay/Scenes/Register/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "configureRegistrationButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "jmecodepay/Scenes/Register/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "configureDopdown()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "jmecodepay/Scenes/Register/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "RegisterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -62,10 +62,42 @@
             filePath = "jmecodepay/Scenes/Register/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "registerButtonTapped()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4ED0282A-94C8-449D-A100-2D03D8BF7BC7 - 8acc65473ff7750a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "jmecodepay.RegisterViewController.registerButtonTapped() -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Register/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "4ED0282A-94C8-449D-A100-2D03D8BF7BC7 - 8acc65473ff7750a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "jmecodepay.RegisterViewController.registerButtonTapped() -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Register/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1480">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

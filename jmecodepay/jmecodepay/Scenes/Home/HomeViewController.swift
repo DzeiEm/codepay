@@ -39,6 +39,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         // fetch
+        setupDatbleView()
+    }
+    
+    func setupDatbleView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 60
     }
     
 }

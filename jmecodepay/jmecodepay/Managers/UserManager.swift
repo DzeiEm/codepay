@@ -32,7 +32,6 @@ struct UserManager {
               let password = password else {
             return
         }
-        
         apiManager.getUser(by: phone, completion: { result in
             switch result {
             case .success(let user):

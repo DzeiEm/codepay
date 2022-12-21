@@ -55,7 +55,7 @@ class RegistrationValidation {
     }
     
     func isPhoneNumberUnique(_ phone: String) throws {
-      // GET
+      // GET all users where phone == phone
     }
      
 }

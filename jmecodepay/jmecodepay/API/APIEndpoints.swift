@@ -15,7 +15,7 @@ enum APIEndpoints {
             return makeURL(endpoint: "user")
         case .createUser:
             return makeURL(endpoint: "account")
-        case .getUser
+        case .getUser:
             return makeURL(endpoint: "user" )
         case .getUserTransactions:
             return makeURL(endpoint: "")

@@ -8,7 +8,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var errorLabel: UILabel!
-    let userManager = UserManager()
+    let userManager = UserManager(apiManager: APIManager.init())
     let validate = LoginValidation()
     
     
@@ -27,11 +27,11 @@ class LoginViewController: UIViewController {
             
            let userData = try? validate.isLoginTextfieldsEmpty(passwordTextfield.text, passwordTextfield.text)
             try? userManager.login(phone: userData?.phone, password: userData?.password)
+            // if input matches registered user data
           navigateToHome()
         } catch let loginError as LoginErrors {
             display(message: loginError.error )
         }
-       
     }
     
     override func viewDidLoad() {

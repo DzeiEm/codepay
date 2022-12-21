@@ -16,4 +16,9 @@ class LoginValidation {
         
         return User(phone: phone, password: password)
     }
+    
+    func isCredentialsMatches(_ phone: String?, _ password: String?) throws -> Bool {
+        
+        return true
+    }
 }

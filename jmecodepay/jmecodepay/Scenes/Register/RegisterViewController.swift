@@ -25,6 +25,7 @@ class RegisterViewController: UIViewController {
     // 2. Validate registration
     // 3. Register user
     // 4. Create account
+    // 5. Validate if phone number is unique
    
     
 
@@ -43,6 +44,7 @@ class RegisterViewController: UIViewController {
                                                              password: passwordTextfield.text,
                                                              confirmPassword: confirmPasswordTextfield.text,
                                                              account: seledtedLabel.text)
+            // try? validate.isPhonenumberUnique()
             try? userManager.register(phone: userData?.phone, password: userData?.password)
             displayAlert()
             
