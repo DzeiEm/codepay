@@ -1,8 +1,8 @@
 
 import Foundation
 
-struct TransactionRequest: Encodable {
-    
+struct TransactionResponse: Codable {
+    let id: String
     let senderId: String
     let receiverId: String
     let amount: Double

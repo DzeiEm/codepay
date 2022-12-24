@@ -3,15 +3,13 @@ import Foundation
 
 class RegistrationValidation {
     
-    func isEmptyFields(phone: String?, password: String?, confirmPassword: String?, account: String?) throws -> UserData {
+    func isEmptyFields(phone: String?, password: String?, confirmPassword: String?) throws -> User {
         guard let phone = phone,
               let password = password,
               let confirmPassword = confirmPassword,
-              let account = account,
               !phone.isEmpty,
               !password.isEmpty,
-              !confirmPassword.isEmpty,
-              !account.isEmpty
+              !confirmPassword.isEmpty
         else {
             throw RegistrationError.unexpecteerError
         }
@@ -19,11 +17,9 @@ class RegistrationValidation {
         try isPasswordsMatch(password: password, confirmPassword: confirmPassword)
         try isPasswordValid(password)
         
-        return UserData(phone: phone,
-                    password: password,
-                    confirmPassword: confirmPassword,
-                    account: account)
+        return User(phoneNumber: phone, password: password)
     }
+    
     
     func isPasswordsMatch(password: String, confirmPassword: String) throws {
        if password != confirmPassword {

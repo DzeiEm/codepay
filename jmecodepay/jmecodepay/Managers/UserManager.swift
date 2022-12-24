@@ -5,7 +5,7 @@ class UserManager {
     
     let apiManager = APIManager()
     var users = [User]()
-    var accounts = [AccountRequest]()
+    var accounts = [AccountResponse]()
 //    var onSuccess: (() -> Void)?
 //    var onFailure: ((String) -> Void)?
 //
@@ -30,7 +30,7 @@ class UserManager {
         })
     }
     
-    func createAccount(account: AccountRequest?) throws {
+    func createAccount(account: AccountResponse?) throws {
         guard let account = account else {
             return
         }

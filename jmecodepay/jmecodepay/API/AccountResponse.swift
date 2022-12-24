@@ -1,12 +1,9 @@
 
-
 import Foundation
 
-struct AccountResponse: Decodable {
-    
-    let id: String
+struct AccountResponse: Codable {
+    var id: String
     let phoneNumber: String
     let currency: String
     let balance: Double
-    
 }

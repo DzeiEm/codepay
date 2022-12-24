@@ -32,14 +32,14 @@ struct APIManager {
 
 extension APIManager {
 
-    func createUser(_ user: User, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
+    func createUser(phoneNumber: String, password: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
 
         guard let url = APIEndpoints.user.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
         }
         
-        let registerUserRequest = User(phoneNumber: user.phoneNumber, password: user.password)
+        let registerUserRequest = User(phoneNumber: phoneNumber, password: password)
         
         guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
             completion(.failure(APIErrors.serializationError))
@@ -62,22 +62,50 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
-//            completion(.success(User(phoneNumber: user.phoneNumber, password: user.password)))
             completion(.success(userResponse))
         }).resume()
     }
+    
+    func isAccountIsTaken(phoneNumber: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
+        
+        guard let url = APIEndpoints.isUserExist(phoneNumber: phoneNumber).url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        urlSession.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                completion(.failure(.serializationError))
+                return
+            }
+            
+            guard let userResponse = try? JSONDecoder().decode([AccountResponse].self, from: data) else {
+                completion(.failure(.parsingError))
+                return
+            }
+            if let user = userResponse.first {
+                completion(.success(user))
+                return
+            } else {
+                completion(.failure(.userNotFound))
+                return
+            }
+        }.resume()
+        
+        
+    }
 
     
-    func createAccount(_ account: AccountRequest , _ completion: @escaping(Result<AccountRequest, APIErrors>) -> Void) {
+    func createAccount(phoneNumber: String, currency: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
 
         guard let url = APIEndpoints.account.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
         }
 
-        let registerUserRequest = AccountRequest(phoneNumber: account.phoneNumber, currency: account.currency)
-
-        guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
+        let createAccount = AccountResponse(id: "", phoneNumber: phoneNumber, currency: currency, balance: 0.00)
+        
+        guard let requestBodyJSON = try? encoder.encode(createAccount) else {
             completion(.failure(APIErrors.serializationError))
             return
         }
@@ -92,26 +120,23 @@ extension APIManager {
             if let error = error {
                 completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
             }
+            
             guard let data = data,
                   let accountResponse = try? decoder.decode(AccountResponse.self, from: data)
             else {
                 completion(.failure(.parsingError))
                 return
             }
-            completion(.success(AccountRequest(phoneNumber: accountResponse.phoneNumber,
-                                               currency: accountResponse.currency)
-            ))
+            completion(.success(accountResponse))
         }).resume()
     }
     
     
-    func getUser(by phone: String?, completion: @escaping(Result<User, APIErrors>) -> Void) {
+    
+    func getUserTransactions(phoneNumber: String, _ completion: @escaping(Result<[TransactionResponse], APIErrors>)  -> Void) {
         
-        guard let phone = phone else {
-            return
-        }
         
-        guard let url = APIEndpoints.getUser(phone: phone).url else {
+        guard let url = APIEndpoints.account.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
         }
@@ -121,47 +146,17 @@ extension APIManager {
 
             if let error = error {
                 completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-            }
-            guard let data = data,
-                  let userResponse = try? decoder.decode(User.self, from: data)
-            else {
-                completion(.failure(.parsingError))
-                return
-            }
-            completion(.success(User(phoneNumber: userResponse.phoneNumber, password: userResponse.password)))
-    
-        }).resume()
-    }
-    
-    func getAllUsers(completion: @escaping(Result<[User], APIErrors>) -> Void) {
-        
-        guard let url = APIEndpoints.getAllUsers.url else {
-            completion(.failure(APIErrors.invalidURL))
-            return
-        }
-        
-        urlSession.dataTask(with: url,
-                            completionHandler: { data, _, error in
-
-            if let error = error {
-                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-            }
-            guard let data = data,
-                  let allusersResponse = try? decoder.decode([User].self, from: data)
-            else {
-                completion(.failure(.parsingError))
-                return
             }
             
-            completion(.success(allusersResponse.compactMap { user in
-                
-                User(phoneNumber: user.phoneNumber, password: user.password)
-                
-            }))
-            print(allusersResponse)
-    
+            guard let data = data,
+                  let transactionResponse = try? decoder.decode([TransactionResponse].self, from: data)
+            else {
+                completion(.failure(.parsingError))
+                return
+            }
+            completion(.success(transactionResponse))
         }).resume()
-        
+    
     }
-
+    
 }

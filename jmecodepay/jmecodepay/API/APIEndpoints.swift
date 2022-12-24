@@ -7,29 +7,21 @@ enum APIEndpoints {
     case user
     case account
     case transaction
+    case isUserExist(phoneNumber: String)
     
-    
-    
-    case getUser(phone: String)
-    case getUserTransactions
-    case getAllUsers
 
     var url: URL? {
         switch self {
-            
         case .user:
             return makeURL(endpoint: "user")
         case .account:
             return makeURL(endpoint: "account")
         case .transaction:
             return makeURL(endpoint: "transaction")
-            
-        case .getUser(phone: let phone):
-            return makeURL(endpoint: "user")
-        case .getUserTransactions:
-            return makeURL(endpoint: "user")
-        case .getAllUsers:
-            return makeURL(endpoint: "user")
+        case .isUserExist(phoneNumber: let phoneNumber):
+            let phoneQueryIteem = URLQueryItem(name: phone, value: phoneNumber)
+            return makeURL(endpoint: "account", queryItems: [phoneQueryIteem])
+           
         }
     }
 }

@@ -1,46 +1,41 @@
 
 import Foundation
 import UIKit
-import DropDown
 
 class RegisterViewController: UIViewController {
     
     @IBOutlet private weak var phoneNumberTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var confirmPasswordTextfield: UITextField!
+    @IBOutlet private weak var currencyAccountSegmentControl: UISegmentedControl!
     @IBOutlet private weak var errorLabel: UILabel!
     @IBOutlet private weak var registerButton: UIButton!
-    @IBOutlet private weak var dropdownView: UIView!
-    @IBOutlet private weak var seledtedLabel: UILabel!
+    
     
     let validate = RegistrationValidation()
     let apiManager = APIManager()
     let userManager = UserManager()
-    let dropdown = DropDown()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
+    private var  selectedAccount = ""
     
     var users = [User]()
-    
-    @IBAction func showDropDownOptions() {
-        dropdown.show()
-    }
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func registerButtonTapped() {
+        selectedAccount = setupCurrencyAccount()
         
         do {
-            let userData = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
-                                                       password: passwordTextfield.text,
-                                                       confirmPassword: confirmPasswordTextfield.text,
-                                                       account: seledtedLabel.text)
+            let user = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
+                                                   password: passwordTextfield.text,
+                                                   confirmPassword: confirmPasswordTextfield.text)
             
-            var account = AccountRequest(phoneNumber: userData?.phone, currency: userData?.account)
-            try? userManager.registerUser(phone: userData?.phone, password: userData?.password)
-            try? userManager.createAccount(account: account)
+            
+            
+            
             displayAlert()
             
         } catch let registrationError as RegistrationError {
@@ -49,16 +44,12 @@ class RegisterViewController: UIViewController {
         } catch let error{
             displayError(message: error.localizedDescription )
         }
-            
-            
-            
-            
         
     }
     
     override func viewDidLoad() {
         configureInitailView()
-        configureDopdown()
+        
     }
 }
 
@@ -88,16 +79,16 @@ extension RegisterViewController: UITextFieldDelegate {
         registerButton.layer.cornerRadius = 20
     }
     
-    fileprivate func configureDopdown() {
-        dropdownView.frame.size.height = 45
-        dropdown.anchorView = dropdownView
-        dropdown.dataSource = currency
-        dropdown.bottomOffset = CGPoint(x: 0, y: 45)
-        dropdown.topOffset = CGPoint(x: 0, y: 45)
-        dropdown.direction = .bottom
-        dropdown.selectionAction = {
-            [unowned self] (index: Int, item: String) in
-            self.seledtedLabel.text = currency[index]
+    func setupCurrencyAccount() -> String{
+        switch currencyAccountSegmentControl.selectedSegmentIndex {
+        case 0:
+            return currency[0]
+        case 1:
+            return currency[1]
+        case  2:
+            return currency[2]
+        default:
+            return "EUR"
         }
     }
     
@@ -128,6 +119,60 @@ extension RegisterViewController: UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    fileprivate func navigateToHomeScreen() {
+        let homeSceen = HomeViewController()
+        homeSceen.modalPresentationStyle = .fullScreen
+        present(homeSceen, animated: true)
+    }
+    
 }
 
-
+extension RegisterViewController {
+    
+    func registerUser(phoneNumber: String, password: String) {
+        func createUser() {
+            apiManager.createUser(phoneNumber: phoneNumber, password: password) { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                case .success(let user):
+                    print(user)
+//                    self?.getUserToken(user: user)
+                }
+            }
+            apiManager.createAccount(phoneNumber: phoneNumber, currency: "EUR") { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                case .success(let account):
+                    DispatchQueue.main.async {
+                        self?.navigateToHomeScreen()
+                    }
+                }
+            }
+        }
+        apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                switch error {
+                case .userNotFound:
+                    createUser()
+                default:
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                }
+            case .success:
+                DispatchQueue.main.async {
+//                    self?.displayError(message: )
+                }
+            }
+        }
+        
+    }
+    
+}
