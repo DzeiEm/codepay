@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="jmecodepay" customModuleProvider="target">
             <connections>
                 <outlet property="confirmPasswordTextfield" destination="Pfh-vY-Rdz" id="GpH-vR-XRh"/>
-                <outlet property="currencyAccountSegmentControl" destination="h7s-Bs-JsC" id="88U-3X-hGY"/>
+                <outlet property="currencyAccountSegmentControl" destination="xer-T0-g3u" id="Im2-Ge-QJr"/>
                 <outlet property="errorLabel" destination="5Xw-cY-GEY" id="eya-Y0-Qny"/>
                 <outlet property="passwordTextfield" destination="78K-RC-46c" id="4aK-dj-vJ1"/>
                 <outlet property="phoneNumberTextfield" destination="5oG-yM-VZ7" id="Cvm-hd-oQd"/>
@@ -69,10 +69,13 @@
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xer-T0-g3u">
                             <rect key="frame" x="0.0" y="150" width="333" height="32"/>
                             <segments>
-                                <segment title="First"/>
+                                <segment title="EUR"/>
                                 <segment title="USD"/>
                                 <segment title="GBP"/>
                             </segments>
+                            <connections>
+                                <action selector="onSegmentControlTypeChanged:" destination="-1" eventType="valueChanged" id="EnK-sy-wbL"/>
+                            </connections>
                         </segmentedControl>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xw-cY-GEY">
                             <rect key="frame" x="0.0" y="191" width="333" height="30"/>
@@ -125,14 +128,6 @@
                         <action selector="backButtonTapped" destination="-1" eventType="touchUpInside" id="UYf-fC-WQj"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h7s-Bs-JsC">
-                    <rect key="frame" x="50" y="609" width="247" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                </segmentedControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="backgroundColor"/>

@@ -14,27 +14,43 @@ class RegisterViewController: UIViewController {
     
     let validate = RegistrationValidation()
     let apiManager = APIManager()
-    let userManager = UserManager()
+   // let userManager = UserManager()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
-    private var  selectedAccount = ""
+    private var selectedAccount = ""
     
-    var users = [User]()
+    
+var users = [User]()
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onSegmentControlTypeChanged(_ sender: Any) {
+    
+        switch currencyAccountSegmentControl.selectedSegmentIndex {
+        case 0:
+            print(currency[0])
+             selectedAccount = currency[0]
+        case 1:
+            print(currency[1])
+             selectedAccount = currency[1]
+        case  2:
+            print(currency[2])
+             selectedAccount = currency[2]
+        default:
+            break
+        }
+    }
+    
+    
+    
     @IBAction func registerButtonTapped() {
-        selectedAccount = setupCurrencyAccount()
         
         do {
             let user = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
                                                    password: passwordTextfield.text,
                                                    confirmPassword: confirmPasswordTextfield.text)
-            
-            
-            
             
             displayAlert()
             
@@ -46,6 +62,7 @@ class RegisterViewController: UIViewController {
         }
         
     }
+
     
     override func viewDidLoad() {
         configureInitailView()
@@ -78,19 +95,7 @@ extension RegisterViewController: UITextFieldDelegate {
         registerButton.isEnabled = true
         registerButton.layer.cornerRadius = 20
     }
-    
-    func setupCurrencyAccount() -> String{
-        switch currencyAccountSegmentControl.selectedSegmentIndex {
-        case 0:
-            return currency[0]
-        case 1:
-            return currency[1]
-        case  2:
-            return currency[2]
-        default:
-            return "EUR"
-        }
-    }
+
     
     fileprivate func configureRegistrationButton() {
         let allTextFieldsFilled = availableTextFields.allSatisfy { textField in
