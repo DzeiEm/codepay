@@ -5,9 +5,9 @@ struct TransactionResponse: Codable {
     let id: String
     let senderId: String
     let receiverId: String
-    let amount: Double
+    let amount: Double?
     let currency: String
-    let createdOn: Double
+    let createdOn: Int
     let reference: String
 }
 

@@ -134,7 +134,7 @@ extension RegisterViewController: UITextFieldDelegate {
 
 extension RegisterViewController {
     
-    func registerUser(phoneNumber: String, password: String) {
+    func registerUser(phoneNumber: String, password: String, account: String) {
         func createUser() {
             apiManager.createUser(phoneNumber: phoneNumber, password: password) { [weak self] result in
                 switch result {
@@ -147,7 +147,7 @@ extension RegisterViewController {
 //                    self?.getUserToken(user: user)
                 }
             }
-            apiManager.createAccount(phoneNumber: phoneNumber, currency: "EUR") { [weak self] result in
+            apiManager.createAccount(phoneNumber: phoneNumber, currency: account) { [weak self] result in
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -180,4 +180,22 @@ extension RegisterViewController {
         
     }
     
+    func getUserToken(user: User) {
+        apiManager.getToken(user: user) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayError(message: error.description)
+                }
+            case .success(let token):
+                print(token)
+                //TODO
+            }
+            
+        }
+        
+    }
+    
+    
+
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		502B27E64DF62C0D412B4A28 /* Pods_jmecodepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87109A2ECC3B947893188C9 /* Pods_jmecodepay.framework */; };
+		CE1FEC05295F28C700A3C56B /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FEC04295F28C700A3C56B /* TokenResponse.swift */; };
 		CE498C62294DFF1900F58C81 /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C61294DFF1900F58C81 /* LoginValidation.swift */; };
 		CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C63294E013D00F58C81 /* RegistrationValidation.swift */; };
 		CE498C66294E01D300F58C81 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C65294E01D300F58C81 /* Currency.swift */; };
@@ -54,6 +55,7 @@
 		377A930486E91BDFDDB27CFB /* Pods-jmecodepay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jmecodepay.debug.xcconfig"; path = "Target Support Files/Pods-jmecodepay/Pods-jmecodepay.debug.xcconfig"; sourceTree = "<group>"; };
 		9926F438BBBF7CCE71BA5BC1 /* Pods-jmecodepay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jmecodepay.release.xcconfig"; path = "Target Support Files/Pods-jmecodepay/Pods-jmecodepay.release.xcconfig"; sourceTree = "<group>"; };
 		A87109A2ECC3B947893188C9 /* Pods_jmecodepay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jmecodepay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1FEC04295F28C700A3C56B /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		CE498C61294DFF1900F58C81 /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 		CE498C63294E013D00F58C81 /* RegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationValidation.swift; sourceTree = "<group>"; };
 		CE498C65294E01D300F58C81 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		CE593295294BB4DC00BE3357 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				CE1FEC04295F28C700A3C56B /* TokenResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				CE498C75294F5F1D00F58C81 /* TransactionCell.swift in Sources */,
 				CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */,
 				CEFD54E02952146E00AD8AB4 /* LoginErrors.swift in Sources */,
+				CE1FEC05295F28C700A3C56B /* TokenResponse.swift in Sources */,
 				CE593278294B997E00BE3357 /* RegisterViewController.swift in Sources */,
 				CE59328C294BB1D100BE3357 /* AllTransactionsViewController.swift in Sources */,
 				CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */,
