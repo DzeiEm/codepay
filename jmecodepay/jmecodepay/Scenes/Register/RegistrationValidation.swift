@@ -17,7 +17,7 @@ class RegistrationValidation {
         try isPasswordsMatch(password: password, confirmPassword: confirmPassword)
         try isPasswordValid(password)
         
-        return User(phoneNumber: phone, password: password)
+        return User(id: <#String#>, phoneNumber: phone, password: password)
     }
     
     

@@ -14,13 +14,10 @@ class RegisterViewController: UIViewController {
     
     let validate = RegistrationValidation()
     let apiManager = APIManager()
-   // let userManager = UserManager()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
     private var selectedAccount = ""
     
-    
-var users = [User]()
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -44,29 +41,88 @@ var users = [User]()
     }
     
     
-    
     @IBAction func registerButtonTapped() {
-        
-        do {
-            let user = try? validate.isEmptyFields(phone: phoneNumberTextfield.text,
-                                                   password: passwordTextfield.text,
-                                                   confirmPassword: confirmPasswordTextfield.text)
-            
-            displayAlert()
-            
-        } catch let registrationError as RegistrationError {
-            displayError(message: registrationError.error)
-            
-        } catch let error{
-            displayError(message: error.localizedDescription )
+        guard let phone = phoneNumberTextfield.text,
+              let password = passwordTextfield.text,
+              let confirmPassword = confirmPasswordTextfield.text,
+              !phone.isEmpty,
+              !password.isEmpty,
+              !confirmPassword.isEmpty else {
+            displayError(message: AccountManager.AccountManagerError.fieldsAreEmpty.errorMessage )
+            return
         }
-        
+        registerUser(phoneNumber: phone, password: password)
     }
 
     
     override func viewDidLoad() {
         configureInitailView()
-        
+        // get user data
+    }
+}
+
+
+extension RegisterViewController {
+    
+    func registerUser(phoneNumber: String, password: String) {
+        func createUser() {
+            apiManager.createUser(phoneNumber: phoneNumber, password: password) { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                case .success(let user):
+                    print(user)
+                    self?.getUserToken(user: user)
+                }
+            }
+            apiManager.createAccount(phoneNumber: phoneNumber, currency: selectedAccount) { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                case .success(let account):
+                    DispatchQueue.main.async {
+                        self?.displayAlert()
+                        self?.navigateToLoginScreen()
+                    }
+                }
+            }
+        }
+        apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                switch error {
+                case .userNotFound:
+                    createUser()
+                default:
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self?.displayError(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
+                }
+            }
+        }
+    }
+    
+    func getUserToken(user: User) {
+        apiManager.getToken(user: user) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayError(message: error.description)
+                }
+            case .success(let token):
+                print(token)
+                //TODO
+            }
+            
+        }
     }
 }
 
@@ -123,79 +179,10 @@ extension RegisterViewController: UITextFieldDelegate {
         
         present(alert, animated: true, completion: nil)
     }
-    
-    fileprivate func navigateToHomeScreen() {
-        let homeSceen = HomeViewController()
-        homeSceen.modalPresentationStyle = .fullScreen
-        present(homeSceen, animated: true)
-    }
-    
-}
-
-extension RegisterViewController {
-    
-    func registerUser(phoneNumber: String, password: String, account: String) {
-        func createUser() {
-            apiManager.createUser(phoneNumber: phoneNumber, password: password) { [weak self] result in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
-                    }
-                case .success(let user):
-                    print(user)
-//                    self?.getUserToken(user: user)
-                }
-            }
-            apiManager.createAccount(phoneNumber: phoneNumber, currency: account) { [weak self] result in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
-                    }
-                case .success(let account):
-                    DispatchQueue.main.async {
-                        self?.navigateToHomeScreen()
-                    }
-                }
-            }
-        }
-        apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                switch error {
-                case .userNotFound:
-                    createUser()
-                default:
-                    DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
-                    }
-                }
-            case .success:
-                DispatchQueue.main.async {
-//                    self?.displayError(message: )
-                }
-            }
-        }
         
+    fileprivate func navigateToLoginScreen() {
+        let loginScreen = LoginViewController()
+        loginScreen.modalPresentationStyle = .fullScreen
+        present(loginScreen, animated: true)
     }
-    
-    func getUserToken(user: User) {
-        apiManager.getToken(user: user) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.sync {
-                    self?.displayError(message: error.description)
-                }
-            case .success(let token):
-                print(token)
-                //TODO
-            }
-            
-        }
-        
-    }
-    
-    
-
 }

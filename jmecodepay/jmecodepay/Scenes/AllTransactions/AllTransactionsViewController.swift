@@ -31,7 +31,7 @@ extension AllTransactionViewController: UITableViewDelegate, UITableViewDataSour
             return cell
         }
         
-        transactionCell.configureCell(receiver: "Receiver", subject: "Subject", date: "Date", amount: 200)
+        //transactionCell.configureCell(receiver: "Receiver", subject: "Subject", date: "Date", amount: 200)
         return transactionCell
     }
 }

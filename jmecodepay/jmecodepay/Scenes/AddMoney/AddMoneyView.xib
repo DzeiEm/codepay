@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMoneyViewController" customModule="jmecodepay" customModuleProvider="target">
             <connections>
+                <outlet property="accountCurrencySegmentControl" destination="rfx-7L-QME" id="yzn-VH-BQ4"/>
                 <outlet property="amountTextfield" destination="0eq-vf-fIS" id="PFo-bB-Tub"/>
                 <outlet property="errorLabel" destination="jeZ-sb-R82" id="R9x-m4-rdY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Tzg-WY-2La"/>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zuX-uw-0bS">
-                    <rect key="frame" x="30" y="294" width="333" height="87.666666666666686"/>
+                    <rect key="frame" x="30" y="294" width="333" height="119.66666666666669"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dg-qi-6sC">
                             <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
@@ -37,8 +38,19 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rfx-7L-QME">
+                            <rect key="frame" x="0.0" y="67.333333333333314" width="333" height="32"/>
+                            <segments>
+                                <segment title="EUR"/>
+                                <segment title="USD"/>
+                                <segment title="GBP"/>
+                            </segments>
+                            <connections>
+                                <action selector="onAccountCurrencyChange" destination="-1" eventType="valueChanged" id="n29-3B-MUQ"/>
+                            </connections>
+                        </segmentedControl>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-sb-R82">
-                            <rect key="frame" x="0.0" y="67.333333333333314" width="333" height="20.333333333333329"/>
+                            <rect key="frame" x="0.0" y="99.333333333333314" width="333" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" systemColor="systemPinkColor"/>
                             <nil key="highlightedColor"/>
@@ -47,10 +59,12 @@
                     <constraints>
                         <constraint firstItem="0eq-vf-fIS" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="MKq-dT-OuS"/>
                         <constraint firstItem="jeZ-sb-R82" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="OKX-4f-SFN"/>
+                        <constraint firstAttribute="trailing" secondItem="rfx-7L-QME" secondAttribute="trailing" id="VQn-oH-7Qa"/>
                         <constraint firstAttribute="trailing" secondItem="1Dg-qi-6sC" secondAttribute="trailing" id="aMk-ce-LX6"/>
                         <constraint firstItem="1Dg-qi-6sC" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="ayN-ki-5lM"/>
                         <constraint firstAttribute="trailing" secondItem="0eq-vf-fIS" secondAttribute="trailing" id="fwf-5k-Lga"/>
                         <constraint firstAttribute="trailing" secondItem="jeZ-sb-R82" secondAttribute="trailing" id="iKy-Cb-FmH"/>
+                        <constraint firstItem="rfx-7L-QME" firstAttribute="leading" secondItem="zuX-uw-0bS" secondAttribute="leading" id="xiO-es-s0F"/>
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQd-we-jp1">

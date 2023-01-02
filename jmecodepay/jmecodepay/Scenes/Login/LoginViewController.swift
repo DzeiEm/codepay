@@ -8,13 +8,9 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var errorLabel: UILabel!
-    let validate = LoginValidation()
-    
-    
-    // TODO:
-   // 1. validatee txt input
-   //2. validate input with set data
-
+    let apiManager = APIManager()
+    let accountManager = AccountManager()
+    let userManager = UserManageer()
     
     
     @IBAction func backButtonTapped() {
@@ -22,14 +18,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped() {
-        do {
-            
-           let userData = try? validate.isLoginTextfieldsEmpty(passwordTextfield.text, passwordTextfield.text)
-          
-          navigateToHome()
-        } catch let loginError as LoginErrors {
-            display(message: loginError.error )
+        
+        guard let phone = phoneNumberTextfield.text,
+              let password = passwordTextfield.text,
+              !phone.isEmpty,
+              !password.isEmpty else {
+            display(message: AccountManager.AccountManagerError.fieldsAreEmpty.errorMessage)
+            return
         }
+        
+        loginUser(phoneNumber: phone, password: password)
     }
     
     override func viewDidLoad() {
@@ -38,6 +36,45 @@ class LoginViewController: UIViewController {
     }
 }
 
+
+extension LoginViewController {
+        
+    func loginUser(phoneNumber: String, password: String) {
+        func isAccountExist() {
+            apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.sync {
+                        self?.display(message: error.description)
+                    }
+                case .success(let account):
+                    DispatchQueue.main.sync {
+                        self?.navigateToHome(account)
+                    }
+                }
+            }
+        }
+        apiManager.isUserExist(phoneNumber: phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.display(message: error.description)
+                }
+            case .success(let user):
+                DispatchQueue.main.sync {
+                    guard let checkPassword = self?.accountManager.checkIsPasswordMatch(password: password, user: user) else {
+                        return
+                    }
+                    if checkPassword {
+                        isAccountExist()
+                    } else {
+                        self?.display(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
+                    }
+                }
+            }
+        }
+    }
+}
 
 extension LoginViewController {
     
@@ -51,7 +88,7 @@ extension LoginViewController {
         errorLabel.isHidden = false
     }
     
-    fileprivate func navigateToHome() {
+    fileprivate func navigateToHome(_ account: AccountResponse) {
         let homeScreen = HomeViewController()
         homeScreen.modalPresentationStyle = .fullScreen
         present(homeScreen, animated: true)
