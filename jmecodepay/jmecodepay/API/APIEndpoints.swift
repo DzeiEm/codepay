@@ -8,7 +8,7 @@ enum APIEndpoints {
     case account
     case accountId(account: AccountResponse)
     case transaction
-    case isUserExist(phoneNumber: String)
+    case isUserExis(phoneNumber: String)
     case getUserToken(user: User)
     
 
@@ -23,7 +23,7 @@ enum APIEndpoints {
             return makeURL(endpoint: "account\(accountId)")
         case .transaction:
             return makeURL(endpoint: "transaction")
-        case .isUserExist(phoneNumber: let phoneNumber):
+        case .isUserExis(phoneNumber: let phoneNumber):
             let phoneQueryIteem = URLQueryItem(name: phone, value: phoneNumber)
             return makeURL(endpoint: "account", queryItems: [phoneQueryIteem])
         case .getUserToken(let user):

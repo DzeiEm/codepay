@@ -124,19 +124,19 @@ extension HomeViewController: AddMoneyViewControllerDelegate {
 extension HomeViewController {
     func getTransactions() {
         guard let account = currrentUserAccount else { return }
-        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.sync {
-                    self?.displayAlert(message: error.description)
-                }
-            case .success(let transactions):
-                DispatchQueue.main.sync {
-                    self?.accountTransactions = transactions
-                    self?.fetchBalance()
-                }
-            }
-        }
+//        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
+//            switch result {
+//            case .failure(let error):
+//                DispatchQueue.main.sync {
+//                    self?.displayAlert(message: error.description)
+//                }
+//            case .success(let transactions):
+//                DispatchQueue.main.sync {
+//                    self?.accountTransactions = transactions
+//                    self?.fetchBalance()
+//                }
+//            }
+//        }
     }
 }
 

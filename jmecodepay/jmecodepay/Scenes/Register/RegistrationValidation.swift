@@ -3,22 +3,22 @@ import Foundation
 
 class RegistrationValidation {
     
-    func isEmptyFields(phone: String?, password: String?, confirmPassword: String?) throws -> User {
-        guard let phone = phone,
-              let password = password,
-              let confirmPassword = confirmPassword,
-              !phone.isEmpty,
-              !password.isEmpty,
-              !confirmPassword.isEmpty
-        else {
-            throw RegistrationError.unexpecteerError
-        }
-        
-        try isPasswordsMatch(password: password, confirmPassword: confirmPassword)
-        try isPasswordValid(password)
-        
-        return User(id: <#String#>, phoneNumber: phone, password: password)
-    }
+//    func isEmptyFields(phone: String?, password: String?, confirmPassword: String?) throws -> User {
+//        guard let phone = phone,
+//              let password = password,
+//              let confirmPassword = confirmPassword,
+//              !phone.isEmpty,
+//              !password.isEmpty,
+//              !confirmPassword.isEmpty
+//        else {
+//            throw RegistrationError.unexpecteerError
+//        }
+//
+//        try isPasswordsMatch(password: password, confirmPassword: confirmPassword)
+//        try isPasswordValid(password)
+//
+//        return User(id: <#T##String#>, phoneNumber: <#T##String#>, password: <#T##String#>)
+//    }
     
     
     func isPasswordsMatch(password: String, confirmPassword: String) throws {
@@ -28,13 +28,6 @@ class RegistrationValidation {
        return
    }
     
-    func isPasswordValid(_ password: String?) throws {
-        guard let password = password else {
-            return
-        }
-        try? isPasswordSecure(password: password)
-    }
-
     func isPasswordSecure(password: String) throws  {
         guard containsNumbers(password) else {
             throw RegistrationError.containsNumbers
@@ -49,11 +42,6 @@ class RegistrationValidation {
             throw RegistrationError.containsRequiredPasswordLength
         }
     }
-    
-    func isPhoneNumberUnique(_ phone: String) throws {
-      // GET all users where phone == phone
-    }
-     
 }
 
 

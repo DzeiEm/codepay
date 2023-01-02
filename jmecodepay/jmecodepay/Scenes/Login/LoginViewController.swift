@@ -54,25 +54,25 @@ extension LoginViewController {
                 }
             }
         }
-        apiManager.isUserExist(phoneNumber: phoneNumber) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.sync {
-                    self?.display(message: error.description)
-                }
-            case .success(let user):
-                DispatchQueue.main.sync {
-                    guard let checkPassword = self?.accountManager.checkIsPasswordMatch(password: password, user: user) else {
-                        return
-                    }
-                    if checkPassword {
-                        isAccountExist()
-                    } else {
-                        self?.display(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
-                    }
-                }
-            }
-        }
+//        apiManager.isUserExist(phoneNumber: phoneNumber) { [weak self] result in
+//            switch result {
+//            case .failure(let error):
+//                DispatchQueue.main.sync {
+//                    self?.display(message: error.description)
+//                }
+//            case .success(let user):
+//                DispatchQueue.main.sync {
+//                    guard let checkPassword = self?.accountManager.checkIsPasswordMatch(password: password, user: user) else {
+//                        return
+//                    }
+//                    if checkPassword {
+//                        isAccountExist()
+//                    } else {
+//                        self?.display(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
+//                    }
+//                }
+//            }
+//        }
     }
 }
 

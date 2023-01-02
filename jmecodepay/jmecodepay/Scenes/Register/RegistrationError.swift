@@ -12,7 +12,7 @@ enum  RegistrationError: Error {
     case containsRequiredPasswordLength
     case unexpecteerError
     
-    var error: String {
+    var errorMessage: String {
         switch self {
         case .passwodDoNotMAtch:
             return "Passwords do not match 💁‍♀️"

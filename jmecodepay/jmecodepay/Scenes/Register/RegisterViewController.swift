@@ -24,17 +24,17 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func onSegmentControlTypeChanged(_ sender: Any) {
-    
+        
         switch currencyAccountSegmentControl.selectedSegmentIndex {
         case 0:
             print(currency[0])
-             selectedAccount = currency[0]
+            selectedAccount = currency[0]
         case 1:
             print(currency[1])
-             selectedAccount = currency[1]
+            selectedAccount = currency[1]
         case  2:
             print(currency[2])
-             selectedAccount = currency[2]
+            selectedAccount = currency[2]
         default:
             break
         }
@@ -51,13 +51,25 @@ class RegisterViewController: UIViewController {
             displayError(message: AccountManager.AccountManagerError.fieldsAreEmpty.errorMessage )
             return
         }
+        
+        do {
+            try validate.isPasswordsMatch(password: password, confirmPassword: confirmPassword)
+            try validate.isPasswordSecure(password: password)
+        }
+        catch let passwordError as RegistrationError {
+            displayError(message: passwordError.errorMessage)
+            return
+        } catch {
+            displayError(message: RegistrationError.unexpecteerError.errorMessage)
+            return
+        }
         registerUser(phoneNumber: phone, password: password)
     }
-
+    
     
     override func viewDidLoad() {
         configureInitailView()
-        // get user data
+        clearAllTextfields()
     }
 }
 
@@ -65,37 +77,12 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController {
     
     func registerUser(phoneNumber: String, password: String) {
-        func createUser() {
-            apiManager.createUser(phoneNumber: phoneNumber, password: password) { [weak self] result in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
-                    }
-                case .success(let user):
-                    print(user)
-                    self?.getUserToken(user: user)
-                }
-            }
-            apiManager.createAccount(phoneNumber: phoneNumber, currency: selectedAccount) { [weak self] result in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
-                    }
-                case .success(let account):
-                    DispatchQueue.main.async {
-                        self?.displayAlert()
-                        self?.navigateToLoginScreen()
-                    }
-                }
-            }
-        }
         apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
             switch result {
             case .failure(let error):
                 switch error {
                 case .userNotFound:
+                    print("User not found")
                     createUser()
                 default:
                     DispatchQueue.main.async {
@@ -108,22 +95,50 @@ extension RegisterViewController {
                 }
             }
         }
-    }
-    
-    func getUserToken(user: User) {
-        apiManager.getToken(user: user) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.sync {
-                    self?.displayError(message: error.description)
+        
+        func createUser() {
+            apiManager.createUser(phoneNumber: phoneNumber, password: password) { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                case .success(let user):
+                    print("create user func \(user)")
+                    //self?.getUserToken(user: user)
                 }
-            case .success(let token):
-                print(token)
-                //TODO
             }
-            
+            apiManager.createAccount(phoneNumber: phoneNumber, currency: selectedAccount) { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.displayError(message: error.description)
+                    }
+                case .success(let account):
+                    print(account)
+                    DispatchQueue.main.async {
+                        self?.displayAlert()
+                        self?.navigateToLoginScreen()
+                    }
+                }
+            }
         }
     }
+    
+//    func getUserToken(user: User) {
+//        apiManager.getToken(user: user) { [weak self] result in
+//            switch result {
+//            case .failure(let error):
+//                DispatchQueue.main.sync {
+//                    self?.displayError(message: error.description)
+//                }
+//            case .success(let token):
+//                print(token)
+//                //TODO
+//            }
+//
+//        }
+//    }
 }
 
 
@@ -135,9 +150,9 @@ extension RegisterViewController: UITextFieldDelegate {
     }
     
     fileprivate func clearAllTextfields() {
-        phoneNumberTextfield.text = nil
-        passwordTextfield.text = nil
-        confirmPasswordTextfield.text = nil
+        phoneNumberTextfield.text = ""
+        passwordTextfield.text = ""
+        confirmPasswordTextfield.text = ""
     }
     
     fileprivate func setTextfieldsDelegates() {
@@ -151,7 +166,7 @@ extension RegisterViewController: UITextFieldDelegate {
         registerButton.isEnabled = true
         registerButton.layer.cornerRadius = 20
     }
-
+    
     
     fileprivate func configureRegistrationButton() {
         let allTextFieldsFilled = availableTextFields.allSatisfy { textField in
@@ -179,7 +194,7 @@ extension RegisterViewController: UITextFieldDelegate {
         
         present(alert, animated: true, completion: nil)
     }
-        
+    
     fileprivate func navigateToLoginScreen() {
         let loginScreen = LoginViewController()
         loginScreen.modalPresentationStyle = .fullScreen
