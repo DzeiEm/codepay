@@ -7,7 +7,7 @@ enum LoginErrors: Error {
     case incorrectCredentials
     case empty
     
-    var error: String {
+    var errorMessage: String {
         switch self {
         case .incorrectCredentials:
             return "User name or password is incorect"

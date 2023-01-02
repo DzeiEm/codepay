@@ -9,7 +9,7 @@ enum APIErrors: Error {
     case parsingError
     case userNotFound
     
-    var description: String {
+    var apiErrorMessage: String {
         switch self {
         case .invalidURL:
             return "Invalid url"

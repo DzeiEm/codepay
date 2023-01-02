@@ -40,12 +40,33 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
         
     func loginUser(phoneNumber: String, password: String) {
+        
+        apiManager.checkIsUserExist(phoneNumber: phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.display(message: error.apiErrorMessage)
+                }
+            case .success(let user):
+                DispatchQueue.main.sync {
+                    guard let checkPassword = self?.accountManager.checkIsPasswordMatch(password: password, user: user) else {
+                        return
+                    }
+                    if checkPassword {
+                        isAccountExist()
+                    } else {
+                        self?.display(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
+                    }
+                }
+            }
+        }
+        
         func isAccountExist() {
-            apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
+            apiManager.checkIsAccountExist(phoneNumber: phoneNumber) { [weak self] result in
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.sync {
-                        self?.display(message: error.description)
+                        self?.display(message: error.apiErrorMessage)
                     }
                 case .success(let account):
                     DispatchQueue.main.sync {
@@ -54,25 +75,6 @@ extension LoginViewController {
                 }
             }
         }
-//        apiManager.isUserExist(phoneNumber: phoneNumber) { [weak self] result in
-//            switch result {
-//            case .failure(let error):
-//                DispatchQueue.main.sync {
-//                    self?.display(message: error.description)
-//                }
-//            case .success(let user):
-//                DispatchQueue.main.sync {
-//                    guard let checkPassword = self?.accountManager.checkIsPasswordMatch(password: password, user: user) else {
-//                        return
-//                    }
-//                    if checkPassword {
-//                        isAccountExist()
-//                    } else {
-//                        self?.display(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
-//                    }
-//                }
-//            }
-//        }
     }
 }
 

@@ -8,12 +8,20 @@ enum APIEndpoints {
     case account
     case accountId(account: AccountResponse)
     case transaction
-    case isUserExis(phoneNumber: String)
+    case checkForUser(phoneNumber: String)
+    case checkForAccount(phoneNumber: String)
     case getUserToken(user: User)
     
 
     var url: URL? {
         switch self {
+        case .checkForUser(phoneNumber: let phoneNumber):
+            let phoneQueryIteem = URLQueryItem(name: phone, value: phoneNumber)
+            return makeURL(endpoint: "user", queryItems: [phoneQueryIteem])
+        case .checkForAccount(phoneNumber: let phoneNumber):
+            let queryItem = URLQueryItem(name: phone, value: phoneNumber)
+            return makeURL(endpoint: "account", queryItems: [queryItem])
+            
         case .user:
             return makeURL(endpoint: "user")
         case .account:
@@ -23,13 +31,9 @@ enum APIEndpoints {
             return makeURL(endpoint: "account\(accountId)")
         case .transaction:
             return makeURL(endpoint: "transaction")
-        case .isUserExis(phoneNumber: let phoneNumber):
-            let phoneQueryIteem = URLQueryItem(name: phone, value: phoneNumber)
-            return makeURL(endpoint: "account", queryItems: [phoneQueryIteem])
         case .getUserToken(let user):
             let id = user.id
             return makeURL(endpoint: "user\(id)")
-           
         }
     }
 }

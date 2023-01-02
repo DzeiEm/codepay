@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        // fetch
+        fetchAccountData()
         setupDatbleView()
         configureCell()
     }
@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: "TransactionCell")
     }
     
-    func fetchBalance() {
+    func fetchAccountData() {
         guard let account = currrentUserAccount else { return }
         balanceLabel.text = "\(account.balance)"
         tableView.reloadData()
@@ -96,47 +96,50 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return transactionCell
         
     }
-
+    
 }
 
 extension HomeViewController: AddMoneyViewControllerDelegate {
     
     func onBalanceChange() {
         guard let account = currrentUserAccount else { return }
-        apiManager.isAccountIsTaken(phoneNumber: account.phoneNumber) { [weak self] result in
+        apiManager.checkIsAccountExist(phoneNumber: account.phoneNumber) { [weak self] result in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.sync {
-                    // SOMETHING
+                    self?.displayAlert(message: error.apiErrorMessage)
                 }
             case .success(let account):
                 DispatchQueue.main.sync {
                     self?.currrentUserAccount = account
-                    self?.fetchBalance()
+                    self?.fetchAccountData()
                 }
             }
         }
+        
         getTransactions()
     }
 }
 
 
+
+
 extension HomeViewController {
     func getTransactions() {
         guard let account = currrentUserAccount else { return }
-//        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
-//            switch result {
-//            case .failure(let error):
-//                DispatchQueue.main.sync {
-//                    self?.displayAlert(message: error.description)
-//                }
-//            case .success(let transactions):
-//                DispatchQueue.main.sync {
-//                    self?.accountTransactions = transactions
-//                    self?.fetchBalance()
-//                }
-//            }
-//        }
+        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayAlert(message: error.apiErrorMessage)
+                }
+            case .success(let transactions):
+                DispatchQueue.main.sync {
+                    self?.accountTransactions = transactions
+                    self?.fetchAccountData()
+                }
+            }
+        }
     }
 }
 

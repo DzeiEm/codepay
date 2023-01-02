@@ -14,9 +14,10 @@ class RegisterViewController: UIViewController {
     
     let validate = RegistrationValidation()
     let apiManager = APIManager()
+    let userManager = UserManageer()
     var currency = ["EUR", "USD", "GBP"]
     private var availableTextFields: [UITextField] = []
-    private var selectedAccount = ""
+    private var selectedAccount = "EUR"
     
     
     @IBAction func backButtonTapped() {
@@ -77,7 +78,7 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController {
     
     func registerUser(phoneNumber: String, password: String) {
-        apiManager.isAccountIsTaken(phoneNumber: phoneNumber) { [weak self] result in
+        apiManager.checkIsAccountExist(phoneNumber: phoneNumber) { [weak self] result in
             switch result {
             case .failure(let error):
                 switch error {
@@ -86,12 +87,12 @@ extension RegisterViewController {
                     createUser()
                 default:
                     DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
+                        self?.displayError(message: error.apiErrorMessage)
                     }
                 }
             case .success:
                 DispatchQueue.main.async {
-                    self?.displayError(message: AccountManager.AccountManagerError.wrongPassword.errorMessage)
+                    self?.displayError(message: AccountManager.AccountManagerError.accountAlreadyExists.errorMessage)
                 }
             }
         }
@@ -101,18 +102,18 @@ extension RegisterViewController {
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
+                        self?.displayError(message: error.apiErrorMessage)
                     }
                 case .success(let user):
                     print("create user func \(user)")
-                    //self?.getUserToken(user: user)
+                    self?.getUserToken(user: user)
                 }
             }
             apiManager.createAccount(phoneNumber: phoneNumber, currency: selectedAccount) { [weak self] result in
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self?.displayError(message: error.description)
+                        self?.displayError(message: error.apiErrorMessage)
                     }
                 case .success(let account):
                     print(account)
@@ -125,20 +126,22 @@ extension RegisterViewController {
         }
     }
     
-//    func getUserToken(user: User) {
-//        apiManager.getToken(user: user) { [weak self] result in
-//            switch result {
-//            case .failure(let error):
-//                DispatchQueue.main.sync {
-//                    self?.displayError(message: error.description)
-//                }
-//            case .success(let token):
-//                print(token)
-//                //TODO
-//            }
-//
-//        }
-//    }
+    func getUserToken(user: User) {
+        apiManager.getToken(user: user) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayError(message: error.apiErrorMessage)
+                }
+            case .success(let token):
+                print(token)
+                self?.userManager.saveToken(token.accessToken, phoneNumber: user.phoneNumber)
+                self?.userManager.saveUserPhoneNumber(phoneNumber: user.phoneNumber)
+                
+            }
+
+        }
+    }
 }
 
 

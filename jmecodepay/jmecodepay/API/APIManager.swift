@@ -32,6 +32,36 @@ struct APIManager {
 
 
 extension APIManager {
+    
+    func checkIsAccountExist(phoneNumber: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
+        
+        guard let url = APIEndpoints.checkForAccount(phoneNumber: phoneNumber).url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        urlSession.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.serializationError))
+                return
+            }
+            
+            guard let userResponse = try? JSONDecoder().decode([AccountResponse].self, from: data) else {
+                completion(.failure(.parsingError))
+                return
+            }
+            if let user = userResponse.first {
+                completion(.success(user))
+                return
+            } else {
+                completion(.failure(.userNotFound))
+                return
+            }
+        }.resume()
+        
+        
+    }
+
 
     func createUser(phoneNumber: String, password: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
 
@@ -67,85 +97,6 @@ extension APIManager {
         }).resume()
     }
     
-    
-//    func isUserExist(phoneNumber: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
-//        guard let url = APIEndpoints.isUserExist(phoneNumber: phoneNumber).url else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//        urlSession.dataTask(with: url, completionHandler: { data, _, error in
-//            if let error = error {
-//                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-//            }
-//            guard let data = data,
-//                  let userResponse = try? decoder.decode([User].self, from: data) else {
-//                completion(.failure(.parsingError))
-//                return
-//            }
-//            if let user = userResponse.first {
-//                completion(.success(user))
-//                return
-//            } else {
-//                completion(.failure(.userNotFound))
-//            }
-//            
-//        }).resume()
-//    }
-//    
-//    func getToken(user: User, _ completion: @escaping(Result<TokenResponse, APIErrors>) -> Void) {
-//
-//        guard let url = APIEndpoints.getUserToken(user: user).url else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//        urlSession.dataTask(with: url, completionHandler: { data, _, error in
-//
-//            if let error = error {
-//                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-//            }
-//
-//            guard let data = data,
-//                  let tokenResponse = try? decoder.decode(TokenResponse.self, from: data) else {
-//                completion(.failure(.parsingError))
-//                return
-//            }
-//
-//            completion(.success(tokenResponse))
-//        }).resume()
-//    }
-//
-    
-    func isAccountIsTaken(phoneNumber: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
-        
-        guard let url = APIEndpoints.isUserExist(phoneNumber: phoneNumber).url else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        urlSession.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.serializationError))
-                return
-            }
-            
-            guard let userResponse = try? JSONDecoder().decode([AccountResponse].self, from: data) else {
-                completion(.failure(.parsingError))
-                return
-            }
-            if let user = userResponse.first {
-                completion(.success(user))
-                return
-            } else {
-                completion(.failure(.userNotFound))
-                return
-            }
-        }.resume()
-        
-        
-    }
-
-    
     func createAccount(phoneNumber: String, currency: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
 
         guard let url = APIEndpoints.account.url  else {
@@ -180,6 +131,83 @@ extension APIManager {
             completion(.success(accountResponse))
         }).resume()
     }
+    
+    func getToken(user: User, _ completion: @escaping(Result<TokenResponse, APIErrors>) -> Void) {
+
+        guard let url = APIEndpoints.getUserToken(user: user).url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        urlSession.dataTask(with: url, completionHandler: { data, _, error in
+
+            if let error = error {
+                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            }
+
+            guard let data = data,
+                  let tokenResponse = try? decoder.decode(TokenResponse.self, from: data) else {
+                completion(.failure(.parsingError))
+                return
+            }
+
+            completion(.success(tokenResponse))
+        }).resume()
+    }
+
+    
+    func checkIsUserExist(phoneNumber: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
+        guard let url = APIEndpoints.checkForUser(phoneNumber: phoneNumber).url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        urlSession.dataTask(with: url, completionHandler: { data, _, error in
+            if let error = error {
+                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            }
+            
+            guard let data = data,
+                  let userResponse = try? decoder.decode([User].self, from: data) else {
+                completion(.failure(.parsingError))
+                return
+            }
+            if let user = userResponse.first {
+                completion(.success(user))
+                return
+            } else {
+                completion(.failure(.userNotFound))
+            }
+
+        }).resume()
+    }
+    
+    func getUserTransactions(phoneNumber: String, _ completion: @escaping(Result<[TransactionResponse], APIErrors>)  -> Void) {
+   
+           guard let url = APIEndpoints.account.url  else {
+               completion(.failure(APIErrors.invalidURL))
+               return
+           }
+   
+           urlSession.dataTask(with: url,
+                               completionHandler: { data, _, error in
+   
+               if let error = error {
+                   completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+               }
+   
+               guard let data = data,
+                     let transactionResponse = try? decoder.decode([TransactionResponse].self, from: data)
+               else {
+                   completion(.failure(.parsingError))
+                   return
+               }
+               completion(.success(transactionResponse))
+           }).resume()
+   
+       }
+   
+    
+    
     
 //    func updateUserAccount(account: AccountResponse, phoneNumber: String?, currency: String?, amount: Double?, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
 //
@@ -228,30 +256,6 @@ extension APIManager {
 //        }).resume()
 //    }
 //
-//    func getUserTransactions(phoneNumber: String, _ completion: @escaping(Result<[TransactionResponse], APIErrors>)  -> Void) {
-//
-//        guard let url = APIEndpoints.account.url  else {
-//            completion(.failure(APIErrors.invalidURL))
-//            return
-//        }
-//
-//        urlSession.dataTask(with: url,
-//                            completionHandler: { data, _, error in
-//
-//            if let error = error {
-//                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-//            }
-//
-//            guard let data = data,
-//                  let transactionResponse = try? decoder.decode([TransactionResponse].self, from: data)
-//            else {
-//                completion(.failure(.parsingError))
-//                return
-//            }
-//            completion(.success(transactionResponse))
-//        }).resume()
-//
-//    }
 //
 //    func sendMoney(sender: AccountResponse,
 //                   receiver: AccountResponse,
