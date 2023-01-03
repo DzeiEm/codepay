@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     private let apiManager = APIManager()
     
     @IBAction func logoutBUttonTapped() {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.presentingViewController?.dismiss(animated: true)
     }
     
     
@@ -38,32 +38,41 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        fetchAccountData()
-        setupDatbleView()
-        configureCell()
+        super.viewDidLoad()
+        configureTransactionCell()
+        configureEmptyCell()
+        setupTableView()
+        reloadScreenData()
+        
     }
     
-    func setupDatbleView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = 60
-    }
-    
-    func configureCell() {
+    func configureTransactionCell() {
         let cellNib = UINib(nibName: "TransactionCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "TransactionCell")
     }
     
-    func fetchAccountData() {
+    func configureEmptyCell() {
+        let cellNib = UINib(nibName: "EmptyTransactionCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "EmptyTransactionCell")
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 30
+    }
+    
+    func reloadScreenData() {
         guard let account = currrentUserAccount else { return }
-        balanceLabel.text = "\(account.balance)"
-        tableView.reloadData()
+        print("ACOUNT: \(account)")
+        balanceLabel.text = "\(Double(account.balance)),\(account.currency)"
+        //tableView.reloadData()
     }
     
 }
 
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let transactions = accountTransactions else {
@@ -72,32 +81,53 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if transactions.count > 5 {
             return 5
         } else {
+            print("TRANSACTION COUNT: \(transactions.count)")
             return transactions.count
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath)
-        
-        guard let transactionCell = cell as? TransactionCell,
-              let account = currrentUserAccount,
-              let accountTransactions = accountTransactions else {
-            return cell
-        }
-        
-        let sortedTransactions = accountTransactions.sorted { $0.createdOn > $1.createdOn }
-        
-        let transaction = sortedTransactions[indexPath.row]
-        transactionCell.configureCell(receiver: transaction.receiverId,
-                                      subject: transaction.reference,
-                                      date: transaction.createdOn,
-                                      amount: transaction.amount!,
-                                      account: account)
-        return transactionCell
-        
-    }
-    
 }
+
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            configureEmptyCell()
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTransactionCell", for: indexPath)
+            
+            guard let emptyCell = cell as? EmptyTransactionCell else {
+                return cell
+            }
+            emptyCell.configure()
+            
+            return emptyCell
+        } else {
+            configureTransactionCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath)
+           
+            guard let transactionCell = cell as? TransactionCell,
+                  let account = currrentUserAccount,
+                  let accountTransactions = accountTransactions else {
+                return cell
+            }
+            
+            let sortedTransactions = accountTransactions.sorted { $0.createdOn > $1.createdOn }
+            let transaction = sortedTransactions[indexPath.row]
+            
+            
+            transactionCell.configureCell(receiver: transaction.receiverId,
+                                          subject: transaction.reference,
+                                          date: transaction.createdOn,
+                                          amount: transaction.amount!,
+                                          account: account)
+            return transactionCell
+            
+        }
+    }
+}
+
 
 extension HomeViewController: AddMoneyViewControllerDelegate {
     
@@ -112,12 +142,25 @@ extension HomeViewController: AddMoneyViewControllerDelegate {
             case .success(let account):
                 DispatchQueue.main.sync {
                     self?.currrentUserAccount = account
-                    self?.fetchAccountData()
+                    self?.reloadScreenData()
                 }
             }
         }
         
-        getTransactions()
+        guard let account = currrentUserAccount else { return }
+        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayAlert(message: error.apiErrorMessage)
+                }
+            case .success(let transactions):
+                DispatchQueue.main.sync {
+                    self?.accountTransactions = transactions
+                    self?.reloadScreenData()
+                }
+            }
+        }
     }
 }
 
@@ -136,7 +179,7 @@ extension HomeViewController {
             case .success(let transactions):
                 DispatchQueue.main.sync {
                     self?.accountTransactions = transactions
-                    self?.fetchAccountData()
+                    self?.reloadScreenData()
                 }
             }
         }

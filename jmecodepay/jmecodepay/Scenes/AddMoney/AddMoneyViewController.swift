@@ -73,24 +73,7 @@ extension AddMoneyViewController {
     
     func updateAccount(_ amount: Double) {
         
-//        apiManager.updateUserAccount(account: selectedAccount,
-//                                     phoneNumber: nil,
-//                                     currency: nil,
-//                                     amount: amount) { [weak self] result in
-//
-//            switch result {
-//            case .success:
-//                DispatchQueue.main.sync {
-//                    self?.displayAlert()
-//                    self.delegate?.onBalanceChange()
-//                }
-//            case .failure(let error):
-//                DispatchQueue.main.sync {
-//                    self.displayAlert()
-//                }
-//            }
-//
-//        }
+
         
     }
     

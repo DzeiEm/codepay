@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +28,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dg-qi-6sC">
                             <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-vf-fIS">
@@ -40,11 +41,13 @@
                         </textField>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rfx-7L-QME">
                             <rect key="frame" x="0.0" y="67.333333333333314" width="333" height="32"/>
+                            <color key="backgroundColor" name="buttonColor"/>
                             <segments>
                                 <segment title="EUR"/>
                                 <segment title="USD"/>
                                 <segment title="GBP"/>
                             </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onAccountCurrencyChange" destination="-1" eventType="valueChanged" id="n29-3B-MUQ"/>
                             </connections>
@@ -69,11 +72,15 @@
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQd-we-jp1">
                     <rect key="frame" x="30" y="743" width="333" height="45"/>
+                    <color key="backgroundColor" name="buttonColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="HH5-X6-dq5"/>
                     </constraints>
+                    <color key="tintColor" name="buttonColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Add money"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Add money">
+                        <color key="baseBackgroundColor" name="buttonColor"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="addMoneyButtonTapped" destination="-1" eventType="touchUpInside" id="oXD-nq-UMg"/>
                     </connections>
@@ -84,7 +91,7 @@
                         <constraint firstAttribute="height" constant="45" id="2Lm-7q-jaz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxp-fg-d83" userLabel="backButton">
@@ -93,15 +100,16 @@
                         <constraint firstAttribute="height" constant="30" id="CS3-DR-vuB"/>
                         <constraint firstAttribute="width" constant="30" id="mRU-Wr-RRT"/>
                     </constraints>
+                    <color key="tintColor" name="buttonColor"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Button" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                    <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system"/>
                     <connections>
                         <action selector="backButtonTapped" destination="-1" eventType="touchUpInside" id="ipt-6J-pGG"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="backgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xQd-we-jp1" secondAttribute="bottom" constant="30" id="5Pz-Zz-X9L"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zuX-uw-0bS" secondAttribute="trailing" constant="30" id="Dna-5p-j9H"/>
@@ -120,9 +128,12 @@
     </objects>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="backgroundColor">
+            <color red="0.0" green="0.14900000393390656" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonColor">
+            <color red="0.31799998879432678" green="0.78600001335144043" blue="0.54699999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

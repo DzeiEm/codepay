@@ -21,7 +21,7 @@
 		CE498C6E294E1E9000F58C81 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6D294E1E9000F58C81 /* TransactionResponse.swift */; };
 		CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6F294F1CD100F58C81 /* UserManager.swift */; };
 		CE498C75294F5F1D00F58C81 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C74294F5F1D00F58C81 /* TransactionCell.swift */; };
-		CE498C77294F5F2C00F58C81 /* RecentTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE498C76294F5F2C00F58C81 /* RecentTransactionCell.xib */; };
+		CE498C77294F5F2C00F58C81 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE498C76294F5F2C00F58C81 /* TransactionCell.xib */; };
 		CE498C79294F65A300F58C81 /* InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C78294F65A300F58C81 /* InputData.swift */; };
 		CE498C7B294F687200F58C81 /* SendMoneyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */; };
 		CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593253294B8C8F00BE3357 /* AppDelegate.swift */; };
@@ -68,7 +68,7 @@
 		CE498C6D294E1E9000F58C81 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
 		CE498C6F294F1CD100F58C81 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		CE498C74294F5F1D00F58C81 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
-		CE498C76294F5F2C00F58C81 /* RecentTransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTransactionCell.xib; sourceTree = "<group>"; };
+		CE498C76294F5F2C00F58C81 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		CE498C78294F65A300F58C81 /* InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputData.swift; sourceTree = "<group>"; };
 		CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyErrors.swift; sourceTree = "<group>"; };
 		CE593250294B8C8F00BE3357 /* jmecodepay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmecodepay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CE498C74294F5F1D00F58C81 /* TransactionCell.swift */,
-				CE498C76294F5F2C00F58C81 /* RecentTransactionCell.xib */,
+				CE498C76294F5F2C00F58C81 /* TransactionCell.xib */,
 			);
 			path = TransactionCell;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE498C77294F5F2C00F58C81 /* RecentTransactionCell.xib in Resources */,
+				CE498C77294F5F2C00F58C81 /* TransactionCell.xib in Resources */,
 				CE59326D294B8FFD00BE3357 /* AuthenticationView.xib in Resources */,
 				CED76F6E295350AC0085EE83 /* EmptyTransactionCell.xib in Resources */,
 				CE59327A294B99B500BE3357 /* RegisterView.xib in Resources */,

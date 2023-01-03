@@ -90,8 +90,9 @@ extension LoginViewController {
         errorLabel.isHidden = false
     }
     
-    fileprivate func navigateToHome(_ account: AccountResponse) {
+    fileprivate func navigateToHome(_ account: AccountResponse?) {
         let homeScreen = HomeViewController()
+        homeScreen.currrentUserAccount = account
         homeScreen.modalPresentationStyle = .fullScreen
         present(homeScreen, animated: true)
     }
