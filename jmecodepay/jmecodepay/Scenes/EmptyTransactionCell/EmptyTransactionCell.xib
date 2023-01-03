@@ -29,6 +29,9 @@
                     <constraint firstItem="8aM-TQ-U0w" firstAttribute="top" secondItem="KVl-B6-M1p" secondAttribute="top" constant="10" id="is4-D3-qlW"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="8aM-TQ-U0w" id="YCQ-Yh-hRf"/>
+            </connections>
             <point key="canvasLocation" x="60.305343511450381" y="56.338028169014088"/>
         </tableViewCell>
     </objects>

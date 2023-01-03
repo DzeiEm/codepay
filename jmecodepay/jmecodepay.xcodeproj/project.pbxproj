@@ -41,7 +41,7 @@
 		CE593287294BA6B800BE3357 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593286294BA6B800BE3357 /* SendMoneyViewController.swift */; };
 		CE593289294BA6DB00BE3357 /* SendMoneyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE593288294BA6DB00BE3357 /* SendMoneyView.xib */; };
 		CE59328C294BB1D100BE3357 /* AllTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59328B294BB1D100BE3357 /* AllTransactionsViewController.swift */; };
-		CE59328E294BB1F600BE3357 /* AllTransactionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59328D294BB1F600BE3357 /* AllTransactionsView.xib */; };
+		CE59328E294BB1F600BE3357 /* AllTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59328D294BB1F600BE3357 /* AllTransactionView.xib */; };
 		CE593297294BB4F300BE3357 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593296294BB4F300BE3357 /* APIErrors.swift */; };
 		CE593299294BB50400BE3357 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593298294BB50400BE3357 /* APIEndpoints.swift */; };
 		CE59329B294BB52400BE3357 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59329A294BB52400BE3357 /* APIManager.swift */; };
@@ -90,7 +90,7 @@
 		CE593286294BA6B800BE3357 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
 		CE593288294BA6DB00BE3357 /* SendMoneyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendMoneyView.xib; sourceTree = "<group>"; };
 		CE59328B294BB1D100BE3357 /* AllTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactionsViewController.swift; sourceTree = "<group>"; };
-		CE59328D294BB1F600BE3357 /* AllTransactionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTransactionsView.xib; sourceTree = "<group>"; };
+		CE59328D294BB1F600BE3357 /* AllTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTransactionView.xib; sourceTree = "<group>"; };
 		CE593296294BB4F300BE3357 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		CE593298294BB50400BE3357 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		CE59329A294BB52400BE3357 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				CE59328B294BB1D100BE3357 /* AllTransactionsViewController.swift */,
-				CE59328D294BB1F600BE3357 /* AllTransactionsView.xib */,
+				CE59328D294BB1F600BE3357 /* AllTransactionView.xib */,
 			);
 			path = AllTransactions;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */,
 				CEFD54E5295229BD00AD8AB4 /* TransactionDetailsView.xib in Resources */,
 				CE593285294BA27000BE3357 /* AddMoneyView.xib in Resources */,
-				CE59328E294BB1F600BE3357 /* AllTransactionsView.xib in Resources */,
+				CE59328E294BB1F600BE3357 /* AllTransactionView.xib in Resources */,
 				CE59327F294B9E1E00BE3357 /* HomeView.xib in Resources */,
 				CE593289294BA6DB00BE3357 /* SendMoneyView.xib in Resources */,
 			);

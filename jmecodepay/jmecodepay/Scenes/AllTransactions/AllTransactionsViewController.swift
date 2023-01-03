@@ -8,6 +8,7 @@ class AllTransactionViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     @IBAction func backButtonTapped() {
+        self.dismiss(animated: true)
     
     }
     

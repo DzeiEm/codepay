@@ -66,13 +66,13 @@ class HomeViewController: UIViewController {
         guard let account = currrentUserAccount else { return }
         print("ACOUNT: \(account)")
         balanceLabel.text = "\(Double(account.balance)),\(account.currency)"
-        //tableView.reloadData()
+        tableView.reloadData()
     }
     
 }
 
 
-extension HomeViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let transactions = accountTransactions else {
@@ -86,10 +86,6 @@ extension HomeViewController: UITableViewDelegate {
         }
     }
     
-}
-
-
-extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
@@ -126,8 +122,8 @@ extension HomeViewController: UITableViewDataSource {
             
         }
     }
+    
 }
-
 
 extension HomeViewController: AddMoneyViewControllerDelegate {
     
