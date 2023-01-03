@@ -209,97 +209,97 @@ extension APIManager {
     
     
     
-//    func updateUserAccount(account: AccountResponse, phoneNumber: String?, currency: String?, amount: Double?, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
-//
-//        guard let url = APIEndpoints.accountId(account: account).url else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//        var updateAccount = AccountResponse(id: account.id,
-//                                            phoneNumber: account.phoneNumber,
-//                                            currency: account.currency,
-//                                            balance: account.balance)
-//
-//        if let currency = currency  {
-//            updateAccount.currency = currency
-//        }
-//
-//        if let amount = amount  {
-//            updateAccount.balance += amount
-//        }
-//
-//        if let phoneNumber = phoneNumber {
-//            updateAccount.phoneNumber = phoneNumber
-//        }
-//
-//        guard let transactionRequest = try? encoder.encode(updateAccount)  else {
-//            completion(.failure(.serializationError))
-//            return
-//        }
-//
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = HTTPMethod.put
-//        urlRequest.httpBody = transactionRequest
-//
-//        urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
-//            if let error = error {
-//                completion(.failure(.parsingError))
-//            }
-//
-//            guard let data = data,
-//                  let accountResponse = try? decoder.decode(AccountResponse.self, from: data) else {
-//                completion(.failure(.parsingError))
-//                return
-//            }
-//            completion(.success(accountResponse))
-//        }).resume()
-//    }
-//
-//
-//    func sendMoney(sender: AccountResponse,
-//                   receiver: AccountResponse,
-//                   amount: Double?,
-//                   currency: String,
-//                   reference: String, _ completion: @escaping(Result<TransactionResponse, APIErrors>) -> Void) {
-//
-//        let createOn = Int(Date().timeIntervalSince1970)
-//
-//        guard let url = APIEndpoints.transaction.url else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//
-//        let transactionResponse = TransactionResponse(id: "",
-//                                                      senderId: sender.phoneNumber,
-//                                                      receiverId: receiver.phoneNumber,
-//                                                      amount: amount,
-//                                                      currency: currency,
-//                                                      createdOn: createOn,
-//                                                      reference: reference)
-//
-//        guard let transactionResponse = try? encoder.encode(transactionResponse) else {
-//            completion(.failure(.serializationError))
-//            return
-//        }
-//
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = HTTPMethod.post
-//        urlRequest.httpBody = transactionResponse
-//
-//
-//        urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
-//            if let error = error {
-//                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-//            }
-//
-//            guard let data = data,
-//                  let userResponse = try? decoder.decode(TransactionResponse.self, from: data) else {
-//                completion(.failure(.parsingError))
-//                return
-//            }
-//            completion(.success(userResponse))
-//        }).resume()
-//    }
+    func updateUserAccount(account: AccountResponse, phoneNumber: String?, currency: String?, amount: Double?, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
+
+        guard let url = APIEndpoints.accountId(account: account).url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        var updateAccount = AccountResponse(id: account.id,
+                                            phoneNumber: account.phoneNumber,
+                                            currency: account.currency,
+                                            balance: account.balance)
+
+        if let currency = currency  {
+            updateAccount.currency = currency
+        }
+
+        if let amount = amount  {
+            updateAccount.balance += amount
+        }
+
+        if let phoneNumber = phoneNumber {
+            updateAccount.phoneNumber = phoneNumber
+        }
+
+        guard let transactionRequest = try? encoder.encode(updateAccount)  else {
+            completion(.failure(.serializationError))
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.put
+        urlRequest.httpBody = transactionRequest
+
+        urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
+            if let error = error {
+                completion(.failure(.parsingError))
+            }
+
+            guard let data = data,
+                  let accountResponse = try? decoder.decode(AccountResponse.self, from: data) else {
+                completion(.failure(.parsingError))
+                return
+            }
+            completion(.success(accountResponse))
+        }).resume()
+    }
+
+
+    func sendMoney(sender: AccountResponse,
+                   receiver: AccountResponse,
+                   amount: Double?,
+                   currency: String,
+                   reference: String, _ completion: @escaping(Result<TransactionResponse, APIErrors>) -> Void) {
+
+        let createOn = Int(Date().timeIntervalSince1970)
+
+        guard let url = APIEndpoints.transaction.url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+
+        let transactionResponse = TransactionResponse(id: "",
+                                                      senderId: sender.phoneNumber,
+                                                      receiverId: receiver.phoneNumber,
+                                                      amount: amount,
+                                                      currency: currency,
+                                                      createdOn: createOn,
+                                                      reference: reference)
+
+        guard let transactionResponse = try? encoder.encode(transactionResponse) else {
+            completion(.failure(.serializationError))
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.post
+        urlRequest.httpBody = transactionResponse
+
+
+        urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
+            if let error = error {
+                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            }
+
+            guard let data = data,
+                  let userResponse = try? decoder.decode(TransactionResponse.self, from: data) else {
+                completion(.failure(.parsingError))
+                return
+            }
+            completion(.success(userResponse))
+        }).resume()
+    }
 }

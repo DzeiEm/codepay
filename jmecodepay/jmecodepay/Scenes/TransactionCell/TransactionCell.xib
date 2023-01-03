@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="107" id="9RU-Ye-mT5">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="107" id="9RU-Ye-mT5" customClass="TransactionCell" customModule="jmecodepay" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="407" height="107"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9RU-Ye-mT5" id="pGN-e6-B6A">
@@ -69,6 +69,12 @@
                     <constraint firstAttribute="trailing" secondItem="TX4-gN-bTN" secondAttribute="trailing" id="zJy-ca-jF3"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="amountlabel" destination="TX4-gN-bTN" id="nix-gC-kIO"/>
+                <outlet property="dateLabel" destination="Mlr-OF-4nT" id="PxY-pb-91f"/>
+                <outlet property="receiverLabel" destination="Rql-fP-xwj" id="ZND-6I-AeO"/>
+                <outlet property="subjectLabel" destination="8Lm-l7-BV5" id="UAQ-aP-CVs"/>
+            </connections>
             <point key="canvasLocation" x="174.80916030534351" y="-5.9859154929577469"/>
         </tableViewCell>
     </objects>

@@ -39,8 +39,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTransactionCell()
-        configureEmptyCell()
         setupTableView()
         reloadScreenData()
         
@@ -59,7 +57,7 @@ class HomeViewController: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 30
+        tableView.rowHeight = 100
     }
     
     func reloadScreenData() {
@@ -75,22 +73,23 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let transactions = accountTransactions else {
+        
+        var transactions = accountTransactions
+        
+        if transactions?.count == 0 {
+            configureEmptyCell()
             return 1
-        }
-        if transactions.count > 5 {
-            return 5
         } else {
-            print("TRANSACTION COUNT: \(transactions.count)")
-            return transactions.count
+            configureTransactionCell()
+            return 5
         }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            configureEmptyCell()
-            
+           
             let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTransactionCell", for: indexPath)
             
             guard let emptyCell = cell as? EmptyTransactionCell else {
@@ -100,7 +99,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             return emptyCell
         } else {
-            configureTransactionCell()
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath)
            
             guard let transactionCell = cell as? TransactionCell,

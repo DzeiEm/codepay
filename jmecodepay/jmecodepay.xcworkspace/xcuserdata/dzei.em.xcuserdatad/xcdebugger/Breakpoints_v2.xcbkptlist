@@ -388,7 +388,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6256434B-B2A6-4A10-85DA-5060E60EFC3F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -404,7 +404,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "637906C0-1F30-4994-A062-9B77BB36F028"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -468,7 +468,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "791B26B3-78D2-478B-8998-F762CBC16725"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -516,7 +516,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8D5D6874-E4EE-49FB-9E79-988A4971CCAE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -532,7 +532,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D2A7A0C6-BB6D-4D46-81B6-202737795165"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -818,7 +818,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9ED9B8C2-D41D-4E60-B2DD-89BC7211CCA5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -866,7 +866,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FAC0D014-8653-4D62-8E70-2812B7CB5918"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -882,7 +882,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A4F8E305-0988-4E44-83E0-DA3C482A9B0E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -914,7 +914,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "369CC851-FEC8-4917-B97C-E81D78E11A87"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -930,7 +930,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0B0A98C1-0419-4DB2-8B8D-FDB4D8B16796"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -946,7 +946,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9D250B5A-0FA8-46CA-B803-DDF5FAA3E7F6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -994,7 +994,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4139C12A-6FFC-42EA-8EC0-6BC12F61A175"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1010,7 +1010,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3154B2EF-2121-4912-9234-A0F8B3DD12D6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1026,7 +1026,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DEAEF089-9A56-48FA-B45B-015DDD147888"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1074,7 +1074,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "35340D1A-FB9D-44C6-B3C0-D767873F39CD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1138,7 +1138,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E09D55B1-521D-4531-87D4-D3074ED11217"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1154,7 +1154,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "383A8D3F-E0D7-45F3-B4A8-B3FBA721F2A9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1599,7 +1599,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5149CBE6-5669-44C5-9F64-E1628AEFFAC4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1615,7 +1615,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2A19B5B0-5644-489A-8192-CB93459A103E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1711,7 +1711,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7BA29946-E861-4C65-A974-B4EA083C5210"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1733,8 +1733,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1743,19 +1743,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DC80E0F2-4528-4327-8906-005FD49F40B5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "DC80E0F2-4528-4327-8906-005FD49F40B5 - 4903f54e1281a208"
+                  uuid = "DC80E0F2-4528-4327-8906-005FD49F40B5 - 4903f54e1281a3b5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1765,12 +1765,12 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
                   offsetFromSymbolStart = "396">
                </Location>
                <Location
-                  uuid = "DC80E0F2-4528-4327-8906-005FD49F40B5 - 4903f54e1281a208"
+                  uuid = "DC80E0F2-4528-4327-8906-005FD49F40B5 - 4903f54e1281a3b5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1780,8 +1780,8 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
                   offsetFromSymbolStart = "456">
                </Location>
             </Locations>
@@ -1797,8 +1797,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
@@ -1875,8 +1875,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1891,8 +1891,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1901,7 +1901,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C343B59C-97F3-438D-9C6B-E759DC7E97E3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -1917,7 +1917,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1AFC94FE-CB90-4257-B2A0-CFE9695F3777"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Login/LoginViewController.swift"
@@ -1933,7 +1933,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "04E830B4-B4E0-4453-986F-889A3595C0E6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Login/LoginViewController.swift"
@@ -1949,7 +1949,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B8A61E8A-406C-45DC-A9D3-E63C06B7CAA1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Login/LoginViewController.swift"
@@ -1965,7 +1965,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D2843DE9-C6BA-4692-BC06-B6AD1055F35D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Login/LoginViewController.swift"
@@ -1981,7 +1981,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3375C87D-847D-4961-A3E7-FE69384A8B7F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Login/LoginViewController.swift"
@@ -1997,7 +1997,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D013007D-000D-423E-8D55-011E481E0939"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Login/LoginViewController.swift"
@@ -2029,7 +2029,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DDDF46E5-218E-4856-A54D-C001A0DE40D1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/API/APIManager.swift"
@@ -2045,14 +2045,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7EC6E5FB-C01E-41E1-A1B0-1C02CC7DE80D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2067,8 +2067,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2077,19 +2077,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8C2B8627-1488-4273-A9DD-532BE4986862"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "reloadScreenData()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8C2B8627-1488-4273-A9DD-532BE4986862 - 6cba19e1466582ed"
+                  uuid = "8C2B8627-1488-4273-A9DD-532BE4986862 - 6cba19e1466582af"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2099,12 +2099,12 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
-                  uuid = "8C2B8627-1488-4273-A9DD-532BE4986862 - 6cba19e1466582ed"
+                  uuid = "8C2B8627-1488-4273-A9DD-532BE4986862 - 6cba19e1466582af"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2114,8 +2114,8 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
                   offsetFromSymbolStart = "141">
                </Location>
             </Locations>
@@ -2125,14 +2125,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D4AD43BE-CE30-497E-9E24-92DD36980446"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "reloadScreenData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2141,14 +2141,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "92D334D2-5253-4652-A0E8-176511662FB9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2220,38 +2220,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AC434B82-E6F9-4D7B-BDF5-056745BC5CC1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "770A625C-CDE2-4355-AA7C-E76527B8A9A1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "007EBC15-E361-44F5-83C1-BB22BA478C85"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -2259,8 +2227,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
@@ -2301,19 +2269,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C2357129-5FAE-4C91-A8DE-52EA322BD29B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C2357129-5FAE-4C91-A8DE-52EA322BD29B - f551d60b29341081"
+                  uuid = "C2357129-5FAE-4C91-A8DE-52EA322BD29B - f551d60b2934136a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2323,12 +2291,12 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
                   offsetFromSymbolStart = "502">
                </Location>
                <Location
-                  uuid = "C2357129-5FAE-4C91-A8DE-52EA322BD29B - 988eb9564af495ff"
+                  uuid = "C2357129-5FAE-4C91-A8DE-52EA322BD29B - 988eb9564af4945a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2338,8 +2306,8 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
                   offsetFromSymbolStart = "69">
                </Location>
             </Locations>
@@ -2349,7 +2317,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4A055BF3-F133-4616-B991-ED634A449E84"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
@@ -2358,6 +2326,230 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "viewAllTransactionsTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC12C723-F546-4361-98AA-FDAAC09CB036"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/API/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "checkIsUserExist(phoneNumber:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B7C34DA-99CF-498A-A645-4A8ED837898F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/API/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "createAccount(phoneNumber:currency:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D852AB96-8AA0-4A87-8E5E-5FF34C00E4E3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "921C0FB9-28AC-46F6-8796-1A954A0F0E50"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87A1F62F-6363-4528-B4A4-0BE9E6964B62"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D42741FF-D3A3-4DC5-A295-99160652AB21"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EBBEB90-80A0-463B-A1D7-39D3B83547FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "addMoneyButtonTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83E92E83-D723-419E-AF03-2ECF4F5C7832"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "addMoneyButtonTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7AC5AB5-B792-48DA-8E6C-2BFCB959C67A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "isAmountValid(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F61B1EEF-A6C8-48F6-9116-91C651B29F9C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "isAmountValid(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F759C1F-DD4F-4980-99DF-245DA469E839"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "isAmountValid(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F759C1F-DD4F-4980-99DF-245DA469E839 - 325b9ceccfb033b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "jmecodepay.AddMoneyViewController.addMoney() -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "833">
+               </Location>
+               <Location
+                  uuid = "7F759C1F-DD4F-4980-99DF-245DA469E839 - b3148c3b6dba6201"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;jmecodepay.AccountResponse, jmecodepay.APIErrors&gt;) -&gt; () in jmecodepay.AddMoneyViewController.addMoney() -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/AddMoney/AddMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "206">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9F7FC2B-CA42-4460-96B4-DD7B651FE6E3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

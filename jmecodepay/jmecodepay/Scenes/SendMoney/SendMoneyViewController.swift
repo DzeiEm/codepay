@@ -10,6 +10,9 @@ class SendMoneyViewController: UIViewController {
     @IBOutlet private weak var amountTextfield: UITextField!
     @IBOutlet private weak var subjectTextfield: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
+    weak var delegate: AddMoneyViewControllerDelegate?
+    var currentAccount: AccountResponse?
+    let apiManager = APIManager()
     
 
     @IBAction func backButtonTapped() {
@@ -28,6 +31,25 @@ class SendMoneyViewController: UIViewController {
     
     
 }
+
+extension SendMoneyViewController {
+    
+    func sendMoney() {
+        
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
 
 extension SendMoneyViewController {
     
