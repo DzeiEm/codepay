@@ -13,7 +13,6 @@
 		CE1FEC0C296207A800A3C56B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FEC0B296207A800A3C56B /* CoreDataManager.swift */; };
 		CE1FEC0F296207DF00A3C56B /* jmecodepayDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1FEC0D296207DF00A3C56B /* jmecodepayDataModel.xcdatamodeld */; };
 		CE1FEC1229620D1800A3C56B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE1FEC1129620D1800A3C56B /* SnapKit */; };
-		CE1FEC1429621B3000A3C56B /* AddMoneyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FEC1329621B3000A3C56B /* AddMoneyErrors.swift */; };
 		CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C63294E013D00F58C81 /* RegistrationValidation.swift */; };
 		CE498C68294E0C7D00F58C81 /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C67294E0C7D00F58C81 /* RegistrationError.swift */; };
 		CE498C6A294E13D200F58C81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C69294E13D200F58C81 /* User.swift */; };
@@ -22,8 +21,6 @@
 		CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C6F294F1CD100F58C81 /* UserManager.swift */; };
 		CE498C75294F5F1D00F58C81 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C74294F5F1D00F58C81 /* TransactionCell.swift */; };
 		CE498C77294F5F2C00F58C81 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE498C76294F5F2C00F58C81 /* TransactionCell.xib */; };
-		CE498C79294F65A300F58C81 /* InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C78294F65A300F58C81 /* InputData.swift */; };
-		CE498C7B294F687200F58C81 /* SendMoneyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */; };
 		CE593254294B8C8F00BE3357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593253294B8C8F00BE3357 /* AppDelegate.swift */; };
 		CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE593255294B8C8F00BE3357 /* SceneDelegate.swift */; };
 		CE59325D294B8C9000BE3357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59325C294B8C9000BE3357 /* Assets.xcassets */; };
@@ -58,7 +55,6 @@
 		CE1FEC04295F28C700A3C56B /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		CE1FEC0B296207A800A3C56B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CE1FEC0E296207DF00A3C56B /* jmecodepayDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jmecodepayDataModel.xcdatamodel; sourceTree = "<group>"; };
-		CE1FEC1329621B3000A3C56B /* AddMoneyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyErrors.swift; sourceTree = "<group>"; };
 		CE498C63294E013D00F58C81 /* RegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationValidation.swift; sourceTree = "<group>"; };
 		CE498C67294E0C7D00F58C81 /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
 		CE498C69294E13D200F58C81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -67,8 +63,6 @@
 		CE498C6F294F1CD100F58C81 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		CE498C74294F5F1D00F58C81 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		CE498C76294F5F2C00F58C81 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
-		CE498C78294F65A300F58C81 /* InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputData.swift; sourceTree = "<group>"; };
-		CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyErrors.swift; sourceTree = "<group>"; };
 		CE593250294B8C8F00BE3357 /* jmecodepay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmecodepay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE593253294B8C8F00BE3357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE593255294B8C8F00BE3357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,7 +225,7 @@
 		CE593276294B995700BE3357 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				CE593295294BB4DC00BE3357 /* Response */,
+				CE1FEC04295F28C700A3C56B /* TokenResponse.swift */,
 				CE498C69294E13D200F58C81 /* User.swift */,
 				CE498C6B294E1E5D00F58C81 /* AccountResponse.swift */,
 				CE498C6D294E1E9000F58C81 /* TransactionResponse.swift */,
@@ -256,7 +250,6 @@
 			children = (
 				CE593282294BA24C00BE3357 /* AddMoneyViewController.swift */,
 				CE593284294BA27000BE3357 /* AddMoneyView.xib */,
-				CE1FEC1329621B3000A3C56B /* AddMoneyErrors.swift */,
 			);
 			path = AddMoney;
 			sourceTree = "<group>";
@@ -264,10 +257,8 @@
 		CE593281294BA23500BE3357 /* SendMoney */ = {
 			isa = PBXGroup;
 			children = (
-				CE498C7A294F687200F58C81 /* SendMoneyErrors.swift */,
 				CE593286294BA6B800BE3357 /* SendMoneyViewController.swift */,
 				CE593288294BA6DB00BE3357 /* SendMoneyView.xib */,
-				CE498C78294F65A300F58C81 /* InputData.swift */,
 			);
 			path = SendMoney;
 			sourceTree = "<group>";
@@ -279,14 +270,6 @@
 				CE59328D294BB1F600BE3357 /* AllTransactionView.xib */,
 			);
 			path = AllTransactions;
-			sourceTree = "<group>";
-		};
-		CE593295294BB4DC00BE3357 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				CE1FEC04295F28C700A3C56B /* TokenResponse.swift */,
-			);
-			path = Response;
 			sourceTree = "<group>";
 		};
 		CEFD54E82953502300AD8AB4 /* EmptyTransactionCell */ = {
@@ -444,7 +427,6 @@
 				CE593297294BB4F300BE3357 /* APIErrors.swift in Sources */,
 				CE498C68294E0C7D00F58C81 /* RegistrationError.swift in Sources */,
 				CE59329B294BB52400BE3357 /* APIManager.swift in Sources */,
-				CE498C79294F65A300F58C81 /* InputData.swift in Sources */,
 				CE498C70294F1CD100F58C81 /* UserManager.swift in Sources */,
 				CE498C75294F5F1D00F58C81 /* TransactionCell.swift in Sources */,
 				CE498C64294E013D00F58C81 /* RegistrationValidation.swift in Sources */,
@@ -459,12 +441,10 @@
 				CE498C6A294E13D200F58C81 /* User.swift in Sources */,
 				CE59327D294B9DFA00BE3357 /* HomeViewController.swift in Sources */,
 				CE593256294B8C8F00BE3357 /* SceneDelegate.swift in Sources */,
-				CE1FEC1429621B3000A3C56B /* AddMoneyErrors.swift in Sources */,
 				CE498C6C294E1E5D00F58C81 /* AccountResponse.swift in Sources */,
 				CE1FEC0C296207A800A3C56B /* CoreDataManager.swift in Sources */,
 				CE593283294BA24C00BE3357 /* AddMoneyViewController.swift in Sources */,
 				CED76F7029537BAC0085EE83 /* AccountManager.swift in Sources */,
-				CE498C7B294F687200F58C81 /* SendMoneyErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
