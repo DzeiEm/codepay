@@ -25,7 +25,7 @@ struct APIManager {
         sessionConfiguration.httpAdditionalHeaders = [
             HeaderKey.headerContent: HeaderValue.content
         ]
-
+        
         return URLSession(configuration: sessionConfiguration)
     }
 }
@@ -61,10 +61,10 @@ extension APIManager {
         
         
     }
-
-
+    
+    
     func createUser(phoneNumber: String, password: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
-
+        
         guard let url = APIEndpoints.user.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
@@ -76,14 +76,14 @@ extension APIManager {
             completion(.failure(APIErrors.serializationError))
             return
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethod.post
         urlRequest.httpBody = requestBodyJSON
-
+        
         urlSession.dataTask(with: urlRequest,
                             completionHandler: { data, _, error in
-
+            
             if let error = error {
                 completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
             }
@@ -98,26 +98,26 @@ extension APIManager {
     }
     
     func createAccount(phoneNumber: String, currency: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
-
+        
         guard let url = APIEndpoints.account.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
         }
-
+        
         let createAccount = AccountResponse(id: "", phoneNumber: phoneNumber, currency: currency, balance: 0.00)
         
         guard let requestBodyJSON = try? encoder.encode(createAccount) else {
             completion(.failure(APIErrors.serializationError))
             return
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethod.post
         urlRequest.httpBody = requestBodyJSON
-
+        
         urlSession.dataTask(with: urlRequest,
                             completionHandler: { data, _, error in
-
+            
             if let error = error {
                 completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
             }
@@ -133,28 +133,28 @@ extension APIManager {
     }
     
     func getToken(user: User, _ completion: @escaping(Result<TokenResponse, APIErrors>) -> Void) {
-
+        
         guard let url = APIEndpoints.getUserToken(user: user).url else {
             completion(.failure(.invalidURL))
             return
         }
-
+        
         urlSession.dataTask(with: url, completionHandler: { data, _, error in
-
+            
             if let error = error {
                 completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
             }
-
+            
             guard let data = data,
                   let tokenResponse = try? decoder.decode(TokenResponse.self, from: data) else {
                 completion(.failure(.parsingError))
                 return
             }
-
+            
             completion(.success(tokenResponse))
         }).resume()
     }
-
+    
     
     func checkIsUserExist(phoneNumber: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
         guard let url = APIEndpoints.checkForUser(phoneNumber: phoneNumber).url else {
@@ -177,35 +177,35 @@ extension APIManager {
             } else {
                 completion(.failure(.userNotFound))
             }
-
+            
         }).resume()
     }
     
     func getUserTransactions(phoneNumber: String, _ completion: @escaping(Result<[TransactionResponse], APIErrors>)  -> Void) {
-   
-           guard let url = APIEndpoints.account.url  else {
-               completion(.failure(APIErrors.invalidURL))
-               return
-           }
-   
-           urlSession.dataTask(with: url,
-                               completionHandler: { data, _, error in
-   
-               if let error = error {
-                   completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
-               }
-   
-               guard let data = data,
-                     let transactionResponse = try? decoder.decode([TransactionResponse].self, from: data)
-               else {
-                   completion(.failure(.parsingError))
-                   return
-               }
-               completion(.success(transactionResponse))
-           }).resume()
-   
-       }
-   
+        
+        
+        guard let url = APIEndpoints.getUserTransactions(phoneNumber: phoneNumber).url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        urlSession.dataTask(with: url,
+                            completionHandler: { data, _, error in
+            
+            if let error = error {
+                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            }
+            
+            guard let data = data,
+                  let transactionResponse = try? decoder.decode([TransactionResponse].self, from: data)
+            else {
+                completion(.failure(.parsingError))
+                return
+            }
+            completion(.success(transactionResponse))
+        }).resume()
+        
+    }
+    
     
     
     
@@ -213,69 +213,66 @@ extension APIManager {
                            phoneNumber: String?,
                            currency: String?,
                            amount: Double?, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void ) {
-
+        
         guard let url = APIEndpoints.accountId(account: account).url else {
             completion(.failure(.invalidURL))
             return
         }
-
+        
         var updateAccount = AccountResponse(id: account.id,
                                             phoneNumber: account.phoneNumber,
                                             currency: account.currency,
                                             balance: account.balance)
-
+        
         if let currency = currency  {
             updateAccount.currency = currency
         }
-
+        
         if let amount = amount  {
             updateAccount.balance += amount
         }
-
+        
         if let phoneNumber = phoneNumber {
             updateAccount.phoneNumber = phoneNumber
         }
-
+        
         guard let transactionRequest = try? encoder.encode(updateAccount) else {
-            print("UPDATE USEr Acc func")
             completion(.failure(.serializationError))
             return
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethod.put
         urlRequest.httpBody = transactionRequest
-
-        urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
-            if let error = error {
-                completion(.failure(.parsingError))
-            }
-
-            guard let data = data,
-                  let accountResponse = try? decoder.decode(AccountResponse.self, from: data) else {
-                
+        
+        urlSession.dataTask(with: urlRequest, completionHandler: { data, request, error in
+            guard let data = data else {
                 completion(.failure(.serializationError))
+                return
+            }
+            guard let accountResponse = try? decoder.decode(AccountResponse.self, from: data) else {
+                completion(.failure(.parsingError))
                 return
             }
             completion(.success(accountResponse))
         }).resume()
     }
-
-
+    
+    
     func sendMoney(sender: AccountResponse,
                    receiver: AccountResponse,
                    amount: Double?,
                    currency: String,
                    reference: String, _ completion: @escaping(Result<TransactionResponse, APIErrors>) -> Void) {
-
+        
         let createOn = Int(Date().timeIntervalSince1970)
-
+        
         guard let url = APIEndpoints.transaction.url else {
             completion(.failure(.invalidURL))
             return
         }
-
-
+        
+        
         let transactionResponse = TransactionResponse(id: "",
                                                       senderId: sender.phoneNumber,
                                                       receiverId: receiver.phoneNumber,
@@ -283,25 +280,23 @@ extension APIManager {
                                                       currency: currency,
                                                       createdOn: createOn,
                                                       reference: reference)
-
+        
         guard let transactionResponse = try? encoder.encode(transactionResponse) else {
             completion(.failure(.serializationError))
-            print("sendMoney func apimanager")
             return
         }
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethod.post
         urlRequest.httpBody = transactionResponse
-
-
+        
+        
         urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
-            if let error = error {
-                completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
+            guard let data = data else {
+                completion(.failure(.parsingError))
+                return
             }
-
-            guard let data = data,
-                  let userResponse = try? decoder.decode(TransactionResponse.self, from: data) else {
+            guard let userResponse = try? decoder.decode(TransactionResponse.self, from: data) else {
                 completion(.failure(.parsingError))
                 return
             }

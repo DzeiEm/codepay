@@ -11,6 +11,16 @@ class HomeViewController: UIViewController {
     var currrentUserAccount: AccountResponse?
     private var accountTransactions: [TransactionResponse]? = []
     private let apiManager = APIManager()
+    var fetchedTransactions = [TransactionResponse]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchTransactions()
+        setupTableView()
+        reloadScreenData()
+    }
+    
+    
     
     @IBAction func logoutBUttonTapped() {
         self.presentingViewController?.dismiss(animated: true)
@@ -35,15 +45,9 @@ class HomeViewController: UIViewController {
     
     @IBAction func viewAllTransactionsTapped() {
         let viewAllTransactionScreen = AllTransactionViewController()
+        viewAllTransactionScreen.currrentUserAccount = currrentUserAccount
         viewAllTransactionScreen.modalPresentationStyle = .fullScreen
         present(viewAllTransactionScreen, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableView()
-        reloadScreenData()
-        
     }
     
     func configureTransactionCell() {
@@ -59,7 +63,7 @@ class HomeViewController: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 100
+        //tableView.rowHeight = 60
     }
     
     func reloadScreenData() {
@@ -69,6 +73,30 @@ class HomeViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func fetchTransactions() {
+        guard let userAcc = currrentUserAccount else {
+            return
+        }
+        
+        apiManager.getUserTransactions(phoneNumber: userAcc.phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let userTransactions):
+                self?.setTransactions(userTransactions)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                print(userTransactions)
+            }
+        }
+        print("already")
+    }
+    
+    func setTransactions(_ transactions: [TransactionResponse]) {
+        fetchedTransactions = transactions
+    }
+    
 }
 
 
@@ -76,49 +104,45 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var transactions = accountTransactions
+        var userTransactions = fetchedTransactions
         
-        if transactions?.count == 0 {
+        if userTransactions.count == 0 {
             configureEmptyCell()
             return 1
         } else {
             configureTransactionCell()
             return 5
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
-           
+        if fetchedTransactions.count == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTransactionCell", for: indexPath)
-            
+
             guard let emptyCell = cell as? EmptyTransactionCell else {
                 return cell
             }
             emptyCell.configure()
-            
+
             return emptyCell
-        } else {
+        }
+        else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath)
-           
-            guard let transactionCell = cell as? TransactionCell,
-                  let account = currrentUserAccount,
-                  let accountTransactions = accountTransactions else {
+            
+            guard let transactionCell = cell as? TransactionCell else {
                 return cell
             }
             
-            let sortedTransactions = accountTransactions.sorted { $0.createdOn > $1.createdOn }
-            let transaction = sortedTransactions[indexPath.row]
+        
+
+            transactionCell.configureCell(receiver: fetchedTransactions[indexPath.row].receiverId,
+                                          subject: fetchedTransactions[indexPath.row].reference,
+                                          date: fetchedTransactions[indexPath.row].createdOn,
+                                          amount: Double(fetchedTransactions[indexPath.row].amount!),
+                                          account: currrentUserAccount!)
             
-            
-            transactionCell.configureCell(receiver: transaction.receiverId,
-                                          subject: transaction.reference,
-                                          date: transaction.createdOn,
-                                          amount: transaction.amount!,
-                                          account: account)
             return transactionCell
             
         }
@@ -143,8 +167,7 @@ extension HomeViewController: AddMoneyViewControllerDelegate {
                 }
             }
         }
-        
-        guard let account = currrentUserAccount else { return }
+
         apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
             switch result {
             case .failure(let error):

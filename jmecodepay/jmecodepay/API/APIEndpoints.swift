@@ -10,6 +10,7 @@ enum APIEndpoints {
     case transaction
     case checkForUser(phoneNumber: String)
     case checkForAccount(phoneNumber: String)
+    case getUserTransactions(phoneNumber: String)
     case getUserToken(user: User)
     
 
@@ -24,17 +25,23 @@ enum APIEndpoints {
         case .accountId(let account):
             let accountId = account.id
             return makeURL(endpoint: "account\(accountId)")
-        
+        case .getUserTransactions(let phoneNumber):
+            let queryItem = URLQueryItem(name: search, value: phoneNumber)
+            return makeURL(endpoint: "transaction", queryItems: [queryItem])
+            
+            
+            
+            
+            
         case .user:
             return makeURL(endpoint: "user")
         case .account:
             return makeURL(endpoint: "account")
-        
-        case .transaction:
-            return makeURL(endpoint: "transaction")
         case .getUserToken(let user):
             let id = user.id
             return makeURL(endpoint: "user\(id)")
+        case .transaction:
+            return makeURL(endpoint: "transaction")
         }
     }
 }
@@ -47,6 +54,10 @@ private extension APIEndpoints {
     
     var phone: String {
         "phoneNumber"
+    }
+    
+    var search: String {
+        "search"
     }
     
     func makeURL(endpoint: String, queryItems: [URLQueryItem]? = nil) -> URL? {

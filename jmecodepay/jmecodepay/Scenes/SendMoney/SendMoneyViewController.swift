@@ -10,8 +10,8 @@ class SendMoneyViewController: UIViewController {
     @IBOutlet private weak var amountTextfield: UITextField!
     @IBOutlet private weak var subjectTextfield: UITextField!
     @IBOutlet weak var accountCurrencySegmentControlLabel: UISegmentedControl!
-    
     @IBOutlet private weak var errorLabel: UILabel!
+    
     weak var delegate: AddMoneyViewControllerDelegate?
     var currentAccount: AccountResponse?
     let apiManager = APIManager()
@@ -19,6 +19,11 @@ class SendMoneyViewController: UIViewController {
     var currency = ["EUR", "USD", "GBP"]
     private var selectedAccount = "EUR"
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        errorLabel.isHidden = true
+    }
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true)
@@ -44,17 +49,15 @@ class SendMoneyViewController: UIViewController {
             break
         }
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        errorLabel.isHidden = true
-    }
-    
-    
 }
 
 extension SendMoneyViewController {
+    
+//    func display(message: String) {
+//        errorLabel.text = message
+//        errorLabel.isHidden = false
+//        errorLabel.textColor = .red
+//    }
     
     func sendMoney() {
         guard let currentAccount = currentAccount,
@@ -67,7 +70,8 @@ extension SendMoneyViewController {
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self?.display(message: error.apiErrorMessage)
+                    print(error)
+                    //self?.display(message: error.apiErrorMessage)
                 }
             case .success(let account):
                 DispatchQueue.main.async {
@@ -78,20 +82,23 @@ extension SendMoneyViewController {
                         Double(amount)! <= currentAccount.balance &&
                         Double(amount)! > 0 {
                         sendMoneyRequest(account: account)
+                    } else {
+                        self?.displayAlert(message: "Insuficient funds or acurrency")
                     }
                 }
             }
-            
         }
         
         func sendMoneyRequest(account: AccountResponse) {
             apiManager.sendMoney(sender: currentAccount,
                                  receiver: account,
                                  amount: Double(amountTextfield.text!),
-                                 currency: currentAccount.currency, reference: reference) { [weak self] result in
+                                 currency: currentAccount.currency,
+                                 reference: reference) { [weak self] result in
                 switch result {
                 case .failure(let error):
-                    self?.display(message: error.apiErrorMessage)
+                    print(error)
+                   // self?.display(message: error.apiErrorMessage)
                 case .success:
                     DispatchQueue.main.async {
                         self?.displayAlert(message: "Transaction completed")
@@ -105,7 +112,8 @@ extension SendMoneyViewController {
                 
                 switch result {
                 case .failure(let error):
-                    self?.display(message: error.apiErrorMessage)
+                    print(error)
+                    //self?.display(message: error.apiErrorMessage)
                 case .success:
                     print("All good, updated")
                 }
@@ -116,7 +124,8 @@ extension SendMoneyViewController {
                                          amount: (-Double(amountTextfield.text!)!)) { [weak self] result in
                 switch result {
                 case .failure(let error):
-                    self?.display(message: error.apiErrorMessage)
+                    print(error)
+                   // self?.display(message: error.apiErrorMessage)
                 case .success:
                     self?.delegate?.onBalanceChange()
                 }
@@ -139,13 +148,6 @@ extension SendMoneyViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
-    
-    func display(message: String) {
-        errorLabel.text = message
-        errorLabel.isHidden = false
-        errorLabel.textColor = .red
-    }
-    
     func navigateToHomeScreen() {
         self.dismiss(animated: true)
     }

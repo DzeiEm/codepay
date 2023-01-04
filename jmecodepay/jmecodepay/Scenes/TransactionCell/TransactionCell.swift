@@ -10,13 +10,19 @@ class TransactionCell: UITableViewCell {
     
     
     func configureCell(receiver: String, subject: String, date: Int, amount: Double, account: AccountResponse) {
-        receiverLabel.text = "\(receiver)"
+        
+        var formatedDate = TimeInterval(date)
+        
+        
+        receiverLabel.text = "Receiver: \(receiver)"
+        subjectLabel.text = "\(subject)"
+        dateLabel.text = "\(formatedDate)"
         
         if account.phoneNumber == receiver {
-            amountlabel.text = "+ \(amount)"
+            amountlabel.text = "+ \(amount), \(account.currency)"
             amountlabel.textColor = .green
         } else {
-            amountlabel.text = "- \(amount)"
+            amountlabel.text = "- \(amount), \(account.currency)"
             amountlabel.textColor = .red
         }
     }

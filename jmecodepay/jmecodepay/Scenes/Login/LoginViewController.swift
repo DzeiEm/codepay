@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         configureButton(loginButton)
         errorLabel.isHidden = true
+        clearAllTextfields()
     }
 }
 
@@ -82,6 +83,11 @@ extension LoginViewController {
     
     fileprivate func configureButton(_ button: UIButton)  {
         button.layer.cornerRadius = 20
+    }
+    
+    fileprivate func clearAllTextfields() {
+        phoneNumberTextfield.text = ""
+        passwordTextfield.text = ""
     }
     
     fileprivate func display(message: String) {

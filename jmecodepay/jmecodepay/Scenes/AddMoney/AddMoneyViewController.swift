@@ -20,6 +20,11 @@ class AddMoneyViewController: UIViewController {
     
     var currency = ["EUR", "USD", "GBP"]
     private var selectedAccount = "EUR"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        errorLabel.isHidden = true
+    }
    
     
     @IBAction func onAccountCurrencyChange() {
@@ -45,12 +50,6 @@ class AddMoneyViewController: UIViewController {
     
     @IBAction func addMoneyButtonTapped() {
       addMoney()
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        errorLabel.isHidden = true
     }
 }
 
@@ -79,7 +78,6 @@ extension AddMoneyViewController {
                     self?.delegate?.onBalanceChange()
                 }
             }
-            
         }
         
         apiManager.sendMoney(sender: account,
@@ -109,7 +107,7 @@ extension AddMoneyViewController {
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.navigateToHomeScreen()
+            self.navigateBackToHomeScreen()
         }))
         present(alert, animated: true, completion: nil)
     }
@@ -120,7 +118,7 @@ extension AddMoneyViewController {
         errorLabel.textColor = .red
     }
     
-    func navigateToHomeScreen() {
+    func navigateBackToHomeScreen() {
         self.dismiss(animated: true)
     }
 }
