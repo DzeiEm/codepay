@@ -6,8 +6,8 @@ enum APIEndpoints {
     
     case user
     case account
-    case accountId(account: AccountResponse)
     case transaction
+    case accountId(account: AccountResponse)
     case checkForUser(phoneNumber: String)
     case checkForAccount(phoneNumber: String)
     case getUserTransactions(phoneNumber: String)
@@ -31,11 +31,6 @@ enum APIEndpoints {
         case .getUserToken(let user):
             let id = user.id
             return makeURL(endpoint: "user\(id)")
-            
-            
-            
-            
-            
         case .user:
             return makeURL(endpoint: "user")
         case .account:

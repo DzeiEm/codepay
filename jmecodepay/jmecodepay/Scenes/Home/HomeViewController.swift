@@ -7,28 +7,25 @@ class HomeViewController: UIViewController {
     
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var sendButton: UIButton!
+    @IBOutlet private weak var addButton: UIButton!
     
     var currrentUserAccount: AccountResponse?
     private var accountTransactions: [TransactionResponse]? = []
-    private let apiManager = APIManager()
     var fetchedTransactions = [TransactionResponse]()
+    private let apiManager = APIManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTransactions()
         setupTableView()
+        configureButtonsView()
         reloadScreenData()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        reloadScreenData()
-    }
-    
     
     @IBAction func logoutBUttonTapped() {
         self.presentingViewController?.dismiss(animated: true)
     }
-    
     
     @IBAction func sendButtonTapped() {
         let sendMoneyScreen = SendMoneyViewController()
@@ -37,14 +34,12 @@ class HomeViewController: UIViewController {
         present(sendMoneyScreen, animated: true)
     }
     
-    
     @IBAction func addMoneyTapped() {
         let addMoneyScreen = AddMoneyViewController()
         addMoneyScreen.account = currrentUserAccount
         addMoneyScreen.modalPresentationStyle = .fullScreen
         present(addMoneyScreen, animated: true)
     }
-    
     
     @IBAction func viewAllTransactionsTapped() {
         let viewAllTransactionScreen = AllTransactionViewController()
@@ -70,7 +65,6 @@ class HomeViewController: UIViewController {
     
     func reloadScreenData() {
         guard let account = currrentUserAccount else { return }
-        print("ACOUNT: \(account)")
         balanceLabel.text = "\(Double(account.balance)),\(account.currency)"
         tableView.reloadData()
     }
@@ -92,13 +86,11 @@ class HomeViewController: UIViewController {
                 print(userTransactions)
             }
         }
-        print("already")
     }
     
     func setTransactions(_ transactions: [TransactionResponse]) {
         fetchedTransactions = transactions
     }
-    
 }
 
 
@@ -118,18 +110,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if fetchedTransactions.count == 0 {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTransactionCell", for: indexPath)
-
             guard let emptyCell = cell as? EmptyTransactionCell else {
                 return cell
             }
             emptyCell.configure()
-
             return emptyCell
-        }
-        else {
+            
+        } else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath)
             
@@ -137,8 +127,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
             
-        
-
             transactionCell.configureCell(receiver: fetchedTransactions[indexPath.row].receiverId,
                                           subject: fetchedTransactions[indexPath.row].reference,
                                           date: fetchedTransactions[indexPath.row].createdOn,
@@ -150,43 +138,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-}
-
-extension HomeViewController: AddMoneyViewControllerDelegate {
-    
-    func onBalanceChange() {
-        guard let account = currrentUserAccount else { return }
-        apiManager.checkIsAccountExist(phoneNumber: account.phoneNumber) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.sync {
-                    self?.displayAlert(message: error.apiErrorMessage)
-                }
-            case .success(let account):
-                DispatchQueue.main.sync {
-                    self?.currrentUserAccount = account
-                    self?.reloadScreenData()
-                }
-            }
-        }
-
-        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.sync {
-                    self?.displayAlert(message: error.apiErrorMessage)
-                }
-            case .success(let transactions):
-                DispatchQueue.main.sync {
-                    self?.accountTransactions = transactions
-                    self?.reloadScreenData()
-                }
-            }
-        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        55
     }
 }
-
-
 
 
 extension HomeViewController {
@@ -208,9 +163,43 @@ extension HomeViewController {
     }
 }
 
+
+extension HomeViewController: AddMoneyViewControllerDelegate {
+    func onBalanceChange() {
+        guard let account = currrentUserAccount else { return }
+        apiManager.checkIsAccountExist(phoneNumber: account.phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayAlert(message: error.apiErrorMessage)
+                }
+            case .success(let account):
+                DispatchQueue.main.sync {
+                    self?.currrentUserAccount = account
+                    self?.reloadScreenData()
+                }
+            }
+        }
+        
+        apiManager.getUserTransactions(phoneNumber: account.phoneNumber) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    self?.displayAlert(message: error.apiErrorMessage)
+                }
+            case .success(let transactions):
+                DispatchQueue.main.sync {
+                    self?.accountTransactions = transactions
+                    self?.reloadScreenData()
+                }
+            }
+        }
+    }
+}
+
+
 extension HomeViewController {
-    
-    fileprivate func displayAlert(message: String) {
+    func displayAlert(message: String) {
         let alert = UIAlertController(title: "Ooops",
                                       message: message,
                                       preferredStyle: .alert)
@@ -222,5 +211,10 @@ extension HomeViewController {
         }))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func configureButtonsView() {
+        addButton.layer.cornerRadius = 10
+        sendButton.layer.cornerRadius = 10
     }
 }

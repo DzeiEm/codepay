@@ -4,10 +4,8 @@ import UIKit
 
 class AuthenticationViewController: UIViewController {
     
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
-   
-    
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var registerButton: UIButton!
     
     @IBAction func loginButtonTapped() {
         let loginScreen = LoginViewController()
@@ -23,6 +21,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-       
+        registerButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 10
     }
 }

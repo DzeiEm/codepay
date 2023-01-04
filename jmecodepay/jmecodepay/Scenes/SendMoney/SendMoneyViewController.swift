@@ -9,26 +9,25 @@ class SendMoneyViewController: UIViewController {
     @IBOutlet private weak var phoneNumberTextfield: UITextField!
     @IBOutlet private weak var amountTextfield: UITextField!
     @IBOutlet private weak var subjectTextfield: UITextField!
-    @IBOutlet weak var accountCurrencySegmentControlLabel: UISegmentedControl!
+    @IBOutlet private weak var accountCurrencySegmentControlLabel: UISegmentedControl!
     @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var sendMoneyButton: UIButton!
     
-    var delegate: AddMoneyViewControllerDelegate?
+    weak var delegate: AddMoneyViewControllerDelegate?
     var currentAccount: AccountResponse?
     let apiManager = APIManager()
-    
-    var currency = ["EUR", "USD", "GBP"]
+    let currency = ["EUR", "USD", "GBP"]
     private var selectedAccount = "EUR"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
+        configureButtonView()
     }
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true)
     }
-    
     
     @IBAction func sendButtonTapped() {
         sendMoney()
@@ -37,19 +36,17 @@ class SendMoneyViewController: UIViewController {
     @IBAction func onSegmentControlChange() {
         switch accountCurrencySegmentControlLabel.selectedSegmentIndex {
         case 0:
-            print(currency[0])
-             selectedAccount = currency[0]
+            selectedAccount = currency[0]
         case 1:
-            print(currency[1])
              selectedAccount = currency[1]
         case  2:
-            print(currency[2])
              selectedAccount = currency[2]
         default:
             break
         }
     }
 }
+
 
 extension SendMoneyViewController {
     
@@ -62,10 +59,11 @@ extension SendMoneyViewController {
     func sendMoney() {
         guard let currentAccount = currentAccount,
               let phoneNumber = phoneNumberTextfield.text,
-              let reference = subjectTextfield.text
+              let subject = subjectTextfield.text
         else {
             return
         }
+        
         apiManager.checkIsAccountExist(phoneNumber: phoneNumber) { [weak self] result in
             switch result {
             case .failure(let error):
@@ -90,12 +88,11 @@ extension SendMoneyViewController {
         }
         
         func sendMoneyRequest(account: AccountResponse) {
-            
             apiManager.sendMoney(sender: currentAccount,
                                  receiver: account,
                                  amount: Double(amountTextfield.text!),
                                  currency: currentAccount.currency,
-                                 reference: reference) { [weak self] result in
+                                 reference: subject) { [weak self] result in
                 switch result {
                 case .failure(let error):
                     print(error)
@@ -106,6 +103,7 @@ extension SendMoneyViewController {
                     }
                 }
             }
+            
             apiManager.updateUserAccount(account: account,
                                          phoneNumber: nil,
                                          currency: nil,
@@ -119,6 +117,7 @@ extension SendMoneyViewController {
                     print("All good, updated")
                 }
             }
+            
             apiManager.updateUserAccount(account: currentAccount,
                                          phoneNumber: nil,
                                          currency: nil,
@@ -137,9 +136,7 @@ extension SendMoneyViewController {
 
 
 extension SendMoneyViewController {
-    
- 
-    fileprivate func displayAlert(message: String) {
+    func displayAlert(message: String) {
         let alert = UIAlertController(title: "Success",
                                       message: message,
                                       preferredStyle: .alert)
@@ -149,7 +146,12 @@ extension SendMoneyViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
+    
     func navigateToHomeScreen() {
         self.dismiss(animated: true)
+    }
+    
+    func configureButtonView() {
+        sendMoneyButton.layer.cornerRadius = 10
     }
 }

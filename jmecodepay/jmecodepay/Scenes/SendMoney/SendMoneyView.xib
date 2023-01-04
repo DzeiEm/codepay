@@ -14,6 +14,7 @@
                 <outlet property="amountTextfield" destination="Tz8-tg-B0D" id="xgq-m5-MPr"/>
                 <outlet property="errorLabel" destination="N48-lv-egD" id="HhU-JZ-b2I"/>
                 <outlet property="phoneNumberTextfield" destination="FaE-vn-jvm" id="wxS-I3-mQh"/>
+                <outlet property="sendMoneyButton" destination="2MM-KX-yih" id="ue9-KP-9AC"/>
                 <outlet property="subjectTextfield" destination="2Zy-j8-yHQ" id="MrR-Fd-siI"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JBD-Jb-nbf"/>
             </connections>

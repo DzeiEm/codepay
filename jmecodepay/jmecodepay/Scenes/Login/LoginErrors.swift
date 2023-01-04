@@ -1,5 +1,4 @@
 
-
 import Foundation
 
 enum LoginErrors: Error {

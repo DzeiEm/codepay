@@ -1,5 +1,4 @@
 
-
 import Foundation
 import UIKit
 
@@ -12,38 +11,34 @@ class AddMoneyViewController: UIViewController {
     
     @IBOutlet private weak var amountTextfield: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
-    @IBOutlet weak var accountCurrencySegmentControl: UISegmentedControl!
+    @IBOutlet private weak var accountCurrencySegmentControl: UISegmentedControl!
+    @IBOutlet private weak var addMoneyButton: UILabel!
     
+    weak var delegate: AddMoneyViewControllerDelegate?
     let apiManager = APIManager()
     var account: AccountResponse?
-    var delegate: AddMoneyViewControllerDelegate?
-    
-    var currency = ["EUR", "USD", "GBP"]
+    let currency = ["EUR", "USD", "GBP"]
     private var selectedAccount = "EUR"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
+        configureButtonView()
     }
-   
     
     @IBAction func onAccountCurrencyChange() {
         switch accountCurrencySegmentControl.selectedSegmentIndex {
         case 0:
-            print(currency[0])
              selectedAccount = currency[0]
         case 1:
-            print(currency[1])
              selectedAccount = currency[1]
         case  2:
-            print(currency[2])
              selectedAccount = currency[2]
         default:
             break
         }
     }
-    
-    
+
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true)
     }
@@ -53,8 +48,8 @@ class AddMoneyViewController: UIViewController {
     }
 }
 
+
 extension AddMoneyViewController {
-    
     func addMoney() {
         guard let amountInput = amountTextfield.text,
               let account = account
@@ -68,14 +63,14 @@ extension AddMoneyViewController {
                                      currency: nil,
                                      amount: amount) { [weak self] result in
             switch result {
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.display(message: error.apiErrorMessage)
-                }
             case .success:
                 DispatchQueue.main.async {
                     self?.displayAlert(message: "Success! Money added")
                     self?.delegate?.onBalanceChange()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.display(message: error.apiErrorMessage)
                 }
             }
         }
@@ -84,25 +79,26 @@ extension AddMoneyViewController {
                              receiver: account,
                              amount: amount,
                              currency: account.currency,
-                             reference: "Added") { [weak self] result in
+                             reference: "Money has been Added") { [weak self] result in
             switch result {
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.display(message: error.apiErrorMessage)
-                }
             case .success:
                 DispatchQueue.main.async {
                     self?.displayAlert(message: "Transaction completed")
                     
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.display(message: error.apiErrorMessage)
                 }
             }
         }
     }
 }
 
+
 extension AddMoneyViewController {
     
-    fileprivate func displayAlert(message: String) {
+     func displayAlert(message: String) {
         let alert = UIAlertController(title: "Success",
                                       message: message,
                                       preferredStyle: .alert)
@@ -113,13 +109,17 @@ extension AddMoneyViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func display(message: String) {
+     func display(message: String) {
         errorLabel.text = message
         errorLabel.isHidden = false
         errorLabel.textColor = .red
     }
     
-    func navigateBackToHomeScreen() {
+     func navigateBackToHomeScreen() {
         self.dismiss(animated: true)
+    }
+    
+    func configureButtonView() {
+        addMoneyButton.layer.cornerRadius = 10
     }
 }

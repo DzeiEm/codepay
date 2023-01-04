@@ -32,9 +32,8 @@ struct APIManager {
 
 
 extension APIManager {
-    
     func checkIsAccountExist(phoneNumber: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
-        
+
         guard let url = APIEndpoints.checkForAccount(phoneNumber: phoneNumber).url else {
             completion(.failure(.invalidURL))
             return
@@ -50,6 +49,7 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
+            
             if let user = userResponse.first {
                 completion(.success(user))
                 return
@@ -58,13 +58,9 @@ extension APIManager {
                 return
             }
         }.resume()
-        
-        
     }
     
-    
     func createUser(phoneNumber: String, password: String, _ completion: @escaping(Result<User, APIErrors>) -> Void) {
-        
         guard let url = APIEndpoints.user.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
@@ -93,12 +89,12 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
+            
             completion(.success(userResponse))
         }).resume()
     }
     
     func createAccount(phoneNumber: String, currency: String, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
-        
         guard let url = APIEndpoints.account.url  else {
             completion(.failure(APIErrors.invalidURL))
             return
@@ -128,19 +124,18 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
+            
             completion(.success(accountResponse))
         }).resume()
     }
     
     func getToken(user: User, _ completion: @escaping(Result<TokenResponse, APIErrors>) -> Void) {
-        
         guard let url = APIEndpoints.getUserToken(user: user).url else {
             completion(.failure(.invalidURL))
             return
         }
         
         urlSession.dataTask(with: url, completionHandler: { data, _, error in
-            
             if let error = error {
                 completion(.failure(APIErrors.requestError(reason: error.localizedDescription)))
             }
@@ -177,17 +172,15 @@ extension APIManager {
             } else {
                 completion(.failure(.userNotFound))
             }
-            
         }).resume()
     }
     
     func getUserTransactions(phoneNumber: String, _ completion: @escaping(Result<[TransactionResponse], APIErrors>)  -> Void) {
-        
-        
         guard let url = APIEndpoints.getUserTransactions(phoneNumber: phoneNumber).url else {
             completion(.failure(.invalidURL))
             return
         }
+        
         urlSession.dataTask(with: url,
                             completionHandler: { data, _, error in
             
@@ -201,13 +194,11 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
+            
             completion(.success(transactionResponse))
         }).resume()
         
     }
-    
-    
-    
     
     func updateUserAccount(account: AccountResponse,
                            phoneNumber: String?,
@@ -250,14 +241,15 @@ extension APIManager {
                 completion(.failure(.serializationError))
                 return
             }
+            
             guard let accountResponse = try? decoder.decode(AccountResponse.self, from: data) else {
                 completion(.failure(.parsingError))
                 return
             }
+            
             completion(.success(accountResponse))
         }).resume()
     }
-    
     
     func sendMoney(sender: AccountResponse,
                    receiver: AccountResponse,
@@ -271,7 +263,6 @@ extension APIManager {
             completion(.failure(.invalidURL))
             return
         }
-        
         
         let transactionResponse = TransactionResponse(id: "",
                                                       senderId: sender.phoneNumber,
@@ -290,7 +281,6 @@ extension APIManager {
         urlRequest.httpMethod = HTTPMethod.post
         urlRequest.httpBody = transactionResponse
         
-        
         urlSession.dataTask(with: urlRequest, completionHandler: { data, response, error in
             guard let data = data else {
                 completion(.failure(.parsingError))
@@ -300,6 +290,7 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
+            
             completion(.success(userResponse))
         }).resume()
     }

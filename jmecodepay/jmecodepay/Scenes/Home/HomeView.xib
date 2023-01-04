@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="jmecodepay" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="bw6-nW-iFX" id="bBG-8i-vDm"/>
                 <outlet property="balanceLabel" destination="HJv-MQ-Dtp" id="wdF-Ku-Onb"/>
+                <outlet property="sendButton" destination="nLF-UL-J4m" id="yT6-w3-09t"/>
                 <outlet property="tableView" destination="mte-ia-tRw" id="K4E-fX-4P7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dsv-hc-xRI"/>
             </connections>

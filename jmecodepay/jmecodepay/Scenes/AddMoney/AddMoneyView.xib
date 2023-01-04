@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMoneyViewController" customModule="jmecodepay" customModuleProvider="target">
             <connections>
                 <outlet property="accountCurrencySegmentControl" destination="rfx-7L-QME" id="yzn-VH-BQ4"/>
+                <outlet property="addMoneyButton" destination="Q53-m3-c28" id="Gz5-mX-OpO"/>
                 <outlet property="amountTextfield" destination="0eq-vf-fIS" id="PFo-bB-Tub"/>
                 <outlet property="errorLabel" destination="jeZ-sb-R82" id="R9x-m4-rdY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Tzg-WY-2La"/>

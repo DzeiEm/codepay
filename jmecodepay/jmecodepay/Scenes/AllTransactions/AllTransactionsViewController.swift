@@ -13,7 +13,6 @@ class AllTransactionViewController: UIViewController {
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true)
-    
     }
     
     override func viewDidLoad() {
@@ -62,6 +61,19 @@ class AllTransactionViewController: UIViewController {
 
 
 extension AllTransactionViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let userTransactions = parsedTransactions
+        
+        if userTransactions.count == 0 {
+            configureEmptyCell()
+            return 1
+        } else {
+            configureCell()
+            return userTransactions.count
+        }
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -83,8 +95,6 @@ extension AllTransactionViewController: UITableViewDelegate, UITableViewDataSour
                 return cell
             }
             
-        
-
             transactionCell.configureCell(receiver: parsedTransactions[indexPath.row].receiverId,
                                           subject: parsedTransactions[indexPath.row].reference,
                                           date: parsedTransactions[indexPath.row].createdOn,
@@ -94,19 +104,5 @@ extension AllTransactionViewController: UITableViewDelegate, UITableViewDataSour
             return transactionCell
             
         }
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var userTransactions = parsedTransactions
-        
-        if userTransactions.count == 0 {
-            configureEmptyCell()
-            return 1
-        } else {
-            configureCell()
-            return userTransactions.count
-        }
-        
     }
 }

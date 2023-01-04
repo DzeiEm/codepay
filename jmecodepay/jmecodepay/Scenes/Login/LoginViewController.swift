@@ -12,13 +12,18 @@ class LoginViewController: UIViewController {
     let accountManager = AccountManager()
     let userManager = UserManageer()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureButton(loginButton)
+        errorLabel.isHidden = true
+        clearAllTextfields()
+    }
     
     @IBAction func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func loginButtonTapped() {
-        
         guard let phone = phoneNumberTextfield.text,
               let password = passwordTextfield.text,
               !phone.isEmpty,
@@ -26,22 +31,13 @@ class LoginViewController: UIViewController {
             display(message: AccountManager.AccountManagerError.fieldsAreEmpty.errorMessage)
             return
         }
-        
         loginUser(phoneNumber: phone, password: password)
-    }
-    
-    override func viewDidLoad() {
-        configureButton(loginButton)
-        errorLabel.isHidden = true
-        clearAllTextfields()
     }
 }
 
 
 extension LoginViewController {
-        
     func loginUser(phoneNumber: String, password: String) {
-        
         apiManager.checkIsUserExist(phoneNumber: phoneNumber) { [weak self] result in
             switch result {
             case .failure(let error):
@@ -80,9 +76,8 @@ extension LoginViewController {
 }
 
 extension LoginViewController {
-    
     fileprivate func configureButton(_ button: UIButton)  {
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 10
     }
     
     fileprivate func clearAllTextfields() {
