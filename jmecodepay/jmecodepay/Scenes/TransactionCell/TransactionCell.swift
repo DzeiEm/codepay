@@ -11,12 +11,19 @@ class TransactionCell: UITableViewCell {
     
     func configureCell(receiver: String, subject: String, date: Int, amount: Double, account: AccountResponse) {
         
-        var formatedDate = TimeInterval(date)
+        
+        let date = Date()
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .long
+        
+        var createOn = dateFormatter.string(from: date)
+     
         
         
         receiverLabel.text = "Receiver: \(receiver)"
         subjectLabel.text = "\(subject)"
-        dateLabel.text = "\(formatedDate)"
+        dateLabel.text = "\(createOn)"
         
         if account.phoneNumber == receiver {
             amountlabel.text = "+ \(amount), \(account.currency)"

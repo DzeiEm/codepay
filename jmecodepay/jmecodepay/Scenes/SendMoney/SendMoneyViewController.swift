@@ -12,7 +12,7 @@ class SendMoneyViewController: UIViewController {
     @IBOutlet weak var accountCurrencySegmentControlLabel: UISegmentedControl!
     @IBOutlet private weak var errorLabel: UILabel!
     
-    weak var delegate: AddMoneyViewControllerDelegate?
+    var delegate: AddMoneyViewControllerDelegate?
     var currentAccount: AccountResponse?
     let apiManager = APIManager()
     
@@ -90,6 +90,7 @@ extension SendMoneyViewController {
         }
         
         func sendMoneyRequest(account: AccountResponse) {
+            
             apiManager.sendMoney(sender: currentAccount,
                                  receiver: account,
                                  amount: Double(amountTextfield.text!),

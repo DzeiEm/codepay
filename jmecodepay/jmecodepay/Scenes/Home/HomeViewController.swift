@@ -20,6 +20,9 @@ class HomeViewController: UIViewController {
         reloadScreenData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reloadScreenData()
+    }
     
     
     @IBAction func logoutBUttonTapped() {
@@ -104,7 +107,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var userTransactions = fetchedTransactions
+        let userTransactions = fetchedTransactions
         
         if userTransactions.count == 0 {
             configureEmptyCell()

@@ -229,7 +229,7 @@ extension APIManager {
         }
         
         if let amount = amount  {
-            updateAccount.balance += amount
+            updateAccount.balance -= amount
         }
         
         if let phoneNumber = phoneNumber {
@@ -291,7 +291,7 @@ extension APIManager {
         urlRequest.httpBody = transactionResponse
         
         
-        urlSession.dataTask(with: urlRequest, completionHandler: { data, _, error in
+        urlSession.dataTask(with: urlRequest, completionHandler: { data, response, error in
             guard let data = data else {
                 completion(.failure(.parsingError))
                 return

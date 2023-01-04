@@ -32,15 +32,10 @@ class AllTransactionViewController: UIViewController {
             case .success(let userTransactions):
                 self?.setTransactions(userTransactions)
                 DispatchQueue.main.async {
-                    
                     self?.tableView.reloadData()
                 }
-                print(userTransactions)
-                
             }
-            
         }
-        print("already")
     }
     
     func setTransactions(_ transactions: [TransactionResponse]) {

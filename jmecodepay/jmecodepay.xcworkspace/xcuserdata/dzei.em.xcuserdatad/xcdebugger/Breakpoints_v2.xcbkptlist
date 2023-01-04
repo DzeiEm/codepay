@@ -1733,8 +1733,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1749,8 +1749,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
@@ -1827,8 +1827,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1843,8 +1843,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2003,8 +2003,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "reloadScreenData()"
             landmarkType = "7">
             <Locations>
@@ -2051,8 +2051,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "reloadScreenData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2067,8 +2067,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2147,8 +2147,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
@@ -2195,8 +2195,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "onBalanceChange()"
             landmarkType = "7">
             <Locations>
@@ -2243,8 +2243,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "viewAllTransactionsTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2291,8 +2291,8 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2599,38 +2599,6 @@
             endingLineNumber = "294"
             landmarkName = "sendMoney(sender:receiver:amount:currency:reference:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C25711E3-DFA8-4B11-97EA-F7AF9EB5C58B - f5c2a3ccc6b1dd85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "jmecodepay.APIManager.sendMoney(sender: jmecodepay.AccountResponse, receiver: jmecodepay.AccountResponse, amount: Swift.Optional&lt;Swift.Double&gt;, currency: Swift.String, reference: Swift.String, _: (Swift.Result&lt;jmecodepay.TransactionResponse, jmecodepay.APIErrors&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "jmecodepay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/API/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "294"
-                  endingLineNumber = "294"
-                  offsetFromSymbolStart = "2205">
-               </Location>
-               <Location
-                  uuid = "C25711E3-DFA8-4B11-97EA-F7AF9EB5C58B - 4eb87ffda86d4a12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in jmecodepay.APIManager.sendMoney(sender: jmecodepay.AccountResponse, receiver: jmecodepay.AccountResponse, amount: Swift.Optional&lt;Swift.Double&gt;, currency: Swift.String, reference: Swift.String, _: (Swift.Result&lt;jmecodepay.TransactionResponse, jmecodepay.APIErrors&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "jmecodepay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/API/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "295"
-                  endingLineNumber = "295"
-                  offsetFromSymbolStart = "277">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2802,8 +2770,8 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -2818,10 +2786,42 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "A0F12A62-4D9A-4E61-BA8B-656D91A49EE3 - 1c3ffedab8c67daf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;jmecodepay.TransactionResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "507">
+               </Location>
+               <Location
+                  uuid = "A0F12A62-4D9A-4E61-BA8B-656D91A49EE3 - af4e25394e5d4b69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;jmecodepay.TransactionResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2834,8 +2834,8 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -2850,42 +2850,10 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "EB45D971-8E54-4245-AC89-AE6AB63F53A0 - 1c3ffedab8c67d44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;jmecodepay.TransactionResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
-                  moduleName = "jmecodepay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "507">
-               </Location>
-               <Location
-                  uuid = "EB45D971-8E54-4245-AC89-AE6AB63F53A0 - af4e25394e5d4a0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;jmecodepay.TransactionResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
-                  moduleName = "jmecodepay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "34">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2898,8 +2866,8 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -2946,10 +2914,57 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "D788B72B-1E61-4564-B28C-0886DC992DE8 - f0aa3cce3eaa00b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1120">
+               </Location>
+               <Location
+                  uuid = "D788B72B-1E61-4564-B28C-0886DC992DE8 - f0aa3cce3eaa00b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1762">
+               </Location>
+               <Location
+                  uuid = "D788B72B-1E61-4564-B28C-0886DC992DE8 - 4ba9a30508687b14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;jmecodepay.AccountResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2962,10 +2977,42 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "C21805CD-E8A9-49C7-9930-D21142E4738C - f0aa3cce3eaa25c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1960">
+               </Location>
+               <Location
+                  uuid = "C21805CD-E8A9-49C7-9930-D21142E4738C - 14a1e23820202ee1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Result&lt;jmecodepay.AccountResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "86">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2978,10 +3025,42 @@
             filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "sendMoneyRequest(account:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "FFE2A004-73AF-4DF9-B014-5F32D2A34A6F - f0aa3cce3eaa25c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1960">
+               </Location>
+               <Location
+                  uuid = "FFE2A004-73AF-4DF9-B014-5F32D2A34A6F - 14a1e23820202ee1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Result&lt;jmecodepay.AccountResponse, jmecodepay.APIErrors&gt;) -&gt; () in sendMoneyRequest(account: jmecodepay.AccountResponse) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "86">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3137,13 +3216,13 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "fetchTransactions()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D0B7D471-6800-4D65-8725-D2B9161B757C - 8cf65521139e4e29"
+                  uuid = "D0B7D471-6800-4D65-8725-D2B9161B757C - 8cf65521139e4ed6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -3153,12 +3232,12 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
                   offsetFromSymbolStart = "123">
                </Location>
                <Location
-                  uuid = "D0B7D471-6800-4D65-8725-D2B9161B757C - b4b3e3c520ec65ba"
+                  uuid = "D0B7D471-6800-4D65-8725-D2B9161B757C - b4b3e3c520ec6545"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -3168,12 +3247,12 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
                   offsetFromSymbolStart = "262">
                </Location>
                <Location
-                  uuid = "D0B7D471-6800-4D65-8725-D2B9161B757C - 81d559146dd4c0ff"
+                  uuid = "D0B7D471-6800-4D65-8725-D2B9161B757C - 81d559146dd4c000"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -3183,8 +3262,8 @@
                   urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/Scenes/Home/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
                   offsetFromSymbolStart = "37">
                </Location>
             </Locations>
@@ -3200,9 +3279,105 @@
             filePath = "jmecodepay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "fetchTransactions()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43EC32E6-A0F1-40D1-AC58-66A24A0E6565"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/API/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "updateUserAccount(account:phoneNumber:currency:amount:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "43EC32E6-A0F1-40D1-AC58-66A24A0E6565 - 292c16fb9801be6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "jmecodepay.APIManager.updateUserAccount(account: jmecodepay.AccountResponse, phoneNumber: Swift.Optional&lt;Swift.String&gt;, currency: Swift.Optional&lt;Swift.String&gt;, amount: Swift.Optional&lt;Swift.Double&gt;, _: (Swift.Result&lt;jmecodepay.AccountResponse, jmecodepay.APIErrors&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/API/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "1735">
+               </Location>
+               <Location
+                  uuid = "43EC32E6-A0F1-40D1-AC58-66A24A0E6565 - 292c16fb9801be6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "jmecodepay.APIManager.updateUserAccount(account: jmecodepay.AccountResponse, phoneNumber: Swift.Optional&lt;Swift.String&gt;, currency: Swift.Optional&lt;Swift.String&gt;, amount: Swift.Optional&lt;Swift.Double&gt;, _: (Swift.Result&lt;jmecodepay.AccountResponse, jmecodepay.APIErrors&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "jmecodepay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dzei.em/Documents/code/IOS/jmecodepay/jmecodepay/jmecodepay/API/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "1763">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3F9DBFB-31A2-41B8-AADB-3AC2A06748A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "sendMoneyRequest(account:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8ED67FB5-B761-4D17-AE7B-196CEB0CA2CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "sendMoneyRequest(account:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADC0D8A8-016B-4CDE-8D3D-7590C0EF683E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jmecodepay/Scenes/SendMoney/SendMoneyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "sendMoney()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -16,7 +16,7 @@ class AddMoneyViewController: UIViewController {
     
     let apiManager = APIManager()
     var account: AccountResponse?
-    weak var delegate: AddMoneyViewControllerDelegate?
+    var delegate: AddMoneyViewControllerDelegate?
     
     var currency = ["EUR", "USD", "GBP"]
     private var selectedAccount = "EUR"
@@ -93,6 +93,7 @@ extension AddMoneyViewController {
             case .success:
                 DispatchQueue.main.async {
                     self?.displayAlert(message: "Transaction completed")
+                    
                 }
             }
         }
