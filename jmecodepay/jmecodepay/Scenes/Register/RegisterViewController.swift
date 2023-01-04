@@ -95,7 +95,7 @@ extension RegisterViewController {
                         self?.displayError(message: error.apiErrorMessage)
                     }
                 case .success(let user):
-                    print("create user func \(user)")
+                    //TODO: ?? dissapeared
                     self?.getUserToken(user: user)
                 }
             }
@@ -106,7 +106,6 @@ extension RegisterViewController {
                         self?.displayError(message: error.apiErrorMessage)
                     }
                 case .success(let account):
-                    print(account)
                     DispatchQueue.main.async {
                         self?.displayAlert()
                         self?.navigateToLoginScreen()
@@ -158,10 +157,8 @@ extension RegisterViewController {
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            let loginScreen = LoginViewController()
-//            loginScreen.modalPresentationStyle = .fullScreen
-//            self.present(loginScreen, animated: true)
             self.navigateToLoginScreen()
+           
         }))
         present(alert, animated: true, completion: nil)
     }

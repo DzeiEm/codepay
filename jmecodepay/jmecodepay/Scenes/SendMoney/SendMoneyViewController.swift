@@ -50,11 +50,11 @@ class SendMoneyViewController: UIViewController {
 
 extension SendMoneyViewController {
     
-//    func display(message: String) {
-//        errorLabel.text = message
-//        errorLabel.isHidden = false
-//        errorLabel.textColor = .red
-//    }
+    func display(message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+        errorLabel.textColor = .red
+    }
     
     func sendMoney() {
         guard let currentAccount = currentAccount,
@@ -69,7 +69,7 @@ extension SendMoneyViewController {
             case .failure(let error):
                 DispatchQueue.main.async {
                     print(error)
-                    //self?.display(message: error.apiErrorMessage)
+                    self?.display(message: error.apiErrorMessage)
                 }
             case .success(let account):
                 DispatchQueue.main.async {
@@ -96,7 +96,7 @@ extension SendMoneyViewController {
                 switch result {
                 case .failure(let error):
                     print(error)
-                   // self?.display(message: error.apiErrorMessage)
+                   self?.display(message: error.apiErrorMessage)
                 case .success:
                     DispatchQueue.main.async {
                         self?.displayAlert(message: "Transaction completed")
@@ -111,8 +111,8 @@ extension SendMoneyViewController {
                 
                 switch result {
                 case .failure(let error):
-                    print(error)
-                    //self?.display(message: error.apiErrorMessage)
+                    print("SEND MONEY CONTROLLER, update user acc \(error)")
+                    self?.display(message: error.apiErrorMessage)
                 case .success:
                     print("All good, updated")
                 }
@@ -124,8 +124,8 @@ extension SendMoneyViewController {
                                          amount: (-Double(amountTextfield.text!)!)) { [weak self] result in
                 switch result {
                 case .failure(let error):
-                    print(error)
-                   // self?.display(message: error.apiErrorMessage)
+                    print("SEND MONEY CONTROLLER, update user acc 2 \(error)")
+                   self?.display(message: error.apiErrorMessage)
                 case .success:
                     self?.delegate?.onBalanceChange()
                 }
