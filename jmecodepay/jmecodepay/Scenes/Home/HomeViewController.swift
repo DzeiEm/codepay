@@ -66,7 +66,6 @@ class HomeViewController: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.rowHeight = 60
     }
     
     func reloadScreenData() {
