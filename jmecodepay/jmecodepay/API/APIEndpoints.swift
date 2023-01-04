@@ -21,14 +21,15 @@ enum APIEndpoints {
         case .checkForAccount(phoneNumber: let phoneNumber):
             let queryItem = URLQueryItem(name: phone, value: phoneNumber)
             return makeURL(endpoint: "account", queryItems: [queryItem])
-            
+        case .accountId(let account):
+            let accountId = account.id
+            return makeURL(endpoint: "account\(accountId)")
+        
         case .user:
             return makeURL(endpoint: "user")
         case .account:
             return makeURL(endpoint: "account")
-        case .accountId(account: let account):
-            let accountId = account.id
-            return makeURL(endpoint: "account\(accountId)")
+        
         case .transaction:
             return makeURL(endpoint: "transaction")
         case .getUserToken(let user):

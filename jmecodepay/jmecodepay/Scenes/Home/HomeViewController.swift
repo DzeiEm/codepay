@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func sendButtonTapped() {
         let sendMoneyScreen = SendMoneyViewController()
+        sendMoneyScreen.currentAccount = currrentUserAccount
         sendMoneyScreen.modalPresentationStyle = .fullScreen
         present(sendMoneyScreen, animated: true)
     }
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func addMoneyTapped() {
         let addMoneyScreen = AddMoneyViewController()
+        addMoneyScreen.account = currrentUserAccount
         addMoneyScreen.modalPresentationStyle = .fullScreen
         present(addMoneyScreen, animated: true)
     }

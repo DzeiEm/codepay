@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendMoneyViewController" customModule="jmecodepay" customModuleProvider="target">
             <connections>
+                <outlet property="accountCurrencySegmentControlLabel" destination="xl1-lj-Gcb" id="FRd-Cw-IFv"/>
                 <outlet property="amountTextfield" destination="Tz8-tg-B0D" id="xgq-m5-MPr"/>
                 <outlet property="errorLabel" destination="N48-lv-egD" id="HhU-JZ-b2I"/>
                 <outlet property="phoneNumberTextfield" destination="FaE-vn-jvm" id="wxS-I3-mQh"/>
@@ -42,7 +43,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uea-N8-lOZ">
-                    <rect key="frame" x="30" y="329" width="333" height="227"/>
+                    <rect key="frame" x="30" y="329" width="333" height="223.66666666666663"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receivers' phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTs-Hy-brM">
                             <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
@@ -79,13 +80,19 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeB-DB-o7t">
-                            <rect key="frame" x="0.0" y="162.33333333333331" width="333" height="34.333333333333343"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="currency"/>
-                        </button>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-lj-Gcb">
+                            <rect key="frame" x="0.0" y="162.33333333333331" width="333" height="32"/>
+                            <segments>
+                                <segment title="EUR"/>
+                                <segment title="USD"/>
+                                <segment title="GBP"/>
+                            </segments>
+                            <connections>
+                                <action selector="onSegmentControlChange" destination="-1" eventType="valueChanged" id="9GD-AW-KTS"/>
+                            </connections>
+                        </segmentedControl>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N48-lv-egD">
-                            <rect key="frame" x="0.0" y="206.66666666666663" width="333" height="20.333333333333343"/>
+                            <rect key="frame" x="0.0" y="203.33333333333337" width="333" height="20.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -96,13 +103,13 @@
                         <constraint firstItem="2Zy-j8-yHQ" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="1l5-NY-3xb"/>
                         <constraint firstItem="N48-lv-egD" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="6XH-Dd-Q7I"/>
                         <constraint firstAttribute="trailing" secondItem="N48-lv-egD" secondAttribute="trailing" id="CXS-m2-Wqa"/>
-                        <constraint firstItem="FeB-DB-o7t" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="ChK-BP-P21"/>
+                        <constraint firstAttribute="trailing" secondItem="xl1-lj-Gcb" secondAttribute="trailing" id="PJk-DI-scu"/>
                         <constraint firstItem="Tz8-tg-B0D" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="bB5-Uh-J4G"/>
                         <constraint firstItem="jTs-Hy-brM" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="bK6-Uv-94X"/>
                         <constraint firstAttribute="trailing" secondItem="2Zy-j8-yHQ" secondAttribute="trailing" id="cOj-uK-MgQ"/>
                         <constraint firstAttribute="trailing" secondItem="jTs-Hy-brM" secondAttribute="trailing" id="gwt-03-IAD"/>
-                        <constraint firstAttribute="trailing" secondItem="FeB-DB-o7t" secondAttribute="trailing" id="o7t-QJ-CBF"/>
                         <constraint firstAttribute="trailing" secondItem="MeY-4z-gWF" secondAttribute="trailing" id="ueH-oN-t60"/>
+                        <constraint firstItem="xl1-lj-Gcb" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="vgk-Lr-TiQ"/>
                         <constraint firstItem="MeY-4z-gWF" firstAttribute="leading" secondItem="uea-N8-lOZ" secondAttribute="leading" id="zkX-MP-u6d"/>
                     </constraints>
                 </stackView>

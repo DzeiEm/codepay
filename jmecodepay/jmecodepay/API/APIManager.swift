@@ -209,7 +209,10 @@ extension APIManager {
     
     
     
-    func updateUserAccount(account: AccountResponse, phoneNumber: String?, currency: String?, amount: Double?, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void) {
+    func updateUserAccount(account: AccountResponse,
+                           phoneNumber: String?,
+                           currency: String?,
+                           amount: Double?, _ completion: @escaping(Result<AccountResponse, APIErrors>) -> Void ) {
 
         guard let url = APIEndpoints.accountId(account: account).url else {
             completion(.failure(.invalidURL))
@@ -233,7 +236,8 @@ extension APIManager {
             updateAccount.phoneNumber = phoneNumber
         }
 
-        guard let transactionRequest = try? encoder.encode(updateAccount)  else {
+        guard let transactionRequest = try? encoder.encode(updateAccount) else {
+            print("UPDATE USEr Acc func")
             completion(.failure(.serializationError))
             return
         }
@@ -249,7 +253,8 @@ extension APIManager {
 
             guard let data = data,
                   let accountResponse = try? decoder.decode(AccountResponse.self, from: data) else {
-                completion(.failure(.parsingError))
+                
+                completion(.failure(.serializationError))
                 return
             }
             completion(.success(accountResponse))
@@ -281,6 +286,7 @@ extension APIManager {
 
         guard let transactionResponse = try? encoder.encode(transactionResponse) else {
             completion(.failure(.serializationError))
+            print("sendMoney func apimanager")
             return
         }
 
